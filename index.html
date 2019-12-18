@@ -33,7 +33,7 @@ use-site-title: true
 <div id="repo_content"></div>
 <button id="btn_get_repos">Get All Repos</button><span id="repo_count"></span>
 <script>
-$("#btn_get_repos").click(function() {
+("#btn_get_repos").click(function() {
       $.ajax({
           type: "GET",
           url: "https://api.github.com/users/ZhanqiZhang66/repos",
