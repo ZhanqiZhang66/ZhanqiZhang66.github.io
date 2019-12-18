@@ -3,14 +3,7 @@ layout: page
 title: Projects
 ---
 
-You can also view all my repos from here
-<div id="repos">
-    <ul id="repo_list">
-    </ul>
-</div>
-<div id="repo_content"></div>
-<button id="btn_get_repos">Get All Repos</button><span id="repo_count"></span>
-<script src="inter.js"></script>
+You can also view all my repos from <a href="https://github.com/ZhanqiZhang66?tab=repositories">here<a/>
 <br />
 
 <h3>
