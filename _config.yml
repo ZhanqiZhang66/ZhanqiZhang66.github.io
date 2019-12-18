@@ -150,7 +150,7 @@ prose:
     - /_includes
     - /css
     - /img
-    - /js
+    - /js/inter.js
   metadata:
     _posts:
       - name: "layout"
