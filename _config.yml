@@ -25,6 +25,7 @@ description: Personal Homepage
 navbar-links:
   Home: "index"
   Projects: "publications"
+  Blog: "inspire"
   Resume: "Victoria Zhang Resume.pdf"
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -43,6 +44,7 @@ author:
   name: Victoria Zhang
   email: "zhanqizhang@wustl.edu"
   github: ZhanqiZhang66   # eg. daattali
+  linkedin: zhanqi-zhang-9873cle 
 
 # Select which links to show in the footer
 footer-links-active:
@@ -65,7 +67,7 @@ footer-links-active:
 # Select which share links to show in posts
 share-links-active:
   twitter: false
-  facebook: false
+  facebook: true
   google: true
   linkedin: true
 
@@ -84,7 +86,7 @@ share-links-active:
 #gtm: ""
 
 # Facebook App ID
-# fb_app_id: ""
+#fb_app_id: "zhanqi.zhang.9"
 
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
