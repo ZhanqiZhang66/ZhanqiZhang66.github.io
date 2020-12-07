@@ -53,9 +53,29 @@ You can also view all my repos from <a href="https://github.com/ZhanqiZhang66?ta
 <div class="media">
     <div class="media-body">
        <p class="media-heading">
-          <strong>Computer Vision Poejects</strong><br />
+          <strong>Computer Vision Projects</strong><br />
           <b>Victoria Zhang</b><br />
-          This work currently can't be viewed publicly due to the policy<br />
+           <li>Edge detection + Line detection
+</li>
+            <li>Image Restoration & Optimization
+</li>
+            <li>Photometric Stereo
+</li>      
+        <li>Camera Projection and Transformations
+</li>   
+           <li>Estimation, Sampling, Robust Fitting
+</li>
+                      <li>Epipolar Geometry, Binocular Stereo
+</li>
+                      <li>Optical flow
+</li>
+                      <li>Neural Networks
+</li>
+           <li>Semantic Vision Tasks
+</li>
+                      <li>GAN and VAEs. Unsupervised Learning.
+</li>
+          This work currently can't be viewed publicly due to the course policy<br />
           Please Email me for more information.
        </p>
     </div>
