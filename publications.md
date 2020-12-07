@@ -96,7 +96,7 @@ You can also view all my repositories from <a href="https://github.com/ZhanqiZha
 <div class="media">
     <div class="media-body">
        <p class="media-heading">
-          <strong>3R ROBOTICS</strong><br />
+          <strong>3D Rotational ROBOTICS</strong><br />
           Victoria Zhang, Ben Miao<br />
             <a href="https://github.com/ZhanqiZhang66/3R-Robotics">[CODE]</a><br />
        </p>
