@@ -2,8 +2,9 @@
 layout: page
 title: Projects
 ---
+To be updated...
 
-You can also view all my repos from <a href="https://github.com/ZhanqiZhang66?tab=repositories">here<a/>
+You can also view all my repositories from <a href="https://github.com/ZhanqiZhang66?tab=repositories">here<a/>
 <br />
 
 <h3>
