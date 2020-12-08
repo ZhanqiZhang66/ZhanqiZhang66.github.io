@@ -32,7 +32,7 @@ navbar-links:
   Blog: "inspire"
   Resume: "Zhanqi Zhang Resume 12_6_2020.pdf"
   
-avatar: "/assets/img/victoria.jpeg"
+avatar: "/assets/img/victoria.jpg"
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 #avatar: "/img/cihangxie.jpg"
