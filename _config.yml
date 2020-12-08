@@ -2,7 +2,11 @@
 
 # url is the full website URL
 # baseurl is the website's URL without the hostname
-
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "http://ZhanqiZhang66.github.io"
 baseurl: ""
@@ -27,7 +31,8 @@ navbar-links:
   Projects: "publications"
   Blog: "inspire"
   Resume: "Zhanqi Zhang Resume 12_6_2020.pdf"
-
+  
+avatar: "/assets/img/victoria.jpeg"
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 #avatar: "/img/cihangxie.jpg"
@@ -70,7 +75,20 @@ share-links-active:
   facebook: true
   google: true
   linkedin: true
+  
+  
+excerpt_length: 50
+feed_show_excerpt: false
+feed_show_tags: false
 
+keywords: "r shiny,r shiny developer,shiny developer,shiny apps,shiny consultant,dashboards r,interactive dashboards"
+
+link-col: "#404040"
+
+mobile-theme-col: "#0085A1"
+
+site-css: "/assets/css/custom-styles.css"
+site-js: "/assets/js/custom-script.js"
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
 # url-pretty: "https://zhishuai.xyz"  # eg. "deanattali.com/beautiful-jekyll"
@@ -99,7 +117,7 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "China/Shanghai"
+timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
