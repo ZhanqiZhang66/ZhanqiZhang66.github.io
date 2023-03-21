@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Thesis, Conferences, Publications and Projects
+title: Selected Projects 
 ---
 To be updated...
 
