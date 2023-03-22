@@ -21,8 +21,9 @@ author: Victoria
 
 navbar-links:
   Home: "index"
-  Publications and Projects: "publications"
+  Publications: "publications"
   Blog: "blog"
+  Art: "art"
   Resume: "Zhanqi Zhang CV_2022.pdf"
 
 ################

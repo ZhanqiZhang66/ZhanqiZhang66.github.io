@@ -80,9 +80,9 @@ var BeautifulJekyllJS = {
             BeautifulJekyllJS.setImg(src, desc);
             img.remove();
             getNextImg();
-          }, 1000);
+          }, 2000);
           //});
-        }, 6000);
+        }, 8000);
       };
 
       // If there are multiple images, cycle through them
