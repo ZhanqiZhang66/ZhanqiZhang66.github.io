@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Sometimes I draw. “Filling a space in a beautiful way” 
-subtitle: Everything you can imagine is real.
+title: Sometimes I draw. 
+subtitle: I would like to paint the way a bird sings, and fill a space in a beautiful way.
 css: "/assets/css/index.css"
 share-img: /assets/img/victoria.jpg
 use-site-title: true

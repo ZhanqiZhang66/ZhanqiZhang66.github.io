@@ -8,22 +8,7 @@ share-title: "Victoria Zhang | Popular posts"
 share-description: "List of all the most popular posts by Victoria Zhang."
 support_promo_box: true
 cover-img:
-  - "/assets/img/big-imgs/balboa.JPEG" : "Balboa Park, San Diego (2022)"
-  - "/assets/img/big-imgs/bird.jpeg" : "Forest Park, Saint Louis, MO (2021)"
-  - "/assets/img/big-imgs/cherry.JPG" : "WashU, Saint Louis, MO (2020)"
-  - "/assets/img/big-imgs/child.JPG" : "Jinan, China (2000)"
-  - "/assets/img/big-imgs/child_2.JPG" : "Jinan, China (2002)"
-  - "/assets/img/big-imgs/dog_2.JPG" : "Creve Coeur Lake. Saint Louis, MO (2018)"
-  - "/assets/img/big-imgs/grad_fountain.jpeg" : "WashU Brookings Quadrangle, Saint Louis, MO (2020)"
-  - "/assets/img/big-imgs/seaside.JPG" : "Sunset Cliffs, La Jolla, CA (2021)"
-  - "/assets/img/big-imgs/yosemite_2.JPEG" : "Yosemite Valley, Yosemite National Park, CA (2022)"
-  - "/assets/img/big-imgs/river.jpg" : "Jinan, China (2018)"
-  - "/assets/img/big-imgs/freshman.JPG" : "WashU, Saint Louis, MO (2016)"
-  - "/assets/img/big-imgs/sea.jpeg" : "La Jolla tide pool, La Jolla, CA (2022)"
-  - "/assets/img/big-imgs/chinohill.JPEG" : "Chino Hills State Park, Chino Hills, CA (2023)"
-  - "/assets/img/big-imgs/ironmountain.JPG" : "Iron Mountain Trail, Poway, CA (2023)"
-  - "/assets/img/big-imgs/ski.jpeg" : "Palisade, Tahoe, CA (2023)"
-  - "/assets/img/big-imgs/jeju.JPG" : "Jeju, South Korea (2018)"
+  - "/assets/img/photograph/forest.jpg" : "Forest Park, Saint Louis, MO (2021)"
 ---
 
 <div class="list-filters">
