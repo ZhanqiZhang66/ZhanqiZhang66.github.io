@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Hi, I'm Victoria"
-subtitle: Researcher in Artificial and Biological Intelligence. Bird Lover.
+subtitle: I’m documenting my learning notes in this blog.
 css: "/assets/css/index.css"
 share-img: /assets/img/victoria.jpg
 share-title: "Victoria Zhang | Popular posts"
