@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Watercolor
-subtitle: I paint!
+title: Sometimes I draw. “Filling a space in a beautiful way” 
+subtitle: Everything you can imagine is real.
 css: "/assets/css/index.css"
 share-img: /assets/img/victoria.jpg
 use-site-title: true
