@@ -3,7 +3,7 @@ layout: page
 title: "My story"
 subtitle: "Researcher. Bird Lover." # in Artificial and Biological Intelligence
 css: "/assets/css/index.css"
-share-img: /assets/img/victoria.jpg
+share-img: /assets/img/victoria_22.jpg
 use-site-title: true
 cover-img:
   - "/assets/img/big-imgs/balboa.JPEG" : "Balboa Park, San Diego (2022)"
