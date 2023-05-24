@@ -61,7 +61,7 @@ family pressure. As a girl raised in a family that longed for a boy, I related
 to their stories.
 </p> 
 <p>
-Through teaching and service, I hope to keep empowering diversity in the community. In graduate school, I am a mentor at <a href="https://www.simonsfoundation.org/collaborations/global-brain/people/?category=global-brain-surf-mentors&type=global-brain-fellows">Simons Foundation Global Brain Program</a>. I connected undergraduate mentee from underrepresented backgrounds to research opportunities, provide strategies for handling difficult work situations, and offer positive feedbacks. At home, when Chinese gender norms stripped girls of opportunities, I encouraged my younger sister to run for leadership roles and to join the formerly male-only
+Through teaching and service, I hope to keep empowering diversity in the community. In graduate school, I am a mentor at <a href="https://www.simonsfoundation.org/collaborations/global-brain/people/?category=global-brain-surf-mentors&type=global-brain-fellows">Simons Foundation Global Brain Program</a>. I connected undergraduate mentee from underrepresented backgrounds to research opportunities, provide strategies for handling difficult work situations, and offer positive feedbacks. I am also a member of UCSE <a href="https://cse.ucsd.edu/diversity/cse-dei-committee">CSE DEI community</a>. At home, when Chinese gender norms stripped girls of opportunities, I encouraged my younger sister to run for leadership roles and to join the formerly male-only
 football team. On social media, I lead women in China today on issues like #MeToo. 
 </p>
 <p>
