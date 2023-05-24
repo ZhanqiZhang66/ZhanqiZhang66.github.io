@@ -30,12 +30,13 @@ cover-img:
   Hi! My name is Victoria Zhanqi Zhang, 张展旗. 
 </p>
 <p>
-  Hi! My name is Victoria Zhanqi Zhang, 张展旗. I am a Ph.D. student in Computer Science at UCSD, supported by HDSI Phd Fellowship. I am honored to be co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. Previously, I studied Computer Science and Electrical Engineering at Washington University in St. Louis. I was advised by <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a> as an undergrad research student. I was the Co-president of <a href="https://www.tbp.org/off/DisplayChapterInfo.cfm?ID=99">Tau Beta Pi Engineering Honor Society</a>, Missouri Gamma Chapter. 
+I am a Ph.D. student in Computer Science at UCSD, supported by HDSI Phd Fellowship. I am honored to be co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. Previously, I studied Computer Science and Electrical Engineering at Washington University in St. Louis. I was advised by <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a> as an undergrad research student. I was the Co-president of <a href="https://www.tbp.org/off/DisplayChapterInfo.cfm?ID=99">Tau Beta Pi Engineering Honor Society</a>, Missouri Gamma Chapter. 
 </p> 
 <p>
   I am broadly interested in how machine and biological intelligence complement each other to push forward the discoveries of the brain. My research interests include machine learning, computational system neuroscience, optimization and signal processing. Specifically, I am currently interested in how human behavior reflects complex neural and physiological processes such as learning, perception, and decision-making in the brain. Using tools in machine learning, computational neuroscience, optimization, and signal processing, I attempt to construct unsupervised animal and human action recognition and behavior classification models to understand disorders in clinical settings. 
 </p> 
-<p>I grew up in a small village in China. When I was 12, my family moved to Beijing. Unfortunately, my Huji, the national registration system, classified me as ineligible for high education in the cities. Despite this, I worked hard to free myself. In 2016, I came to the US for college.
+<p>
+I grew up in a small village in China. When I was 12, my family moved to Beijing. Unfortunately, my Huji, the national registration system, classified me as ineligible for high education in the cities. Despite this, I worked hard to free myself. In 2016, I came to the US for college.
 </p>
 <p>
 Fresh off the boat, I struggled to find my voice in the engineering classroom and to confidently articulate my thoughts in front of male classmates. I learned to seek guidance and, when I was at my lowest point, my advisors, <a href="https://engineering.wustl.edu/faculty/Emily-Boyd.html">Dr. Emily Boyd</a> in Mechanical Engineering, and <a href="https://engineering.wustl.edu/faculty/Caitlin-Kelleher.html">Dr. Caitlin Kelleher</a> in Computer Science, both exemplars of successful women in STEM, provided solace. They taught me that it is okay to feel lost, but I needed to move forward step by step. 
@@ -44,6 +45,7 @@ Fresh off the boat, I struggled to find my voice in the engineering classroom an
 <p>
 My early years taught me to never give up and motivated me to discover, conquer and achieve. I fell in love with Computer Science, Electrical Engineering, and Neuroscience at <a href='https://wustl.edu/'>Washington University in St. Louis<a/>. Actively participating in seminar series and journal clubs, I am fascinated by how machine and biological intelligence complement each other to push forward the discoveries in science. 
 </p>
+  
 <p>
 I joined <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a>’s laboratory at WashU to study visual information encoding in the primate brain. This valuable experience have instilled in me a passion for the deeper insights of scientific research and motivated me to pursue a doctoral program.
 </p>
