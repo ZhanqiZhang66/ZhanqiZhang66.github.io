@@ -22,7 +22,7 @@ author: Victoria
 navbar-links:
   Home: "index"
   Publications: "publications"
-  #About me: "aboutme"
+  About me: "aboutme"
   Blog: "blog"
   Art: "art"
   Resume: "Zhanqi Zhang CV_2022.pdf"
