@@ -8,25 +8,69 @@ cover-img:
   - "/assets/img/photograph/IMG_9057.jpeg" : "Black's beach, LA Jolla (2022)"
 use-site-title: true
 ---
-To be updated...
 
 You can also view all my repositories from <a href="https://github.com/ZhanqiZhang66?tab=repositories">here<a/>
 <br />
     
 <h2>
-    <a name='Thesis, Conferences, and Publications'></a> Thesis, Conferences, and Publications
+    <a name='Conferences and Publications'></a> Conferences and Publications
 </h2>
 <div class="media">
     <div class="media-body">
        <p class="media-heading">
-          <strong>Shape Recognition in Ultrasound with Deep Learning (2020)</strong><br />
-           <strong>Zhang, Z., Miao, H., & Liao, X. </strong><br />
-          <i>Washington University in St. Louis, McKelvey School of Engineering, Department of Electrical and Systems Engineering Capstone Design Thesis</i><br/>
+          <strong>Semi-supervised quantification and interpretation of undirected human behavior. </strong><br/>
+           <strong>Zhang, Z.</strong>, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2023). <br />
+                    <i>Accepted as poster for <a href="https://www.cosyne.org/">Computational and Systems Neuroscience (COSYNE) 2023</a> </i>
         </p>
-         <p class="media-heading" style="font-size:15px">Ultrasound is one of the most common imaging techniques in clinical settings, but its functionalities are limited by its low resolution and high dependency on the operator skills. Here, we applied a pre-trained neural network to recognize geometric shapes in ultrasound images of 3D-printed samples. We achieved 96% task accuracy and created a database available for future research in ultrasound imaging.
+         <p class="media-heading" style="font-size:15px">Undirected behavior reflects cognitive functions and provides insights for diagnosing psychiatric conditions such as bipolar disorder (BD) (McReynolds, 1962). Open-field animal behaviors have been well-studied for this purpose; however, a corresponding human subject paradigm is still lacking, and quantifying complex spontaneous human behaviors is challenging. Here, we demonstrate a semi-supervised model to quantify undirected human behavior, differentiate subtle hallmark behavioral features of BD, and create a natural language generative model to provide nuanced interpretations of behaviors with context information. We collected videos of BD (n=12) and control (n=12) human participants freely interacting in an unexplored room with each video manually annotated into 6 categories (e.g., walk). We used DeepLabCut (Mathis et al, 2018) to track the spatiotemporal postures of the participants coupled with the VAME latent variable model (Luxem et al, 2021) to encode pose sequences into latent representations. We then clustered the latent representations into 10 behavioral motifs. To interpret these motifs, we independently described example clips using natural language. Using these descriptions, we created a novel transformer-based model that generated interpretable descriptions for each cluster. We found the dwell time of motif “approach, inspect, move along” is significantly lower in the BD population compared with controls (two sample t-test, p-value: 0.04), while no significance was found from manually annotated categories. We then used transition matrices to characterize how participants transitioned between motifs. We found BD to have sparser transition matrices in the second half of the video which reflected more stereotyped behavior and a smaller behavioral repertoire. We quantified this using the entropy of the transition matrix and found BD patients to have significantly different entropy between the first and the second half of the video (F test for equal variances, p-value: 0.01). Our analysis identifies fine-resolution behavioral motifs that can distinguish BD using undirected human behavior.
         </p>
     </div>
 </div>
+
+<div class="media">
+    <div class="media-body">
+       <p class="media-heading">
+         <strong>Unsupervised quantification of undirected human behavior for bipolar disorder analysis. </strong><br/>
+           <strong>Zhang, Z.</strong>, Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2022). <br />
+                    <i>Accepted as a spotlight poster for <a href="https://brain.ieee.org/event/ieee-brain-discovery-and-neurotechnology-workshop/">IEEE Brain Discovery Neurotechnology Workshop – Brain Mind Body Cognitive Engineering for Health and Wellness 2022</a> and <a href="https://www.sfn.org/meetings/neuroscience-2021">Society for Neuroscience (SfN) 2022</a> </i>
+        </p>   
+    </div>
+</div>
+
+<div class="media">
+    <div class="media-body">
+       <p class="media-heading">
+                   <strong>Animal-feature Encoding in Macaque Brain and in Artificial Networks. </strong><br/>
+           <strong>Zhang, Z.</strong>, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2022). <br />
+                    <i>Accepted as a spotlight poster for <a href="https://www.sfn.org/meetings/neuroscience-2021">Society for Neuroscience (SfN) 2022</a> </i>
+        </p>
+    </div>
+</div>
+
+<div class="media">
+    <div class="media-body">
+       <p class="media-heading">
+          <strong>Do you see what I see? Representations in brains and neural networks. Brain-Score and Beyond: Confronting Brain-like ANNs with Neuroscientific Data. </strong><br/>
+           <strong>Zhang, Z.</strong>, Ponce, C. R. (2022). <br /> 
+                   <i>Accepted as a workshop presentation for <a href="https://www.cosyne.org/">Computational and Systems Neuroscience (COSYNE) 2022</a> </i>
+        </p>
+    </div>
+</div>
+
+
+<div class="media">
+    <div class="media-body">
+       <p class="media-heading">
+          <strong>The Macaque Ventral Stream Shows A Hierarchical Structure for Animal-feature Encoding (2021)</strong><br />
+          <strong>Zhang, Z.</strong>, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R.<br />
+           <i>Accepted as abstract for <a href="https://www.sfn.org/meetings/neuroscience-2021">Society for Neuroscience (SfN) 2021</a> and <a href="https://abstracts.g-node.org/conference/BC21/abstracts#/uuid/bbb01455-e0b9-4521-bbe1-9c7c0ba4389c">Bernstein Conference 2021</a> </i>
+               <br/>
+       </p>
+       <p class="media-heading" style="font-size:15px"> Are there organizing principles for information encoding along the primate ventral stream? Neurons in each visual area are often tested with different types of stimuli, ranging from simple (e.g., lines in V1) to complex (faces in inferotemporal cortex, IT); however, this strategy limits functional comparisons across areas. By comparing neuronal responses to a given stimulus set across areas, we set out to identify brain-wide organizing principles and determine if these principles are shared by learning-based models of the ventral stream (convolutional neural networks, CNNs)
+        </p>
+    </div>
+</div>
+
 
 <div class="media">
     <div class="media-body">
@@ -46,18 +90,18 @@ You can also view all my repositories from <a href="https://github.com/ZhanqiZha
 <div class="media">
     <div class="media-body">
        <p class="media-heading">
-          <strong>The Macaque Ventral Stream Shows A Hierarchical Structure for Animal-feature Encoding (2021)</strong><br />
-          <strong>Zhang, Z., Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R.</strong><br />
-           <i>Accepted as abstract for <a href="https://www.sfn.org/meetings/neuroscience-2021">SfN 2021</a> and <a href="https://abstracts.g-node.org/conference/BC21/abstracts#/uuid/bbb01455-e0b9-4521-bbe1-9c7c0ba4389c">Bernstein Conference 2021</a> </i>
-               <br/>
-       </p>
-       <p class="media-heading" style="font-size:15px"> Are there organizing principles for information encoding along the primate ventral stream? Neurons in each visual area are often tested with different types of stimuli, ranging from simple (e.g., lines in V1) to complex (faces in inferotemporal cortex, IT); however, this strategy limits functional comparisons across areas. By comparing neuronal responses to a given stimulus set across areas, we set out to identify brain-wide organizing principles and determine if these principles are shared by learning-based models of the ventral stream (convolutional neural networks, CNNs)
+          <strong>Shape Recognition in Ultrasound with Deep Learning (2020)</strong><br />
+           <strong>Zhang, Z.</strong>, Miao, H., & Liao, X. <br />
+          <i>Washington University in St. Louis, McKelvey School of Engineering, Department of Electrical and Systems Engineering Capstone Design Thesis</i><br/>
+        </p>
+         <p class="media-heading" style="font-size:15px">Ultrasound is one of the most common imaging techniques in clinical settings, but its functionalities are limited by its low resolution and high dependency on the operator skills. Here, we applied a pre-trained neural network to recognize geometric shapes in ultrasound images of 3D-printed samples. We achieved 96% task accuracy and created a database available for future research in ultrasound imaging.
         </p>
     </div>
 </div>
 
+
 <h2>
-     <a name='Projects'></a> Projects
+     <a name='Projects'></a> Undergrad Projects
 </h2>
 <h3>
     <a name='2019'></a> 2019
