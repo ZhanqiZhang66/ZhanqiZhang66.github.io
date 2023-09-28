@@ -4,9 +4,9 @@ title: Intro to Recurrent Neural Networks (RNNs)
 subtitle: Part I
 gh-repo: zhanqizhang66/zhanqizhang66.github.io/
 gh-badge: [star, fork, follow]
-cover-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
+cover-img: /assets/img/photograph/281AB3B5-547A-4CE3-BDAF-E0C43AEC29DE.jpg
 thumbnail-img:
-share-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
+share-img: /assets/img/photograph/281AB3B5-547A-4CE3-BDAF-E0C43AEC29DE.jpg
 tags: [learning notes]
 ---
 
