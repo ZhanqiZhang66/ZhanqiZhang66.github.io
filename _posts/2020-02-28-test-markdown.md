@@ -1,14 +1,32 @@
 ---
 layout: post
-title: Sample blog post
-subtitle: Each post also has a subtitle
-gh-repo: daattali/beautiful-jekyll
+title: Intro to Recurrent Neural Networks (RNNs)
+subtitle: Part I
+gh-repo: zhanqizhang66/zhanqizhang66.github.io/
 gh-badge: [star, fork, follow]
-tags: [test]
-comments: true
+cover-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
+thumbnail-img:
+share-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
+tags: [learning notes]
 ---
 
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+
+<h2>Intro to Recurrent Neural Networks (RNNs)</h2>
+
+* Before RNNs: Perceptron and ConvNets
+* RNNs, and Why?
+* Some Math
+  * Forward pass
+  * Backpropagation refresher
+  * The RNN backward pass
+* Some pros and cons
+* On the difficulty of training RNNs
+* Applications
+
+
+
+<iframe width="100%" height="800" src="/files/Intro to RNNs.pdf">
+<!-- This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
 
 **Here is some bold text**
 
@@ -75,4 +93,4 @@ You can add notification, warning and error boxes like this:
 ### Error
 
 {: .box-error}
-**Error:** This is an error box.
+**Error:** This is an error box. -->
