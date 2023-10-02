@@ -24,52 +24,24 @@ cover-img:
   - "/assets/img/big-imgs/snowvalley.JPG" : "Snow Valley, Running Springs, CA (2023)"
 ---
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y06S3E3WTE');
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<div id="aboutme-section">
 <h3>About me</h3>
 
-<p class="about-text">
-<span class="fa fa-graduation-cap about-icon"></span>
-Hi! My name is Victoria Zhanqi Zhang, 张展旗. I am a Ph.D. student in Computer Science at UCSD, supported by HDSI Phd Fellowship. I am honored to be co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. Previously, I studied Computer Science and Electrical Engineering at Washington University in St. Louis. I was advised by <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a> as an undergrad research student. 
+<p>
+  Hi! My name is Victoria Zhanqi Zhang, 张展旗. I am a Ph.D. student in Computer Science at UCSD, supported by HDSI Phd Fellowship. I am honored to be co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. Previously, I studied Computer Science and Electrical Engineering at Washington University in St. Louis. I was advised by <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a> as an undergrad research student. 
+</p>
+<p>If you want to learn more about me and my life, here is <a href="https://zhanqizhang66.github.io/aboutme/">my story</a>. </p>
+<p>
+  I am currently a Ph.D. student in Computer Science at <a href='https://ucsd.edu/'>UCSD<a/>, supported by HDSI Phd Fellowship. I am honored to be co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. Using tools in computer science,  neuroscience, and signal processing, I attempt to construct behavior models to understand disorders in pychiatry. I’m listing my projects<a href="https://zhanqizhang66.github.io/blog/"> here</a> and documenting my learning notes in this <a href="https://zhanqizhang66.github.io/blog/">blog</a>.   
+</p>
+<p>
+  In my free time, I enjoy painting, hiking, travelling, and mentoring. I live with two happy free-flying birds: cockatiel Ashe and parakeet Kiwi. I love DIY swings and castles for them and teaching them new songs and cool tricks. Here is the <a href="https://zhanqizhang66.github.io/art/">Art Portfolio</a> of some of my watercolor and color pencil drawings. 
 </p>
 
-<p class="about-text">
-<span class="fa fa-code about-icon"></span>
-I am driven to apply deep learning models as theories of neural computations to answer long-standing questions in science. Are there natural learning principles in brain computation? How can we these principles to reproduce sophisticated AI? Using tools in computer science,  neuroscience, and signal processing, I attempt to construct behavior models to understand disorders in pychiatry. 
-</p>
 
-<p class="about-text">
-<span class="fa fa-file-alt about-icon"></span>
-The <strong><a href="https://zhanqizhang66.github.io/publications">projects</a></strong> page is a nice place to see some of my work, but you can also view my <a href="https://zhanqizhang66.github.io/Zhanqi%20Zhang%20CV_2023.pdf">resume</a>. 
-</p>
 
-<p class="about-text">
-<span class="fa-solid fa-pen-to-square about-icon"></span>Learning is a lifelong journey. I documenting my learning notes of deep learning, computational neuroscience, hacking tricks, and everything school DIDN'T teach you about programming in this<a href="https://zhanqizhang66.github.io/blog/">blog</a>. 
-</p>
 
-<p class="about-text">
-<span class="fa fa-globe-americas about-icon"></span>
-Grew up in <i>Jinan, China</i>; moved to <i>Beijing, China</i> during my teens; Began my undergrad in <i>St. Louis</i>in 2016; living in <i>San Diego</i> for grad school; If you want to learn more about my journey, here is <a href="https://zhanqizhang66.github.io/aboutme/">my story</a>.
-</p>
-
-<p class="about-text">
-<span class="fa fa-heart about-icon"></span>
-In my free time, I enjoy surfing :surfer:, painting, hiking, travelling, and mentoring. I live with two happy free-flying birds: cockatiel Ashe and parakeet Kiwi. I love DIY swings and castles for them and teaching them new songs and cool tricks. Here is the <a href="https://zhanqizhang66.github.io/art/">Art Portfolio</a> of some of my watercolor and color pencil drawings. 
-</p>
-</div>
-
-<div id="research-section">
 <h3>Graduate School Research</h3>
 <ul>
   <! –– 
@@ -99,11 +71,10 @@ In my free time, I enjoy surfing :surfer:, painting, hiking, travelling, and men
   </li>
 
 </ul>
-</div>
 
 <div id="contactme-section">
 <h3 id="contact">Contact</h3>
-<p>Feel free to <a href="mailto:zhz091@ucsd.edu?subject=Hello from ZhanqiZhang66.github.io">email me</a> or DM me on <a href="https://twitter.com/ZhangZhanqi">Twitter</a> if you want to get in touch! </p>
+<p>Feel free to <a href="mailto:zhz091@ucsd.edu?subject=Hello from ZhanqiZhang66.github.io">email me</a> or DM me <a href="https://twitter.com/ZhangZhanqi">on Twitter</a> if you want to get in touch! </p>
 
 <form action="https://formspree.io/f/xayzdjey" method="POST" class="form" id="contact-form">
   <p>You can also leave me a message using the form below:</p>

@@ -2,7 +2,7 @@
 layout: page
 title: "Blog"
 subtitle: "learning notes & misc."
-css: "/assets/css/index.css"
+css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
 share-title: "Victoria Zhang | Popular posts"
 share-description: "List of all the most popular posts by Victoria Zhang."
