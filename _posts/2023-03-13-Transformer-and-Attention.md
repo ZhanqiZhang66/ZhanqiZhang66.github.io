@@ -53,4 +53,6 @@ Reference other the papers cited in the pdf:
 + [Illustrated self attention](https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a)
 + [Jacob Gildenblat's post on explainability of vision transformers](https://jacobgil.github.io/deeplearning/vision-transformer-explainability)
 + [PyTorch visulization inside the matrix](https://pytorch.org/blog/inside-the-matrix/)
+
+
 	

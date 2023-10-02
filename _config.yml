@@ -270,6 +270,7 @@ defaults:
       show-subscribe: true
       show-share: true
       support_promo_box: true
+      after-content: [disqus.html]
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
