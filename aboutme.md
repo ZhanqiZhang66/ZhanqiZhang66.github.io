@@ -22,6 +22,15 @@ cover-img:
   - "/assets/img/big-imgs/ski.jpeg" : "Palisade, Tahoe, CA (2023)"
   - "/assets/img/big-imgs/flower.JPG" : "La Jolla Cove, La Jolla, CA (2021)"
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y06S3E3WTE');
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

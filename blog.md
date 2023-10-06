@@ -10,6 +10,15 @@ support_promo_box: true
 cover-img:
   - "/assets/img/photograph/forest.jpg" : "Forest Park, Saint Louis, MO (2021)"
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y06S3E3WTE');
+</script>
 
 <div class="list-filters">
   <a href="/" class="list-filter">All posts</a>

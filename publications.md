@@ -8,8 +8,17 @@ cover-img:
   - "/assets/img/photograph/IMG_9057.jpeg" : "Black's beach, LA Jolla (2022)"
 use-site-title: true
 ---
-Conferences and Publications
-----------------------------
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y06S3E3WTE');
+</script>
+
+### Conferences and Publications
 
 **Semi-supervised quantification and interpretation of undirected human behavior.**  
 **Zhang, Z.**, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2023).  
