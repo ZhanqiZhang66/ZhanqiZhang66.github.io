@@ -7,7 +7,7 @@ gh-badge: [star, fork, follow]
 cover-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
 thumbnail-img:
 share-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
-tags: [learning notes, tutorials]
+tags: [tutorials]
 ---
 
 
