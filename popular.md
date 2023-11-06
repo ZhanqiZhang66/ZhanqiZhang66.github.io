@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Blog"
-subtitle: "learning notes & misc."
+subtitle: "guess y'all like these"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
 share-title: "Victoria Zhang | Popular posts"
@@ -30,7 +30,7 @@ cover-img:
 {% assign posts = paginator.posts | default: site.posts %}
 
 <div class="posts-list">
-  {% for post in posts %}
+  {% for post in site.tags.popular %}
   <article class="post-preview">
 
     {%- capture thumbnail -%}

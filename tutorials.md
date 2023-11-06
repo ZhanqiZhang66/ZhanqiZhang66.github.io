@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Blog"
-subtitle: "learning notes & misc."
+title: "Learning notes & tutorials"
+subtitle: "science is magic that works"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
 share-title: "Victoria Zhang | Popular posts"
 share-description: "List of all the most popular blogs by Victoria Zhang."
 support_promo_box: true
 cover-img:
-  - "/assets/img/photograph/forest.jpg" : "Yosemite, CA (2021)"
+  - "/assets/img/photograph/IMG_9543.JPEG" : "Balboa Park, San Diego, CA (2022)"
 ---
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
@@ -30,7 +30,7 @@ cover-img:
 {% assign posts = paginator.posts | default: site.posts %}
 
 <div class="posts-list">
-  {% for post in posts %}
+  {% for post in site.tags.tutorials %}
   <article class="post-preview">
 
     {%- capture thumbnail -%}
