@@ -34,7 +34,9 @@ cover-img:
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 ### Preface
-Be it horse, car, human, or even lizard, our lives are but the brightest flashes in a universe that is billions of years old. In the great grand scheme of things, we are just tiny specks that will one day be forgotten. So, it doesn’t matter what we did in the past, or how we will be remembered. The only thing that matters is that now, this moment, this spectacular moment we are sharing together. Welcome to my world.
+Be it horse, car, human, or even lizard, our lives are but the brightest flashes in a universe that is billions of years old. In the great grand scheme of things, we are just tiny specks that will one day be forgotten. So, it doesn’t matter what we did in the past, or how we will be remembered. The only thing that matters is that now, this moment, this spectacular moment we are sharing together. 
+
+Welcome to my world.
 
 ### Past
 
