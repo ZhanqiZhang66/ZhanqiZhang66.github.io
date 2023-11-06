@@ -1,5 +1,32 @@
-# Poems and Proses
+# Poems and Proses Excerpts
 
+## 2023
+- Never attach yourself to a person, a place, a company, an organization or a project. Attach yourself to a mission, a calling, a purpose only. That’s how you keep your power and your peace.  Elon Musk
+- 人这辈子千万不要马虎两件事，一是找对爱人，二是找对事业，因为太阳升起时要投身事业，太阳落山是要与爱人相拥的。
+- 我们终其一生，一直都在寻找两个东西一个是价值感，一个是归属感。
+- 价值感来自于被肯定，归属感来自于被爱。
+- 什么是人脉？人脉不是说你认识多少人，而是多少人认识你；
+- 旧爱隔山海 岁月不回头
+- 海底月是天上月，眼前人是心上人。向来心是看客心，奈何人是剧中人。后来啊，海底月不可捞，眼前人不可及。向来心猜不透，剧中人不再提
+- It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.
+  
+
+## 2022
+- under promise, over delivery
+- 不要因为工资而工作，选择职业天花板更高的工作。
+- 经验和技能远远比眼下的工资更加重要，尤其是年轻的时候。
+- 当你老了，回顾一生，就会发觉：什么时候出国读书，什么时候决定做第一份职业、何时选定了对象而恋爱、什么时候结婚，其实都是命运的巨变。只是当时站在三岔路口，眼见风云千樯，你作出选择的那一日，在日记上，相当沉闷和平凡，当时还以为是生命中普通的一天
+- Direction is more important than speed. 
+- 
+## 2021
+- 竹杖芒鞋轻胜马，一蓑烟雨任平生
+- 小舟从此逝，江海寄余生
+- 最是人间留不住，朱颜辞镜花辞树
+- 我问张百川：我们的社会为什么不接纳同性恋者？他说：因为我们的性文化里，把生育当作性的目的，把无知当纯洁，把愚昧当德行，把偏见当原则。
+- 如果你整天这样，不读书不运动，不节制消费，不反省不自律，无兴趣无爱好，无目标无任何期望，生活是不会变好的！多看点儿书，多挣点儿钱，少想没用的。当你犹豫要不要去做一件事的时候，其实你内心已经有了选择，只是你还没有充足的理由去说服自己。低级的欲望，放纵即可获得高级的欲望，克制才能得到。与其自嘲平庸，不如克制慵懒。
+- 美貌是约会的敲门砖，富贵则是社交的通行证
+- 有人让我们学会爱，有人让我们学会被爱，有人让我们知道世界原是五彩，岁月流逝亦有可待…
+- 一个社会有三大底线行业：一教育，二医疗，三法律。无论社会多么不堪，只要教育优秀公平，底层就会有上升希望；只要医疗不黑暗堕落，生命就会得到起码的尊重；只要法律秉持正义，社会不良现象就能被压缩到最小……如果三大底线全部洞穿，就是人间炼狱！
 ## 2020
 - 是的，春天需要你，许多星辰指望你去探寻他们。《杜伊诺哀歌》
 
