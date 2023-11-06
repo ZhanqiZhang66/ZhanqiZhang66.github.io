@@ -42,7 +42,7 @@ I am a Ph.D. student in Computer Science at UCSD, supported by HDSI Phd Fellowsh
 
 I am broadly interested in how machine and biological intelligence complement each other to push forward the discoveries of the brain. My research interests include machine learning, computational system neuroscience, optimization and signal processing. Specifically, I am currently interested in how human behavior reflects complex neural and physiological processes such as learning, perception, and decision-making in the brain. Using tools in machine learning, computational neuroscience, optimization, and signal processing, I attempt to construct unsupervised animal and human action recognition and behavior classification models to understand disorders in clinical settings.
 
-I grew up in a small town in China. When I was 12, my family moved to Beijing. Unfortunately, my Huji, the national registration system, classified me as ineligible for high education in the cities. Despite this, I worked hard to free myself. In 2016, I came to the US for college.
+I grew up in a small town in China. When I was 12, my family moved to Beijing. In 2016, I came to the US for college.
 
 Fresh off the boat, I struggled to find my voice in the engineering classroom and to confidently articulate my thoughts in front of male classmates. I learned to seek guidance and, when I was at my lowest point, my advisors, [Dr. Emily Boyd](https://engineering.wustl.edu/faculty/Emily-Boyd.html) in Mechanical Engineering, and [Dr. Caitlin Kelleher](https://engineering.wustl.edu/faculty/Caitlin-Kelleher.html) in Computer Science, both exemplars of successful women in STEM, provided solace. They taught me that it is okay to feel lost, but I needed to move forward step by step.
 
