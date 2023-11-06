@@ -40,7 +40,7 @@ Welcome to my world.
 
 ### Past
 
-My name is Victoria Zhanqi Zhang, 张展旗. My name comes from a line from [Mao's poem in 1930](https://baike.baidu.com/item/%E5%A6%82%E6%A2%A6%E4%BB%A4%C2%B7%E5%85%83%E6%97%A6/5962399) that paints a vivid picture of a scene of a red flag fluttering in the wind with mountains, representing victory, joy and confidence.
+My name is Victoria Zhanqi Zhang, 张展旗. My name comes from a line from [Mao's poem](https://baike.baidu.com/item/%E5%A6%82%E6%A2%A6%E4%BB%A4%C2%B7%E5%85%83%E6%97%A6/5962399) in 1930 that paints a vivid picture of a scene of a red flag fluttering in the wind with mountains, representing victory, joy and confidence.
 
 I grew up in a small town in China. When I was 12, my family moved to Beijing. Being young, I had no concept of Huji, the national registration system that restricts eligibilities for state-monitored services to limit population mobility. My Huji destined me ineligible for any education in the capital city. A month before the fall semester, a school made an exception to take me in. Despite this, I worked hard to free myself from the shackling system. My aspiration for my new future almost shattered in the summer before college. Overnight, my family had no money; my father went to jail. My precious admission letter to Wash U quickly depreciated as relatives suggested me giving up my American dream. Nonetheless, my mom, who had given up college to care for her aging father, would not let this dream die. She sold her jewelries for 200 dollars and sent me to the airport. That 200 dollars was all I had when I first stepped into the United States in 2016.
 
