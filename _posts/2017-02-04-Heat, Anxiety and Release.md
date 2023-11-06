@@ -17,7 +17,9 @@ She was in an elegant pink dress with a plaid blue folding umbrella in her left 
 Then I saw the guard stop her at the gate. She clutched the umbrella even more tightly but her left hand was shaking. The blue stripes on the umbrella were jumping and dancing in my head. I couldn’t think.
 
 "Hey you! Pregnant woman. Stop. You’re not a parent of a teenager, are you?"
+
 "I’m..."
+
 "What...Huh!"
 
 That woman was my mom.
@@ -29,13 +31,19 @@ For policy reasons, very few families have more than one child. I have two sibli
 It felt like the whole world knew the news immediately, and I suddenly became a hot topic for discussion. All my classmates and neighbors were so curious that they asked me tons of questions to dig up all my family secrets. The sharp questions followed me everywhere. “Why?” I didn’t know! I was frightened to face all those things. The fear turned to be horror and finally the deep horror drove me mad. It was a shame.
 
 "What a poor, poor little girl. " people said. 
+
 My mom’s pregnancy became a stigma that followed me everywhere. 
 
 "Tomorrow all the students, parents and teachers will go to the parents’ meeting," I said. 
+
 "I know." mom said. 
+
 "All of them! Mom, " I almost cried.
+
 "...I know.’"
+
 "Mother! It would be embarrassing."
+
 "Is it embarrassing," she looked at me, "or do I make you feel embarrassed?"
 
 Afraid of being recognized as the daughter of a once-again pregnant woman, the next day I climbed to the top of the school building and paced back and forth on the roof to distract myself. It was extremely hot on the roof, and the poplar tree’s glossy dark green leaves, the blindingly orange runway, the kids giggling and running, the bright red Chinese Flag, the hot sun...the world turned giddily before my eyes. But I couldn’t force myself to look away from her. I watched her get stopped by the guard. I watched her walking slowly through the playground under the sun, taking a breath every ten meters. I watched her clutching the umbrella tightly and putting it in front of her round belly—to hide it, for me. I watched her speeding up, walking to the hall as fast as the other parents accompanied by their children. But she was alone from the beginning. 
