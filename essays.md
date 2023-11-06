@@ -8,7 +8,7 @@ share-title: "Victoria Zhang | Essays"
 share-description: "List of all the essays by Victoria Zhang."
 support_promo_box: true
 cover-img:
-  - "/assets/img/photograph/b_k_4.jpeg" : "Saint Louis, MO (2019)"
+  - "/assets/img/bird/b_k_4.jpeg" : "Saint Louis, MO (2019)"
 ---
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
