@@ -4,9 +4,9 @@ title: Heat, Anxiety and Release
 subtitle: self-forgiveness and self-acceptance
 gh-repo: zhanqizhang66/zhanqizhang66.github.io
 gh-badge: [star, fork, follow]
-cover-img: /assets/img/photograph/young.JPG
+cover-img: /assets/img/big-imgs/young.JPG
 thumbnail-img:
-share-img: /assets/img/photograph/young.JPG
+share-img: /assets/img/big-imgs/young.JPG
 tags: [essays]
 ---
 I saw her.
