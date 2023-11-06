@@ -4,11 +4,11 @@ title: "Essays and Poems"
 subtitle: "words has power"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
-share-title: "Victoria Zhang | Popular posts"
-share-description: "List of all the most popular blogs by Victoria Zhang."
+share-title: "Victoria Zhang | Essays"
+share-description: "List of all the essays by Victoria Zhang."
 support_promo_box: true
 cover-img:
-  - "/assets/img/photograph/forest.jpg" : "Yosemite, CA (2021)"
+  - "/assets/img/photograph/b_k_4.jpeg" : "Saint Louis, MO (2019)"
 ---
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
@@ -21,9 +21,10 @@ cover-img:
 </script>
 
 <div class="list-filters">
-  <a href="/" class="list-filter">All posts</a>
+  <a href="/blog" class="list-filter">All posts</a>
   <a href="/popular" class="list-filter filter-selected">Most Popular</a>
   <a href="/tutorials" class="list-filter">Tutorials</a>
+  <a href="/essay" class="list-filter">Essays</a>
   <a href="/tags" class="list-filter">Index</a>
 </div>
 

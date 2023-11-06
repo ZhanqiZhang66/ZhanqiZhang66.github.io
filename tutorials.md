@@ -4,8 +4,8 @@ title: "Learning notes & tutorials"
 subtitle: "science is magic that works"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
-share-title: "Victoria Zhang | Popular posts"
-share-description: "List of all the most popular blogs by Victoria Zhang."
+share-title: "Victoria Zhang | Tutorials"
+share-description: "List of all the tutorials by Victoria Zhang."
 support_promo_box: true
 cover-img:
   - "/assets/img/photograph/IMG_9543.JPEG" : "Balboa Park, San Diego, CA (2022)"
@@ -21,9 +21,10 @@ cover-img:
 </script>
 
 <div class="list-filters">
-  <a href="/" class="list-filter">All posts</a>
+  <a href="/blog" class="list-filter">All posts</a>
   <a href="/popular" class="list-filter filter-selected">Most Popular</a>
   <a href="/tutorials" class="list-filter">Tutorials</a>
+  <a href="/essay" class="list-filter">Essays</a>
   <a href="/tags" class="list-filter">Index</a>
 </div>
 

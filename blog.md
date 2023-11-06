@@ -1,11 +1,11 @@
 ---
 layout: page
 title: "Blog"
-subtitle: "learning notes & misc."
+subtitle: "learning notes & essays"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
-share-title: "Victoria Zhang | Popular posts"
-share-description: "List of all the most popular blogs by Victoria Zhang."
+share-title: "Victoria Zhang | Posts"
+share-description: "List of all the blogs by Victoria Zhang."
 support_promo_box: true
 cover-img:
   - "/assets/img/photograph/forest.jpg" : "Yosemite, CA (2021)"
@@ -21,9 +21,10 @@ cover-img:
 </script>
 
 <div class="list-filters">
-  <a href="/" class="list-filter">All posts</a>
+  <a href="/blog" class="list-filter">All posts</a>
   <a href="/popular" class="list-filter filter-selected">Most Popular</a>
   <a href="/tutorials" class="list-filter">Tutorials</a>
+  <a href="/essay" class="list-filter">Essays</a>
   <a href="/tags" class="list-filter">Index</a>
 </div>
 
