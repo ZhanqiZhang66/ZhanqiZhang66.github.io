@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "My story"
-subtitle: "Researcher. Bird Lover." # in Artificial and Biological Intelligence
+subtitle: "Per ardua ad astra." # in Artificial and Biological Intelligence
 css: "/assets/css/index.css"
 share-img: /assets/img/victoria_22.jpg
 use-site-title: true
