@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Writing, the Entropy in my Universe
-subtitle: about words and soul 
+title: Battle not with monsters, lest ye become a monster
+subtitle: fear, pain, survival 
 gh-repo: zhanqizhang66/zhanqizhang66.github.io
 gh-badge: [star, fork, follow]
-cover-img: /assets/img/photograph/IMG_9575.JPEG
+cover-img: /assets/img/photograph/IMG_9057.jpeg
 thumbnail-img:
-share-img: /assets/img/photograph/IMG_9575.JPEG
+share-img: /assets/img/photograph/IMG_9057.jpeg
 tags: [essays]
 ---
 **"Battle not with monsters, lest ye become a monster, and if you gaze into the abyss, the abyss gazes also into you." — Nietzsche**
