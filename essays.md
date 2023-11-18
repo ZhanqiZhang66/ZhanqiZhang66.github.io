@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Essays and Poems"
-subtitle: "words has power"
+subtitle: "words have power"
 css: "/assets/css/blog.css"
 share-img: /assets/img/victoria.jpg
 share-title: "Victoria Zhang | Essays"
