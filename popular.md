@@ -24,7 +24,7 @@ cover-img:
   <a href="/blog" class="list-filter">All posts</a>
   <a href="/popular" class="list-filter filter-selected">Most Popular</a>
   <a href="/tutorials" class="list-filter">Tutorials</a>
-  <a href="/essay" class="list-filter">Essays</a>
+  <a href="/essays" class="list-filter">Essays</a>
   <a href="/tags" class="list-filter">Index</a>
 </div>
 

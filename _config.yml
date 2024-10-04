@@ -27,7 +27,7 @@ navbar-links:
   Art: "art"
   #Excerpts: 'inspire'
   
-  Resume: "Zhanqi Zhang CV_2023.pdf"
+  Resume: "Zhanqi Zhang CV_2024.pdf"
 
 ################
 # --- Logo --- #
@@ -75,7 +75,7 @@ social-network-links:
 #  calendly: yourname
 #  mastodon: instance.url/@username
 #  ORCID: your ORCID ID
-#  google-scholar: your google scholar
+  google-scholar: NjLyahEAAAA
 #  discord: invite/invite_code or users/userid 
 #  kaggle: yourname
 #  hackerrank: yourname
@@ -120,7 +120,7 @@ edit_page_button: false
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "Zhanqi, Zhang, Zhanqi Zhang, Victoria Zhang, Victoria, ZhanqiZhang"
+keywords: "Zhanqi, Zhang, Zhanqi Zhang, Victoria Zhang, Victoria, ZhanqiZhang, VictoriaZhang"
 
 ######################################
 # --- Colours / background image --- #
