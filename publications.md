@@ -20,9 +20,54 @@ use-site-title: true
 
 ### Conferences and Publications
 
+**Characterizing Behavioral Dynamics in Bipolar Disorder with Computational Ethology**
+**Zhang, Z.**, Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024).  
+*preprint on [medRxiv ](https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v1)*
+
+New technologies for the quantification of behavior have revolutionized animal studies in social, cognitive, and pharmacological neurosciences. However, comparable studies in understanding human behavior, especially in psychiatry, are lacking. In this study, we utilized data-driven machine learning to analyze natural, spontaneous open-field human behaviors from people with euthymic bipolar disorder (BD) and non-BD participants. Our computational paradigm identified representations of distinct sets of actions (motifs) that capture the physical activities of both groups of participants. We propose novel measures for quantifying dynamics, variability, and stereotypy in BD behaviors. These fine-grained behavioral features reflect patterns of cognitive functions of BD and better predict BD compared with traditional ethological and psychiatric measures and action recognition approaches. This research represents a significant computational advancement in human ethology, enabling the quantification of complex behaviors in real-world conditions and opening new avenues for characterizing neuropsychiatric conditions from behavior.
+
+**Arousal as a universal embedding for spatiotemporal brain dynamics**
+
+Raut, R. V, Rosenthal Z. P, Wang X. ,Miao  H. , **Zhang, Z**, Lee Jin-Moo, Raichle, M. E , Bauer, A. Q , Brunton, S. L , Brunton, B. W, Kutz, J N. (2023)
+
+*Preprint on [bioRxiv ](https://pmc.ncbi.nlm.nih.gov/articles/PMC10769245/)*
+
+Neural activity in awake organisms shows widespread and spatiotemporally diverse correlations with behavioral and physiological measurements. We propose that this covariation reflects in part the dynamics of a unified, arousal-related process that regulates brain-wide physiology on the timescale of seconds. Taken together with theoretical foundations in dynamical systems, this interpretation leads us to a surprising prediction: that a single, scalar measurement of arousal (e.g., pupil diameter) should suffice to reconstruct the continuous evolution of multimodal, spatiotemporal measurements of large-scale brain physiology. To test this hypothesis, we perform multimodal, cortex-wide optical imaging and behavioral monitoring in awake mice. We demonstrate that spatiotemporal measurements of neuronal calcium, metabolism, and blood-oxygen can be accurately and parsimoniously modeled from a low-dimensional state-space reconstructed from the time history of pupil diameter. Extending this framework to behavioral and electrophysiological measurements from the Allen Brain Observatory, we demonstrate the ability to integrate diverse experimental data into a unified generative model via mappings from an intrinsic arousal manifold. Our results support the hypothesis that spontaneous, spatially structured fluctuations in brain-wide physiology—widely interpreted to reflect regionally-specific neural communication—are in large part reflections of an arousal-related process. This enriched view of arousal dynamics has broad implications for interpreting observations of brain, body, and behavior as measured across modalities, contexts, and scales.
+
+**Unsupervised quantification and classification of free-moving human behavior in euthymic bipolar disorder.**
+
+**Zhang, Z.**, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024).  
+_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_
+
+Free-moving spontaneous behavior is the window to probe the brain and mind. Individuals with
+neuropsychiatric conditions such as bipolar disorder (BD) can exhibit distinctive patterns of behavior
+(McReynolds, 1962). Our objective was to quantify free-moving spontaneous human behavior in real-world
+contexts among euthymic BD individuals and differentiate them from a healthy control (HC) population based
+on these identified behavioral features.
+
+We analyzed videos of 25 BD patients and 25 HC participants freely moving in an unexplored room for
+15 minutes (Young et al, 2007). Utilizing a key-point estimation toolbox (Mathis et al., 2018), we extracted
+human poses and represented them through a latent variable model (Luxem et al., 2022). Clustering the latent
+representations identified repeated behavioral motifs, revealing unique features of BD aligned with known
+clinical observations. For comparison, we employed action detection from computer vision (CV) models (e.g.,
+MMAction and S3D) and from expert human annotation to extract motifs.
+
+Notably, our unsupervised framework revealed differences between BD and HC populations. We
+detected differences in dwell time for identified motifs (two sample t-test, p-value: 0.04), in contrast to
+manually labeled or CV identified actions. We found a smaller behavioral repertoire in BD, as measured by
+transition probabilities, but with higher latent volume, indicating a higher-variance yet more stereotyped
+behavior in BD. Our approach outperformed CV models, expert human annotation, and even established
+clinical assessment scales (Hamilton Depression Scale and Young Mania Rating Scale) in distinguishing BD from
+HC (accuracy mean std; ours: 0.72 0.11, CV actions: 0.62 0.13: assessment scales: 0.60 0.13, human
+annotation: 0.50 0.14).
+
+Our results underscore the potential of data-driven identified behavioral motifs to effectively
+differentiate BD from HC. This insight promises the development of novel diagnostics and treatment
+approaches for understanding neuropsychiatric conditions from behavior.
+
 **Semi-supervised quantification and interpretation of undirected human behavior.**  
 **Zhang, Z.**, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2023).  
-_Accepted as poster for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_
+_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_
 
 Undirected behavior reflects cognitive functions and provides insights for diagnosing psychiatric conditions such as bipolar disorder (BD) (McReynolds, 1962). Open-field animal behaviors have been well-studied for this purpose; however, a corresponding human subject paradigm is still lacking, and quantifying complex spontaneous human behaviors is challenging. Here, we demonstrate a semi-supervised model to quantify undirected human behavior, differentiate subtle hallmark behavioral features of BD, and create a natural language generative model to provide nuanced interpretations of behaviors with context information. We collected videos of BD (n=12) and control (n=12) human participants freely interacting in an unexplored room with each video manually annotated into 6 categories (e.g., walk). We used DeepLabCut (Mathis et al, 2018) to track the spatiotemporal postures of the participants coupled with the VAME latent variable model (Luxem et al, 2021) to encode pose sequences into latent representations. We then clustered the latent representations into 10 behavioral motifs. To interpret these motifs, we independently described example clips using natural language. Using these descriptions, we created a novel transformer-based model that generated interpretable descriptions for each cluster. We found the dwell time of motif “approach, inspect, move along” is significantly lower in the BD population compared with controls (two sample t-test, p-value: 0.04), while no significance was found from manually annotated categories. We then used transition matrices to characterize how participants transitioned between motifs. We found BD to have sparser transition matrices in the second half of the video which reflected more stereotyped behavior and a smaller behavioral repertoire. We quantified this using the entropy of the transition matrix and found BD patients to have significantly different entropy between the first and the second half of the video (F test for equal variances, p-value: 0.01). Our analysis identifies fine-resolution behavioral motifs that can distinguish BD using undirected human behavior.
 
