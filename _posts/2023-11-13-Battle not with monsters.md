@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Battle not with monsters, lest ye become a monster
-subtitle: fear, battle 
+subtitle: fear and courage 
 gh-repo: zhanqizhang66/zhanqizhang66.github.io
 gh-badge: [star, fork, follow]
 cover-img: /assets/img/photograph/IMG_9057.jpeg
