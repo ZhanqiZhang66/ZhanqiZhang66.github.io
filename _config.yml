@@ -22,7 +22,7 @@ author: Victoria
 navbar-links:
   Home: "index"
   Research: "publications"
-  About me: "aboutme"
+  # About me: "aboutme"
   Blog: "blog"
   Art: "art"
   #Excerpts: 'inspire'
