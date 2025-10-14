@@ -2,7 +2,6 @@
 layout: page
 title: "Selected Projects"
 subtitle: 
-css: "/assets/css/index.css"
 share-img: /assets/img/victoria.jpg
 cover-img:
   - "/assets/img/photograph/IMG_9057.jpeg" : "Black's beach, LA Jolla (2022)"
