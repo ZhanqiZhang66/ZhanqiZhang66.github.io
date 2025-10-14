@@ -28,7 +28,7 @@ p, div, span, li, ul, ol, a, td, th, blockquote {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-/* Ensure all text in the contact section uses sans-serif */
+/* Ensure all text in the contact section uses Inter */
 #contactme-section {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
