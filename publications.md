@@ -20,144 +20,357 @@ use-site-title: true
 
 ### Conferences and Publications
 
-**Characterizing Behavioral Dynamics in Bipolar Disorder with Computational Ethology**
-**Zhang, Z.**, Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024).  
-*preprint on [medRxiv ](https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v1)*
+<style>
+.publication-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.publication-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.publication-content {
+    flex: 2.5;
+    padding-right: 25px;
+}
+.publication-image {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.publication-image img {
+    max-width: 100%;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.publication-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+.pub-title {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+.pub-authors {
+    font-size: 0.95em;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.pub-venue {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+    font-size: 0.9em;
+}
+.pub-abstract {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #2c3e50;
+    text-align: justify;
+}
+.pub-abstract ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+.pub-abstract li {
+    margin-bottom: 4px;
+}
 
-New technologies for the quantification of behavior have revolutionized animal studies in social, cognitive, and pharmacological neurosciences. However, comparable studies in understanding human behavior, especially in psychiatry, are lacking. In this study, we utilized data-driven machine learning to analyze natural, spontaneous open-field human behaviors from people with euthymic bipolar disorder (BD) and non-BD participants. Our computational paradigm identified representations of distinct sets of actions (motifs) that capture the physical activities of both groups of participants. We propose novel measures for quantifying dynamics, variability, and stereotypy in BD behaviors. These fine-grained behavioral features reflect patterns of cognitive functions of BD and better predict BD compared with traditional ethological and psychiatric measures and action recognition approaches. This research represents a significant computational advancement in human ethology, enabling the quantification of complex behaviors in real-world conditions and opening new avenues for characterizing neuropsychiatric conditions from behavior.
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .publication-row {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .publication-content {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    .publication-image {
+        min-height: auto;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    .publication-image img {
+        max-height: 200px;
+    }
+}
+</style>
 
-**Arousal as a universal embedding for spatiotemporal brain dynamics**
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Brain Feature Maps Reveal Progressive Animal-Feature Representations</div>
+        <div class="pub-authors">Zhang, Z., Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2025)</div>
+        <div class="pub-venue">*[Science Advances](https://www.science.org/doi/10.1126/sciadv.adq7342)*</div>
+        <div class="pub-abstract">What are the fundamental principles that inform representation in the primate visual brain? While objects have become an intuitive framework for studying neurons in many parts of cortex, it is possible that neurons follow a more expressive organizational principle, such as encoding generic features present across textures, places, and objects. In this study, we used multielectrode arrays to record from neurons in the early (V1/V2), middle (V4), and later [posterior inferotemporal (PIT) cortex] areas across the visual hierarchy, estimating each neuron's local operation across natural scene via "heatmaps." We found that, while populations of neurons with foveal receptive fields across V1/V2, V4, and PIT responded over the full scene, they focused on salient subregions within object outlines. Notably, neurons preferentially encoded animal features rather than general objects, with this trend strengthening along the visual hierarchy. These results show that the monkey ventral stream is partially organized to encode local animal features over objects, even as early as primary visual cortex.</div>
+    </div>
+    <div class="publication-image">
+        <!-- Add your publication image here -->
+        <img src="/assets/img/paper_fig/featuremap.png" alt="Brain Feature Maps" />
+    </div>
+</div>
 
-Raut, R. V, Rosenthal Z. P, Wang X. ,Miao  H. , **Zhang, Z**, Lee Jin-Moo, Raichle, M. E , Bauer, A. Q , Brunton, S. L , Brunton, B. W, Kutz, J N. (2023)
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Arousal as a universal embedding for spatiotemporal brain dynamics</div>
+        <div class="pub-authors">Raut, R. V, Rosenthal Z. P, Wang X. ,Miao H. , Zhang, Z, Lee Jin-Moo, Raichle, M. E , Bauer, A. Q , Brunton, S. L , Brunton, B. W, Kutz, J N. (2023)</div>
+        <div class="pub-venue">*[Nature](https://www.nature.com/articles/s41586-025-09544-4)*</div>
+        <div class="pub-abstract">Neural activity in awake organisms shows widespread and spatiotemporally diverse correlations with behavioral and physiological measurements. We propose that this covariation reflects in part the dynamics of a unified, arousal-related process that regulates brain-wide physiology on the timescale of seconds. Taken together with theoretical foundations in dynamical systems, this interpretation leads us to a surprising prediction: that a single, scalar measurement of arousal (e.g., pupil diameter) should suffice to reconstruct the continuous evolution of multimodal, spatiotemporal measurements of large-scale brain physiology. To test this hypothesis, we perform multimodal, cortex-wide optical imaging and behavioral monitoring in awake mice. We demonstrate that spatiotemporal measurements of neuronal calcium, metabolism, and blood-oxygen can be accurately and parsimoniously modeled from a low-dimensional state-space reconstructed from the time history of pupil diameter. Extending this framework to behavioral and electrophysiological measurements from the Allen Brain Observatory, we demonstrate the ability to integrate diverse experimental data into a unified generative model via mappings from an intrinsic arousal manifold. Our results support the hypothesis that spontaneous, spatially structured fluctuations in brain-wide physiology—widely interpreted to reflect regionally-specific neural communication—are in large part reflections of an arousal-related process. This enriched view of arousal dynamics has broad implications for interpreting observations of brain, body, and behavior as measured across modalities, contexts, and scales.</div>
+    </div>
+    <div class="publication-image">
+        <!-- Add your publication image here -->
+        <img src="/assets/img/paper_fig/arousal.png" alt="Arousal Dynamics" />
+    </div>
+</div>
 
-*Preprint on [bioRxiv ](https://pmc.ncbi.nlm.nih.gov/articles/PMC10769245/)*
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Characterizing Behavioral Dynamics in Bipolar Disorder with Computational Ethology</div>
+        <div class="pub-authors">Zhang, Z., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024)</div>
+        <div class="pub-venue">*preprint on [medRxiv](https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v2)*</div>
+        <div class="pub-abstract">New technologies for the quantification of behavior have revolutionized animal studies in social, cognitive, and pharmacological neurosciences. However, comparable studies in understanding human behavior, especially in psychiatry, are lacking. In this study, we utilized data-driven machine learning to analyze natural, spontaneous open-field human behaviors from people with euthymic bipolar disorder (BD) and non-BD participants. Our computational paradigm identified representations of distinct sets of actions (motifs) that capture the physical activities of both groups of participants. We propose novel measures for quantifying dynamics, variability, and stereotypy in BD behaviors. These fine-grained behavioral features reflect patterns of cognitive functions of BD and better predict BD compared with traditional ethological and psychiatric measures and action recognition approaches. This research represents a significant computational advancement in human ethology, enabling the quantification of complex behaviors in real-world conditions and opening new avenues for characterizing neuropsychiatric conditions from behavior.</div>
+    </div>
+    <div class="publication-image">
+        <!-- Add your publication image here -->
+        <img src="/assets/img/paper_fig/bd.png" alt="Behavioral Dynamics" />
+    </div>
+</div>
 
-Neural activity in awake organisms shows widespread and spatiotemporally diverse correlations with behavioral and physiological measurements. We propose that this covariation reflects in part the dynamics of a unified, arousal-related process that regulates brain-wide physiology on the timescale of seconds. Taken together with theoretical foundations in dynamical systems, this interpretation leads us to a surprising prediction: that a single, scalar measurement of arousal (e.g., pupil diameter) should suffice to reconstruct the continuous evolution of multimodal, spatiotemporal measurements of large-scale brain physiology. To test this hypothesis, we perform multimodal, cortex-wide optical imaging and behavioral monitoring in awake mice. We demonstrate that spatiotemporal measurements of neuronal calcium, metabolism, and blood-oxygen can be accurately and parsimoniously modeled from a low-dimensional state-space reconstructed from the time history of pupil diameter. Extending this framework to behavioral and electrophysiological measurements from the Allen Brain Observatory, we demonstrate the ability to integrate diverse experimental data into a unified generative model via mappings from an intrinsic arousal manifold. Our results support the hypothesis that spontaneous, spatially structured fluctuations in brain-wide physiology—widely interpreted to reflect regionally-specific neural communication—are in large part reflections of an arousal-related process. This enriched view of arousal dynamics has broad implications for interpreting observations of brain, body, and behavior as measured across modalities, contexts, and scales.
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Unsupervised quantification and classification of free-moving human behavior in euthymic bipolar disorder</div>
+        <div class="pub-authors">Zhang, Z., Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024)</div>
+        <div class="pub-venue">_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_</div>
+        <div class="pub-abstract">Free-moving spontaneous behavior is the window to probe the brain and mind. Individuals with neuropsychiatric conditions such as bipolar disorder (BD) can exhibit distinctive patterns of behavior (McReynolds, 1962). Our objective was to quantify free-moving spontaneous human behavior in real-world contexts among euthymic BD individuals and differentiate them from a healthy control (HC) population based on these identified behavioral features. We analyzed videos of 25 BD patients and 25 HC participants freely moving in an unexplored room for 15 minutes (Young et al, 2007). Utilizing a key-point estimation toolbox (Mathis et al., 2018), we extracted human poses and represented them through a latent variable model (Luxem et al., 2022). Clustering the latent representations identified repeated behavioral motifs, revealing unique features of BD aligned with known clinical observations. Our approach outperformed CV models, expert human annotation, and even established clinical assessment scales in distinguishing BD from HC.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Unsupervised Behavior Analysis" />
+    </div>
+</div>
 
-**Unsupervised quantification and classification of free-moving human behavior in euthymic bipolar disorder.**
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Semi-supervised quantification and interpretation of undirected human behavior</div>
+        <div class="pub-authors">Zhang, Z., Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2023)</div>
+        <div class="pub-venue">_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_</div>
+        <div class="pub-abstract">Undirected behavior reflects cognitive functions and provides insights for diagnosing psychiatric conditions such as bipolar disorder (BD) (McReynolds, 1962). Open-field animal behaviors have been well-studied for this purpose; however, a corresponding human subject paradigm is still lacking, and quantifying complex spontaneous human behaviors is challenging. Here, we demonstrate a semi-supervised model to quantify undirected human behavior, differentiate subtle hallmark behavioral features of BD, and create a natural language generative model to provide nuanced interpretations of behaviors with context information. We found the dwell time of motif "approach, inspect, move along" is significantly lower in the BD population compared with controls (two sample t-test, p-value: 0.04), while no significance was found from manually annotated categories.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Semi-supervised Behavior" />
+    </div>
+</div>
 
-**Zhang, Z.**, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2024).  
-_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Unsupervised quantification of undirected human behavior for bipolar disorder analysis</div>
+        <div class="pub-authors">Zhang, Z., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2022)</div>
+        <div class="pub-venue">_Accepted as a spotlight poster for [IEEE Brain Discovery Neurotechnology Workshop – Brain Mind Body Cognitive Engineering for Health and Wellness](https://brain.ieee.org/event/ieee-brain-discovery-and-neurotechnology-workshop/) and [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021)_</div>
+        <div class="pub-abstract">Research on unsupervised quantification of undirected human behavior for bipolar disorder analysis.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Unsupervised Quantification" />
+    </div>
+</div>
 
-Free-moving spontaneous behavior is the window to probe the brain and mind. Individuals with
-neuropsychiatric conditions such as bipolar disorder (BD) can exhibit distinctive patterns of behavior
-(McReynolds, 1962). Our objective was to quantify free-moving spontaneous human behavior in real-world
-contexts among euthymic BD individuals and differentiate them from a healthy control (HC) population based
-on these identified behavioral features.
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Animal-feature Encoding in Macaque Brain and in Artificial Networks</div>
+        <div class="pub-authors">Zhang, Z., Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2022)</div>
+        <div class="pub-venue">_Accepted as a poster for [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021)_</div>
+        <div class="pub-abstract">Macaque monkeys are foraging and social animals that spend a significant fraction of their time identifying conspecifics, classifying their actions, and avoiding threats from other animals. This suggests that in learning information from the visual world, many neurons of the monkey ventral stream might focus on encoding animal-based features. We discovered that animal masks identified regions with strong neuronal activity for IT better than they did for V4 and for V4 better than for V1 (AUC values, median ± SE; V1: 0.19 ± 0.01, V4: 0.63 ± 0.06, IT: 0.73 ± 0.08). Collectively, our results provide further evidence of an organizing principle of the monkey ventral stream — to encode information diagnostic of animals.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Animal-feature Encoding" />
+    </div>
+</div>
 
-We analyzed videos of 25 BD patients and 25 HC participants freely moving in an unexplored room for
-15 minutes (Young et al, 2007). Utilizing a key-point estimation toolbox (Mathis et al., 2018), we extracted
-human poses and represented them through a latent variable model (Luxem et al., 2022). Clustering the latent
-representations identified repeated behavioral motifs, revealing unique features of BD aligned with known
-clinical observations. For comparison, we employed action detection from computer vision (CV) models (e.g.,
-MMAction and S3D) and from expert human annotation to extract motifs.
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Do you see what I see? Representations in brains and neural networks. Brain-Score and Beyond: Confronting Brain-like ANNs with Neuroscientific Data</div>
+        <div class="pub-authors">Zhang, Z., Ponce, C. R. (2022)</div>
+        <div class="pub-venue">_Accepted as a workshop presentation for [Computational and Systems Neuroscience (COSYNE) 2022](https://www.cosyne.org/)_</div>
+        <div class="pub-abstract">Workshop presentation on representations in brains and neural networks.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Brain Representations" />
+    </div>
+</div>
 
-Notably, our unsupervised framework revealed differences between BD and HC populations. We
-detected differences in dwell time for identified motifs (two sample t-test, p-value: 0.04), in contrast to
-manually labeled or CV identified actions. We found a smaller behavioral repertoire in BD, as measured by
-transition probabilities, but with higher latent volume, indicating a higher-variance yet more stereotyped
-behavior in BD. Our approach outperformed CV models, expert human annotation, and even established
-clinical assessment scales (Hamilton Depression Scale and Young Mania Rating Scale) in distinguishing BD from
-HC (accuracy mean std; ours: 0.72 0.11, CV actions: 0.62 0.13: assessment scales: 0.60 0.13, human
-annotation: 0.50 0.14).
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">The Macaque Ventral Stream Shows A Hierarchical Structure for Animal-feature Encoding (2021)</div>
+        <div class="pub-authors">Zhang, Z., Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R.</div>
+        <div class="pub-venue">_Accepted as abstract for [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021) and [Bernstein Conference](https://abstracts.g-node.org/conference/BC21/abstracts#/uuid/bbb01455-e0b9-4521-bbe1-9c7c0ba4389c)_</div>
+        <div class="pub-abstract">Are there organizing principles for information encoding along the primate ventral stream? Neurons in each visual area are often tested with different types of stimuli, ranging from simple (e.g., lines in V1) to complex (faces in inferotemporal cortex, IT); however, this strategy limits functional comparisons across areas. By comparing neuronal responses to a given stimulus set across areas, we set out to identify brain-wide organizing principles and determine if these principles are shared by learning-based models of the ventral stream (convolutional neural networks, CNNs).</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Macaque Ventral Stream" />
+    </div>
+</div>
 
-Our results underscore the potential of data-driven identified behavioral motifs to effectively
-differentiate BD from HC. This insight promises the development of novel diagnostics and treatment
-approaches for understanding neuropsychiatric conditions from behavior.
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Translating Convolutional Neural Networks Approach to the Ventral Pathway (2021)</div>
+        <div class="pub-authors">Zhang, Z.<br/>Committee Members: Dr. Chien-Ju Ho, Dr. Ulugbek Kamilov, and Dr. Carlos Ponce</div>
+        <div class="pub-venue">_Washington University in St. Louis, McKelvey School of Engineering, Department of Computer Science Master Thesis Dissertation_<br/>[\[PDF\]](https://openscholarship.wustl.edu/eng_etds/574/)</div>
+        <div class="pub-abstract">Do artificial neurons in CNNs learn to represent the same visual information as the biological neurons in primate brains? Previous studies have shown that the visual recognition pathway (ventral stream) in humans and monkeys increasingly represents animate objects. We used a heatmap attribution technique borrowed from convolutional neural networks to generate biological feature maps identifying regions in scenes that elicit responses from neurons along the ventral stream (V1/V2, V4, and IT). We found that image regions containing animals elicited increasingly larger responses along the ventral stream, while such animacy features are not represented in artificial neural networks.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="CNN Ventral Pathway" />
+    </div>
+</div>
 
-**Semi-supervised quantification and interpretation of undirected human behavior.**  
-**Zhang, Z.**, Yang, Y., Sheehan, T., Chou, C., Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2023).  
-_Accepted for [Computational and Systems Neuroscience (COSYNE)](https://www.cosyne.org/)_
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Shape Recognition in Ultrasound with Deep Learning (2020)</div>
+        <div class="pub-authors">Zhang, Z., Miao, H., & Liao, X.</div>
+        <div class="pub-venue">_Washington University in St. Louis, McKelvey School of Engineering, Department of Electrical and Systems Engineering Capstone Design Thesis_</div>
+        <div class="pub-abstract">Ultrasound is one of the most common imaging techniques in clinical settings, but its functionalities are limited by its low resolution and high dependency on the operator skills. Here, we applied a pre-trained neural network to recognize geometric shapes in ultrasound images of 3D-printed samples. We achieved 96% task accuracy and created a database available for future research in ultrasound imaging.</div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/paper_fig/" alt="Ultrasound Shape Recognition" />
+    </div>
+</div>
 
-Undirected behavior reflects cognitive functions and provides insights for diagnosing psychiatric conditions such as bipolar disorder (BD) (McReynolds, 1962). Open-field animal behaviors have been well-studied for this purpose; however, a corresponding human subject paradigm is still lacking, and quantifying complex spontaneous human behaviors is challenging. Here, we demonstrate a semi-supervised model to quantify undirected human behavior, differentiate subtle hallmark behavioral features of BD, and create a natural language generative model to provide nuanced interpretations of behaviors with context information. We collected videos of BD (n=12) and control (n=12) human participants freely interacting in an unexplored room with each video manually annotated into 6 categories (e.g., walk). We used DeepLabCut (Mathis et al, 2018) to track the spatiotemporal postures of the participants coupled with the VAME latent variable model (Luxem et al, 2021) to encode pose sequences into latent representations. We then clustered the latent representations into 10 behavioral motifs. To interpret these motifs, we independently described example clips using natural language. Using these descriptions, we created a novel transformer-based model that generated interpretable descriptions for each cluster. We found the dwell time of motif “approach, inspect, move along” is significantly lower in the BD population compared with controls (two sample t-test, p-value: 0.04), while no significance was found from manually annotated categories. We then used transition matrices to characterize how participants transitioned between motifs. We found BD to have sparser transition matrices in the second half of the video which reflected more stereotyped behavior and a smaller behavioral repertoire. We quantified this using the entropy of the transition matrix and found BD patients to have significantly different entropy between the first and the second half of the video (F test for equal variances, p-value: 0.01). Our analysis identifies fine-resolution behavioral motifs that can distinguish BD using undirected human behavior.
+## Undergraduate Projects
 
-**Unsupervised quantification of undirected human behavior for bipolar disorder analysis.**  
-**Zhang, Z.**, Rosberg, H., Perry, W., Young, J., Minassian, A., Mishne, G., & Aoi, M. (2022).  
-_Accepted as a spotlight poster for [IEEE Brain Discovery Neurotechnology Workshop – Brain Mind Body Cognitive Engineering for Health and Wellness](https://brain.ieee.org/event/ieee-brain-discovery-and-neurotechnology-workshop/) and [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021)_
-
-**Animal-feature Encoding in Macaque Brain and in Artificial Networks.**  
-**Zhang, Z.**, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2022).  
-_Accepted as a poster for [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021)_
-
-Macaque monkeys are foraging and social animals that spend a significant fraction of their time identifying conspecifics, classifying their actions, and avoiding threats from other animals (Post and Baulu, 1978; Cheney and Seyfarth, 1990; Son, 2004). This suggests that in learning information from the visual world, many neurons of the monkey ventral stream might focus on encoding animal-based features. To test this, we designed experiments to show how neurons respond over entire natural scenes containing animals and other types of objects. Inspired by feature-mapping operations in artificial neural networks (ANNs), we developed heatmaps describing the spiking activity of V1, V4, and IT neurons over full natural scenes (Arcaro et al., 2020). Heatmaps can be compared across cortical areas and also to feature channels in ANNs. We selected dozens of scenes, and each was segmented using independently obtained annotations from neural networks (Chen et al, 2017) and human participants. These segmentations served as masks quantifying the concentration of neuronal and ANN activity within labeled regions. Consistent with the observed behavior of macaques in the wild, we discovered that animal masks identified regions with strong neuronal activity for IT better than they did for V4 and for V4 better than for V1 (AUC values, median ± SE;  V1: 0.19 ± 0.01, V4: 0.63 ± 0.06, IT: 0.73 ± 0.08). No such linear trend was found for non-animal masks (e.g., food, books). To determine if this trend could emerge from any system with a hierarchical architecture, we replicated these analyses using ANNs. Most ANNs did not show this animal-focused trend. We studied the few ANNs that did express this pattern, such as CORNet-S (Kubilius et al, 2019), and measured their ability to overcome nuisance changes (distortion robustness), e.g., bias for shapes vs. textures, using previous tools (Geirhos et al, 2021). We found these ANNs could converge to the same result as the brain by showing a bias towards animal-related textures, even if they lacked object-centric representations. Finally, we also compared neuronal heatmaps with those derived from monkeys’ free-viewing data, against three saliency maps (GBVS, Itti-Koch, and FASA). We found saliency maps and free-viewing maps correlated best with IT heatmaps (Pearson correlation; eye-viewing: 0.13, Itto-Koch: 0.31, GBVS: 0.38, FASA: 0.16). Collectively, our results provide further evidence of an organizing principle of the monkey ventral stream  — to encode information diagnostic of animals.
-
-**Do you see what I see? Representations in brains and neural networks. Brain-Score and Beyond: Confronting Brain-like ANNs with Neuroscientific Data.**  
-**Zhang, Z.**, Ponce, C. R. (2022).  
-_Accepted as a workshop presentation for [Computational and Systems Neuroscience (COSYNE) 2022](https://www.cosyne.org/)_
-
-**The Macaque Ventral Stream Shows A Hierarchical Structure for Animal-feature Encoding (2021)**  
-**Zhang, Z.**, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R.  
-_Accepted as abstract for [Society for Neuroscience (SfN)](https://www.sfn.org/meetings/neuroscience-2021) and [Bernstein Conference](https://abstracts.g-node.org/conference/BC21/abstracts#/uuid/bbb01455-e0b9-4521-bbe1-9c7c0ba4389c)_  
-
-Are there organizing principles for information encoding along the primate ventral stream? Neurons in each visual area are often tested with different types of stimuli, ranging from simple (e.g., lines in V1) to complex (faces in inferotemporal cortex, IT); however, this strategy limits functional comparisons across areas. By comparing neuronal responses to a given stimulus set across areas, we set out to identify brain-wide organizing principles and determine if these principles are shared by learning-based models of the ventral stream (convolutional neural networks, CNNs)
-
-**Translating Convolutional Neural Networks Approach to the Ventral Pathway (2021) [\[PDF\]](https://openscholarship.wustl.edu/eng_etds/574/)**  
-**Zhang, Z.**  
-Committee Members: Dr. Chien-Ju Ho, Dr. Ulugbek Kamilov, and Dr. Carlos Ponce  
-_Washington University in St. Louis, McKelvey School of Engineering, Department of Computer Science Master Thesis Dissertation_  
-
-Do artificial neurons in CNNs learn to represent the same visual information as the biological neurons in primate brains? Previous studies have shown that the visual recognition pathway (ventral stream) in humans and monkeys increasingly represents animate objects. We used a heatmap attribution technique borrowed from convolutional neural networks to generate biological feature maps identifying regions in scenes that elicit responses from neurons along the ventral stream (V1/V2, V4, and IT). Biological feature maps were then compared to activation maps produced by units in convolutional neural networks. We found that image regions containing animals elicited increasingly larger responses along the ventral stream, while such animacy features are not represented in artificial neural networks.  
-
-
-**Shape Recognition in Ultrasound with Deep Learning (2020)**  
-**Zhang, Z.**, Miao, H., & Liao, X.  
-_Washington University in St. Louis, McKelvey School of Engineering, Department of Electrical and Systems Engineering Capstone Design Thesis_  
-
-Ultrasound is one of the most common imaging techniques in clinical settings, but its functionalities are limited by its low resolution and high dependency on the operator skills. Here, we applied a pre-trained neural network to recognize geometric shapes in ultrasound images of 3D-printed samples. We achieved 96% task accuracy and created a database available for future research in ultrasound imaging.
-
-Undergrad Projects
-------------------
-
-### 2019
-
-**Internet of Things: incubator**  
-Victoria Zhang, Xingjue Liao  
-
-*   Plastic bottles: recycle and reuse
-*   Hardware: wires, resistors, fan, Adafruit SI7021, Photon, Arduino...
-*   Embedded system: Sensors and Actuators + Feedback Control
-*   UI: graphical sliders and other information of the incubator.
-*   Networking infrastructure: monitor and control the incubator remotely
-
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Internet of Things: Incubator</div>
+        <div class="pub-authors">Victoria Zhang, Xingjue Liao (2019)</div>
+        <div class="pub-venue">*Embedded Systems & IoT Project*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> Arduino, Photon, Adafruit SI7021, Embedded Systems<br/>
+            <strong>Features:</strong>
+            <ul>
+                <li>Plastic bottles: recycle and reuse</li>
+                <li>Hardware: wires, resistors, fan, Adafruit SI7021, Photon, Arduino</li>
+                <li>Embedded system: Sensors and Actuators + Feedback Control</li>
+                <li>UI: graphical sliders and other information of the incubator</li>
+                <li>Networking infrastructure: monitor and control the incubator remotely</li>
+            </ul>
 [\[CODE\]](https://github.com/ZhanqiZhang66/Incubator)  
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="IoT Incubator Project" />
+    </div>
+</div>
 
-**Internet of Things: Mini Garage Controller in C++, JavaScript and HTML**  
-Victoria Zhang, Xingjue Liao  
-
-*   Hardware: wires, resistors, buttons, LEDS, Two Photons
-*   Embedded system: Sensors and Actuators + Remote Control
-*   UI: responsive website and app
-*   Networking infrastructure: monitor and control the garage light and door remotely
-*   Functionality: Close the door and turn of the light automatically with the time setted
-
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Internet of Things: Mini Garage Controller</div>
+        <div class="pub-authors">Victoria Zhang, Xingjue Liao (2019)</div>
+        <div class="pub-venue">*C++, JavaScript, HTML, Embedded Systems*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> C++, JavaScript, HTML, Photon, Arduino<br/>
+            <strong>Features:</strong>
+            <ul>
+                <li>Hardware: wires, resistors, buttons, LEDs, Two Photons</li>
+                <li>Embedded system: Sensors and Actuators + Remote Control</li>
+                <li>UI: responsive website and app</li>
+                <li>Networking infrastructure: monitor and control the garage light and door remotely</li>
+                <li>Functionality: Close the door and turn off the light automatically with the time set</li>
+            </ul>
 [\[CODE\]](https://github.com/ZhanqiZhang66/GarageController)  
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="Garage Controller Project" />
+    </div>
+</div>
 
-**Computer Vision Projects in Python**  
-**Victoria Zhang**  
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Computer Vision Projects in Python</div>
+        <div class="pub-authors">Victoria Zhang (2019)</div>
+        <div class="pub-venue">*Computer Vision & Machine Learning*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> Python, OpenCV, TensorFlow, PyTorch<br/>
+            <strong>Projects Include:</strong>
+            <ul>
+                <li>Edge detection + Line detection</li>
+                <li>Image Restoration & Optimization</li>
+                <li>Photometric Stereo</li>
+                <li>Camera Projection and Transformations</li>
+                <li>Estimation, Sampling, Robust Fitting</li>
+                <li>Epipolar Geometry, Binocular Stereo</li>
+                <li>Optical flow</li>
+                <li>Neural Networks</li>
+                <li>Semantic Vision Tasks</li>
+                <li>GAN and VAEs. Unsupervised Learning</li>
+            </ul>
+            <em>This work currently can't be viewed publicly due to the course policy</em>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="Computer Vision Projects" />
+    </div>
+</div>
 
-*   Edge detection + Line detection
-*   Image Restoration & Optimization
-*   Photometric Stereo
-*   Camera Projection and Transformations
-*   Estimation, Sampling, Robust Fitting
-*   Epipolar Geometry, Binocular Stereo
-*   Optical flow
-*   Neural Networks
-*   Semantic Vision Tasks
-*   GAN and VAEs. Unsupervised Learning.
-This work currently can't be viewed publicly due to the course policy  
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Web Development: To-do List</div>
+        <div class="pub-authors">Victoria Zhang (2019)</div>
+        <div class="pub-venue">*React.js, Web Development*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> React.js, JavaScript, HTML, CSS<br/>
+            Interactive web application for task management with modern React.js framework.
+            <!-- [\[CODE\]](https://wustlcse204.github.io/09-todo-react-ZhanqiZhang66/) -->
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="Todo List Web App" />
+    </div>
+</div>
 
-
-**Web development: To-do List**  
-**Victoria Zhang**  
-<!-- [\[CODE\]](https://wustlcse204.github.io/09-todo-react-ZhanqiZhang66/)   -->
-
-### 2018
-
-**3D Rotational Robotics in Simulink and Matlab**  
-**Victoria Zhang** 
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">3D Rotational Robotics in Simulink and Matlab</div>
+        <div class="pub-authors">Victoria Zhang (2018)</div>
+        <div class="pub-venue">*Matlab, Simulink, Robotics*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> MATLAB, Simulink, Robotics Control Systems<br/>
+            Development of 3D rotational robotics control systems using MATLAB and Simulink for kinematic and dynamic analysis.
 [\[CODE\]](https://github.com/ZhanqiZhang66/3R-Robotics)  
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="3D Robotics Project" />
+    </div>
+</div>
 
-**AI tic-tac-toe and Gomoku Game in C++**  
-**Victoria Zhang**  
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">AI Tic-tac-toe and Gomoku Game</div>
+        <div class="pub-authors">Victoria Zhang (2018)</div>
+        <div class="pub-venue">*C++, Artificial Intelligence*</div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> C++, AI Algorithms, Game Theory<br/>
+            Implementation of artificial intelligence algorithms for classic board games including tic-tac-toe and Gomoku with intelligent move prediction and strategy optimization.
 [\[CODE\]](https://github.com/ZhanqiZhang66/AI-Gomuku)
+        </div>
+    </div>
+    <div class="publication-image">
+        <img src="/assets/img/projects/" alt="AI Game Project" />
+    </div>
+</div>
