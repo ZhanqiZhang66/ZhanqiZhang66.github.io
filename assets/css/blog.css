@@ -1,5 +1,20 @@
+/* Use Inter font for blog pages */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Ensure all text elements use Inter */
+p, div, span, li, ul, ol, a, td, th, blockquote {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Override any elements that might specifically use serif fonts */
+.post-meta, .blog-tags {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
 .list-filters {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   margin-top: 1.5rem;
   text-align: center;

@@ -1,0 +1,48 @@
+/* Custom styles for index page - use Inter font */
+
+/* Override body font to use Inter */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Ensure all text elements use Inter */
+p, div, span, li, ul, ol, a, td, th, blockquote {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Override any elements that might specifically use serif fonts */
+.post-meta, .blog-tags {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Keep headings as they already use sans-serif in beautifuljekyll.css */
+/* h1, h2, h3, h4, h5, h6 already use 'Inter' in the main CSS */
+
+/* Specific overrides for common elements that might inherit serif */
+.about-text {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Contact form styling */
+.form-control {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Ensure all text in the contact section uses sans-serif */
+#contactme-section {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+#contactme-section * {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Override any remaining serif elements */
+* {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Exception: keep headings as they are (they're already sans-serif) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
