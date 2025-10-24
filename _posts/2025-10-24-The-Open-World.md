@@ -19,7 +19,7 @@ In time, you learn to survive by talking to the NPCs who live here, the classmat
 
 It’s been eight years for me in this world. I’ve built homes, collected friendships like rare items, and found joy in fleeting sunrises over foreign streets. Yet beneath every triumph lies that same quiet ache, the vast loneliness of knowing that this is not the same as being alone at home. And when I look back, I realize home itself has changed. Time kept moving while I was gone, reshaping what I thought I could return to. Home still exists, but only in another dimension of time, gentle and unreachable. So, I keep walking, carrying both the ache and the wonder, remembering why I began and why I must continue.
 
-There is no "quit button" in this game. You cannot resprawn or reload a simpler level. But even so, exploring this world still makes me excited. Every time I unlock a new part of the map; every time I meet someone new; it still stirs something in me. 
+There is no "quit button" in this game. You cannot respawn or reload a simpler level. But even so, exploring this world still makes me excited. Every time I unlock a new part of the map; every time I meet someone new; it still stirs something in me. 
 
 The loneliness is real but so is continuing. Maybe that is what it truly means to live in an open world: to walk through it not in search of home, but in search of yourself.
 
