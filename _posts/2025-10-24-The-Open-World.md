@@ -9,8 +9,6 @@ thumbnail-img:
 share-img: /assets/img/photograph/Breath-of-the-Wild-Casual-Gamer-Culture.webp
 tags: [essays]
 ---
-**The Open World**
-
 Studying abroad feels like joining an open-world game: vast, breathtaking, and endlessly silent. You wake up in a new land like Link, armed with only curiosity and a faint quest called “find your place.” 
 
 There’s no map at first, no tutorial to follow, and no team waiting at the village gate. Every step forward is your own.
