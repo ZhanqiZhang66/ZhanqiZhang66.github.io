@@ -26,7 +26,7 @@ navbar-links:
   Blog: "blog"
   Art: "art"
   #Excerpts: 'inspire'
-  Resume: "Zhanqi Zhang CV_2026.pdf"
+  Resume: "Zhanqi Zhang CV_2026_sans_serif.pdf"
 
 ################
 # --- Logo --- #
@@ -34,7 +34,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/victoria_22.jpg"
+avatar: "/assets/img/IMG_5259.jpg"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -73,7 +73,7 @@ social-network-links:
 #  telegram: yourname
 #  calendly: yourname
 #  mastodon: instance.url/@username
-#  ORCID: your ORCID ID
+ ORCID: 0000-0003-2606-139X
   google-scholar: citations?user=NjLyahEAAAAJ&hl=en
 #  discord: invite/invite_code or users/userid 
 #  kaggle: yourname
