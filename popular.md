@@ -3,7 +3,7 @@ layout: page
 title: "Blog"
 subtitle: "guess y'all like these"
 css: "/assets/css/blog.css"
-share-img: /assets/img/victoria.jpg
+share-img: /assets/img/IMG_5259.jpg
 share-title: "Victoria Zhang | Popular posts"
 share-description: "List of all the most popular blogs by Victoria Zhang."
 support_promo_box: true
