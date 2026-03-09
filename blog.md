@@ -3,7 +3,7 @@ layout: page
 title: "Blog"
 subtitle: "learning notes & essays"
 css: "/assets/css/blog.css"
-share-img: /assets/img/victoria.jpg
+share-img: /assets/img/IMG_5259.jpg
 share-title: "Victoria Zhang | Posts"
 share-description: "List of all the blogs by Victoria Zhang."
 support_promo_box: true
