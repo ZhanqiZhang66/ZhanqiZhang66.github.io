@@ -46,3 +46,7 @@ p, div, span, li, ul, ol, a, td, th, blockquote {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
+h3 + ul,
+h3 + p {
+  margin-top: 0;
+}
