@@ -73,8 +73,8 @@ social-network-links:
 #  telegram: yourname
 #  calendly: yourname
 #  mastodon: instance.url/@username
- ORCID: 0000-0003-2606-139X
-  google-scholar: citations?user=NjLyahEAAAAJ&hl=en
+  ORCID: 0000-0003-2606-139X
+  google-scholar: "citations?user=NjLyahEAAAAJ&hl=en"
 #  discord: invite/invite_code or users/userid 
 #  kaggle: yourname
 #  hackerrank: yourname
