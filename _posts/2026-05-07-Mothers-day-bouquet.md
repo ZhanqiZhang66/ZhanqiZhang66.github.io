@@ -3,6 +3,9 @@ layout: post
 title: Mother's Day Bouquet
 gh-repo: zhanqizhang66/zhanqizhang66.github.io
 gh-badge: [star, fork, follow]
+cover-img: /assets/img/photograph/flower.JPG
+thumbnail-img: /assets/img/photograph/flower.JPG
+share-img: /assets/img/photograph/flower.JPG
 tags: [essays]
 ---
 For eight years, every Mother's Day began with the same Taobao florist shop in my mother's city.
