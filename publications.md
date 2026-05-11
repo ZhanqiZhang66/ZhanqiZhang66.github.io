@@ -140,7 +140,7 @@ use-site-title: true
 
 <div class="publication-row">
     <div class="publication-content">
-        <div class="pub-title">The Position Curse: LLMs Struggle to Locate the Last Few Items in a List</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2605.07127">The Position Curse: LLMs Struggle to Locate the Last Few Items in a List</a></div>
         <div class="pub-authors"><b>Zhang, Z.</b>*, Xiong, H.-D.*, Wilson, R. C., Aoi, M., Mattar, M. G., & Ji-An, L.† <br/><em>*Co-first authors. †Senior author.</em></div>
         <div class="pub-venue"><b>preprint</b></div>
         <div class="pub-abstract">
