@@ -3,6 +3,7 @@ layout: post
 title: "Attention: Why Matmul Is Not the Bottleneck"
 subtitle: "Counting HBM traffic on GPT-2 shows that masking, softmax, and dropout move twice the bytes of the two matmuls"
 tags: [tutorials, llm, gpu, attention, performance, notes]
+cover-img: /assets/img/blog/tutorial-cover.svg
 thumbnail-img: /assets/img/blog/llm_notes/attention-flashattention-bars.jpg
 head-extra: [mathjax.html]
 ---

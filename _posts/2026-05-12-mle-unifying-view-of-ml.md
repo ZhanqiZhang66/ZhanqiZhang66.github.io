@@ -3,6 +3,7 @@ layout: post
 title: "Maximum Likelihood Estimation as a Unifying View of ML"
 subtitle: "From linear regression to GPT, most training losses are just negative log-likelihood under a probabilistic model"
 tags: [tutorials, machine-learning, statistics, notes]
+cover-img: /assets/img/blog/tutorial-cover.svg
 head-extra: [mathjax.html]
 ---
 

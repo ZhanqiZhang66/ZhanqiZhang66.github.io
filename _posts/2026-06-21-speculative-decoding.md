@@ -3,6 +3,7 @@ layout: post
 title: "Speculative Decoding: Trading Cheap Compute for Expensive Bandwidth"
 subtitle: "How a fast little draft model lets a big model run 2–3× faster with no loss in quality"
 tags: [tutorials, llm, inference, decoding, notes]
+cover-img: /assets/img/blog/tutorial-cover.svg
 head-extra: [mathjax.html]
 ---
 

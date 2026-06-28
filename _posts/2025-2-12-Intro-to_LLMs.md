@@ -4,7 +4,7 @@ title: Intro to LLMs
 subtitle: 
 gh-repo: zhanqizhang66/zhanqizhang66.github.io/
 gh-badge: [star, fork, follow]
-cover-img: /assets/img/photograph/IMG_8464.jpeg
+cover-img: /assets/img/blog/tutorial-cover.svg
 thumbnail-img:
 share-img: /assets/img/photograph/IMG_8464.jpeg
 tags: [tutorials]

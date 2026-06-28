@@ -3,6 +3,7 @@ layout: post
 title: "Gated Attention: Rethinking Softmax Attention Through One Switch"
 subtitle: "A single sigmoid gate after SDPA removes the attention sink, stabilizes training, and rescues long-context extrapolation"
 tags: [tutorials, llm, attention, architecture, notes]
+cover-img: /assets/img/blog/tutorial-cover.svg
 head-extra: [mathjax.html]
 ---
 
