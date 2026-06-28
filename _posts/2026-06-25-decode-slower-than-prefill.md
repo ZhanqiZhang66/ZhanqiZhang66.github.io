@@ -2,7 +2,7 @@
 layout: post
 title: "Why LLM Decode Is 100× Slower Than Prefill"
 subtitle: "The bottleneck is not the KV cache — it is matrix shape, and the physics shows up in arithmetic intensity"
-tags: [llm, inference, roofline, performance, notes]
+tags: [tutorials, llm, inference, roofline, performance, notes]
 head-extra: [mathjax.html]
 ---
 

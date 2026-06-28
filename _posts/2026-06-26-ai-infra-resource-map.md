@@ -2,7 +2,7 @@
 layout: post
 title: "AI Infra: A Map of Schedulable Resources, Tricks, and Hardware"
 subtitle: "Every optimization trades one resource dimension for another — here is the full inventory and what each trick is really swapping"
-tags: [llm, gpu, infra, performance, notes]
+tags: [tutorials, llm, gpu, infra, performance, notes]
 head-extra: [mathjax.html]
 ---
 

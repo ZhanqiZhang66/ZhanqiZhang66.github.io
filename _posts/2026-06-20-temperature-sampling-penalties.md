@@ -2,7 +2,8 @@
 layout: post
 title: "The Temperature Knob: Sampling, Penalties, and Hallucination"
 subtitle: "A decoding-side tour from softmax temperature to repetition loops and made-up facts"
-tags: [llm, decoding, notes]
+tags: [tutorials, llm, decoding, notes]
+thumbnail-img: /assets/img/blog/llm_notes/temp-feedback-loop.png
 head-extra: [mathjax.html]
 ---
 

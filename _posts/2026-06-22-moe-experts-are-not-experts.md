@@ -2,7 +2,7 @@
 layout: post
 title: "The 'Expert' in MoE Is Not an Expert"
 subtitle: "Mixture-of-Experts is conditional computation, and its auxiliary losses are system constraints, not learning signals"
-tags: [llm, moe, architecture, notes]
+tags: [tutorials, llm, moe, architecture, notes]
 head-extra: [mathjax.html]
 ---
 

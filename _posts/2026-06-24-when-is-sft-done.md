@@ -2,7 +2,7 @@
 layout: post
 title: "How to Tell When SFT Is Done"
 subtitle: "Why lower loss is the wrong target, and which signals say supervised fine-tuning has hit diminishing returns"
-tags: [llm, post-training, sft, rl, notes]
+tags: [tutorials, llm, post-training, sft, rl, notes]
 head-extra: [mathjax.html]
 ---
 

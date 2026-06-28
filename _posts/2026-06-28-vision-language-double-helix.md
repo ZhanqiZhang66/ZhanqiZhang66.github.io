@@ -2,7 +2,7 @@
 layout: post
 title: "The Double Helix of Vision and Language"
 subtitle: "A map of modern vision, drawn as a coupled system that keeps catching paradigms from NLP — and sending a few back"
-tags: [vision, multimodal, deep-learning, notes]
+tags: [tutorials, vision, multimodal, deep-learning, notes]
 head-extra: [mathjax.html]
 ---
 
