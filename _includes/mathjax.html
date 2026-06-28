@@ -1,0 +1,34 @@
+<!-- MathJax for rendering LaTeX equations in posts. Included via `head-extra: [mathjax.html]`. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'none'
+    },
+    options: {
+      // kramdown (GFM) renders $$...$$ into <script type="math/tex">; let MathJax pick those up too.
+      includeHtmlTags: { br: '\n' },
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script>
+  // Promote kramdown's math script tags so MathJax v3 typesets them.
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('script[type="math/tex"]').forEach(function (el) {
+      var span = document.createElement('span');
+      span.textContent = '\\(' + el.textContent + '\\)';
+      el.parentNode.replaceChild(span, el);
+    });
+    document.querySelectorAll('script[type="math/tex; mode=display"]').forEach(function (el) {
+      var div = document.createElement('div');
+      div.textContent = '\\[' + el.textContent + '\\]';
+      el.parentNode.replaceChild(div, el);
+    });
+  });
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
