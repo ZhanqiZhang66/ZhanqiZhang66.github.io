@@ -3,7 +3,7 @@ layout: page
 title: "Essays and Poems"
 subtitle: "words have power"
 css: "/assets/css/blog.css"
-share-img: /assets/img/victoria.jpg
+share-img: /assets/img/og-preview.png
 share-title: "Victoria Zhang | Essays"
 share-description: "List of all the essays by Victoria Zhang."
 support_promo_box: true

@@ -73,3 +73,7 @@ In a dense model, the loss is a *learning signal*. In MoE, part of the loss is a
 - The essence of the auxiliary loss is not an optimization trick but a **hard constraint on system behavior**.
 
 Once you adopt this lens, the designs of *expert*, *routing*, and *balancing* all stop being mysterious.
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

@@ -3,7 +3,7 @@ layout: page
 title: "My story"
 subtitle: "Per ardua ad astra." # in Artificial and Biological Intelligence
 css: "/assets/css/index.css"
-share-img: /assets/img/victoria_22.jpg
+share-img: /assets/img/og-preview.png
 use-site-title: true
 cover-img:
   - "/assets/img/big-imgs/balboa.JPEG" : "Balboa Park, San Diego (2022)"

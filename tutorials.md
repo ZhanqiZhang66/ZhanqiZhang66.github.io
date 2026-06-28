@@ -3,7 +3,7 @@ layout: page
 title: "Learning notes & tutorials"
 subtitle: "science is magic that works"
 css: "/assets/css/blog.css"
-share-img: /assets/img/victoria.jpg
+share-img: /assets/img/og-preview.png
 share-title: "Victoria Zhang | Tutorials"
 share-description: "List of all the tutorials by Victoria Zhang."
 support_promo_box: true

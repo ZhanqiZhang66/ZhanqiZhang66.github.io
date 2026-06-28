@@ -15,7 +15,7 @@ The real bottleneck is **matrix shape**. Decode generates one token at a time, s
 
 The key is to translate the two inference terms (*prefill* and *decode*) into "the geometry of the input matrix." At the terminology level the two differ only in "how many tokens are processed at once." At the shape level, this is a **phase transition from compute-bound to memory-bound.**
 
-## From abstract terms to concrete shapes
+## From abstract terms to real shapes
 
 Take LLaMA-7B (hidden $= 4096$, FFN $= 11008$, head_dim $= 128$). Suppose 100 input tokens, with 50 already generated. Every matmul, before and after, shares the same weights, so the difference is entirely in the shape of the input $X$.
 
@@ -85,7 +85,7 @@ $$
 
 An H100 SXM's FP32 ridge is around $20$ FLOP/byte, and its BF16 + Tensor Core ridge around $150$. Decode's AI of $0.5$ is far below any generation's ridge, which means the compute ceiling is irrelevant and **only HBM bandwidth is usable.**
 
-Concretely, one LLaMA-7B decode step must read every weight across all 32 transformer layers. In FP16 the weights are about 14 GB, and the H100's HBM bandwidth is 3.35 TB/s, so the theoretical lower bound is:
+For example, one LLaMA-7B decode step must read every weight across all 32 transformer layers. In FP16 the weights are about 14 GB, and the H100's HBM bandwidth is 3.35 TB/s, so the theoretical lower bound is:
 
 $$
 T_{\text{decode}} = \frac{14\ \text{GB}}{3.35\ \text{TB/s}} \approx 4.2\ \text{ms / token}
@@ -120,3 +120,7 @@ AI grows **linearly with batch size**, which is the fundamental reason continuou
 How exquisitely a kernel is written decides whether you hit 80% or 95% of the Roofline ceiling, but *which side of the Roofline you are on, and what the ceiling is*, is decided entirely by matrix shape. Kernel optimization explains the last mile, while **shape optimization decides the racetrack itself.**
 
 So when you face a new LLM-inference performance problem, the first step is not to profile kernel time, nor to check KV-cache hit rate. It is to **write out the shapes of every matmul in the workload, plug them into the AI formula, and see which side of the Roofline each operator falls on.** After that, where the bottleneck is, how far it can be optimized, and which class of technique you need are all immediately clear. That is the threshold from "being able to use an inference framework" to "being able to design an inference system."
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

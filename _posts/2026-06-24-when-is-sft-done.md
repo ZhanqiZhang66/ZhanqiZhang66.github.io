@@ -85,3 +85,7 @@ SFT addresses *whether the model knows how to answer*. RL addresses *which of se
 For verifiable tasks (math, code, agentic tool-use) RL's value is usually higher, because there is a clear outcome signal and the correct trajectory may not be unique. SFT can only imitate existing trajectories, whereas RL can optimize the policy distribution against the final result.
 
 But RL also depends on SFT initialization. With too little SFT the model cannot produce effective trajectories, and with too much the sampling distribution is too narrow for RL to explore. So the goal of SFT is **not** to push supervised metrics to the maximum. It is to obtain a stable, controllable policy that still has room for later optimization.
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

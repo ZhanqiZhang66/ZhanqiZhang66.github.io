@@ -39,8 +39,6 @@ Real systems apply temperature *before* candidate truncation. The semantic order
 
 This order matters. If you truncated first and scaled second, temperature would lose its influence over *which tokens make it into the candidate set*. Because scaling comes first, even adjusting temperature alone indirectly resizes the top-$p$ nucleus. A sharper distribution yields a smaller, more focused nucleus, while a flatter one yields a larger, more divergent nucleus.
 
-> Temperature changes the gaps, not the ranking; its relationship to top-$k$/top-$p$ is "reshape the distribution first, then decide which few tokens to draw from."
-
 ## 2. Why models get stuck in loops: the feedback loop
 
 Tuning temperature well does not guarantee good output. A classic failure is the model getting trapped in a repetition it cannot escape, as in *"this movie is very very very very …"*, or, more subtly, circling the same sentence over and over. This is called **pattern collapse** (colloquially, "the stuck record"). It is worst under greedy decoding, but it still happens with temperature sampling. Why?
@@ -99,8 +97,6 @@ Any token that has appeared once is reduced by $\gamma$, and no more. Its purpos
 
 How to choose? For open-ended generation and continuation, frequency penalty is usually most effective, because the stuck-record disease is fundamentally driven by counts. If you only want to avoid topical poverty, presence penalty suffices, and repetition penalty is an older but simple, robust fallback. The three do not replace one another, but using all three at once is rare, since they fight each other.
 
-> The cure for the stuck record is not lowering the temperature, it is automatically down-weighting repeated tokens at the next step, and *how* you down-weight depends on whether you care "has it appeared" or "how many times."
-
 ## 4. The three layers behind "talking nonsense"
 
 Finally, there is *hallucination*, when a model confidently invents a nonexistent fact, cites a paper that was never written, or hands you a wrong API name. The full topic is far larger than decoding, but the part visible from the decoding side makes a good closing, because it connects the "temperature, sampling, penalty" thread to "why the model is wrong." There are at least three stacked layers.
@@ -110,8 +106,6 @@ Finally, there is *hallucination*, when a model confidently invents a nonexisten
 **Layer 2: long-tail amplification.** Top-$p$ was designed to cut off the unreliable tail: when the distribution is sharp the nucleus tightens, and only when it is flat does the nucleus widen. The problem is that it cannot tell "flat because the model is genuinely weighing several reasonable options" from "flat because the model cannot tell the boundary." Exactly where the model is unsure (say, what follows a rare proper noun), the distribution naturally flattens, the nucleus expands, and more low-probability tokens are admitted. A slightly high temperature flattens it further, admitting yet more. Once one of these tokens is drawn, it becomes the seed of fabricated content: it was never high-probability, and sampling promoted it to the page.
 
 **Layer 3: model overconfidence (out-of-distribution).** The first two layers assume the model is at least honest about its own uncertainty, but it often is not. When the input falls outside the training distribution (OOD), the model frequently still produces a *sharp* distribution: it has not seen this question, yet it overlays patterns learned from similar ones and outputs a confident-looking answer. This layer has nothing to do with sampling or penalties. Set $T = 0$, turn every penalty off, and the model will still make things up.
-
-> Talking nonsense is not one phenomenon but the superposition of three: sampling randomness, the long tail being admitted into the candidate pool, and the model's overconfidence about the unknown.
 
 The key boundary is this: the first two layers can be *mitigated* by tuning sampling, but the third cannot. Blaming every hallucination on "temperature too high" is a misdiagnosis, and conversely, crushing temperature to $0$ will not make the model start telling the truth. Factual correctness relies far more on structural safeguards, such as external retrieval, citation checking, tool calls, and refusal mechanisms, than on the decoder. Sampling is only one very thin filter in that stack.
 
@@ -125,3 +119,7 @@ By now the picture of generation should have sharpened from "the model emits tok
 - OpenAI Platform Docs, *Frequency and presence penalties*: official definitions and suggested ranges.
 - Welleck et al., *Neural Text Generation with Unlikelihood Training*, ICLR 2020. [arXiv:1908.04319](https://arxiv.org/abs/1908.04319). On curing repetition from the training-objective side.
 - Ji et al., *Survey of Hallucination in Natural Language Generation*, ACM Computing Surveys 2023. [arXiv:2202.03629](https://arxiv.org/abs/2202.03629).
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

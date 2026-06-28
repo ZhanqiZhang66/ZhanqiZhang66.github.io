@@ -2,7 +2,7 @@
 layout: page
 title: "Sometimes I draw"
 subtitle: I would like to paint the way a bird sings, and fill a space in a beautiful way.
-share-img: /assets/img/victoria_22.jpg
+share-img: /assets/img/og-preview.png
 cover-img:
   - "/assets/img/bird/draw.jpg" : "My model and client Ashe (2023)"
 use-site-title: true

@@ -164,3 +164,7 @@ The H20 is counterintuitive: its compute is cut to about 15% of the H100, yet it
 | RTX 5090 | 21,760 | 32 GB GDDR7 | 1.79 TB/s | none | 575 W |
 
 Neither supports NVLink, so multi-card setups fall back to PCIe 5.0 (~64 GB/s one-way). For local TP/EP experiments, communication easily becomes the bottleneck, which is exactly what the resource map predicts.
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

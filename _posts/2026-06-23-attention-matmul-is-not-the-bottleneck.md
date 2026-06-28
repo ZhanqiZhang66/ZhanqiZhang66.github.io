@@ -7,14 +7,11 @@ cover-img: /assets/img/blog/covers/attention-matmul.svg
 head-extra: [mathjax.html]
 ---
 
-> **Q:** In attention, what is the slowest part?
-> **Me:** ...Matmul? *(Instantly busted.)*
-
-It feels obvious. Matrix multiplication has by far the most floating-point operations, so surely it must dominate the runtime. On a modern GPU, though, that intuition is **wrong**. The two matmuls in attention are simply not where the time goes.
+If someone asks which part of attention is slowest, the obvious guess is the matrix multiplication. It has by far the most floating-point operations, so surely it must dominate the runtime. On a modern GPU, that intuition is **wrong**. The two matmuls in attention are simply not where the time goes.
 
 To see why, let us actually count the bytes.
 
-## A concrete configuration: GPT-2
+## Example: GPT-2
 
 - sequence length $N = 1024$
 - number of heads $H = 12$
@@ -71,6 +68,10 @@ Add it up, and the combined HBM traffic of mask, softmax, and dropout (48 MB) is
 
 ## Why FlashAttention wins
 
-The chart tells the whole story. Vanilla PyTorch materializes the 24 MB $S$ matrix in HBM, reads it back, then writes it out again, and it pays that toll once per elementwise op. FlashAttention **fuses** the matmuls, masking, softmax, and dropout into a single kernel that keeps the score tiles in fast on-chip SRAM and never spills the full $S$ matrix to HBM. The FLOPs barely change, yet the HBM traffic plummets, and the runtime falls right along with it.
+Vanilla PyTorch materializes the 24 MB $S$ matrix in HBM, reads it back, then writes it out again, and it pays that toll once per elementwise op. FlashAttention **fuses** the matmuls, masking, softmax, and dropout into a single kernel that keeps the score tiles in fast on-chip SRAM and never spills the full $S$ matrix to HBM. The FLOPs barely change, yet the HBM traffic plummets, and the runtime falls right along with it.
 
 The lesson generalizes. When an operation is **memory-bound**, the path to speed is not "do less math." It is "move fewer bytes."
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

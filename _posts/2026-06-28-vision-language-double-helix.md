@@ -125,3 +125,7 @@ By 2026 the four threads have converged on two levels: architecture (all Transfo
 Each crack is a latent chance for a paradigm leap. If a new tokenizer could inter-translate discriminative features and generative latents, DINOv2 and DiT might merge into one model. If a new training objective could balance discriminative SSL's efficiency with generative SSL's coverage, the very concept of a "backbone" could be rewritten.
 
 The map's purpose is not to give answers but to show that vision is best read as one half of a double helix, winding around language, trading paradigms in both directions, and still carrying the seams where the two strands have not yet fused.
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*

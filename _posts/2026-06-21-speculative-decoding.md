@@ -88,3 +88,7 @@ Speculative decoding is like the "predictive input" system in a video game:
 4. **Result:** quality unchanged, speed roughly doubled.
 
 It is a textbook **systems-engineering optimization**. It does not change the AI's intelligence, but it dramatically changes the experience of interacting with it.
+
+---
+
+*Note: these notes are compiled from sources on the internet and are not my original work. I plan to rewrite them in my own words later.*
