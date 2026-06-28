@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Attention: Why Matmul Is Not the Bottleneck"
-subtitle: "Counting HBM traffic on GPT-2 shows that masking, softmax, and dropout move twice the bytes of the two matmuls"
+title: "Attention Is Not Matmul Bound"
+subtitle: "Where the time really goes"
 tags: [tutorials, llm, gpu, attention, performance, notes]
-cover-img: /assets/img/blog/tutorial-cover.svg
+cover-img: /assets/img/blog/covers/attention-matmul.svg
 head-extra: [mathjax.html]
 ---
 
 > **Q:** In attention, what is the slowest part?
 > **Me:** ...Matmul? *(Instantly busted.)*
 
-It feels obvious — matrix multiplication has by far the most floating-point operations, so it must dominate the runtime. On a modern GPU this intuition is **wrong**. The two matmuls in attention are not where the time goes.
+It feels obvious. Matrix multiplication has by far the most floating-point operations, so surely it must dominate the runtime. On a modern GPU, though, that intuition is **wrong**. The two matmuls in attention are simply not where the time goes.
 
 To see why, let us actually count the bytes.
 
@@ -22,7 +22,7 @@ To see why, let us actually count the bytes.
 - batch size $B = 1$ (to keep the arithmetic simple)
 - precision FP16 (2 bytes per element)
 
-### Step 1 — size of each matrix
+### Step 1: size of each matrix
 
 **$Q$, $K$, $V$** each have shape $(B, H, N, D) = (1, 12, 1024, 64)$:
 
@@ -36,11 +36,11 @@ $$
 1 \times 12 \times 1024 \times 1024 \times 2 \ \text{bytes} = 24 \ \text{MB}
 $$
 
-This is the key number — the score matrix is **enormous**, because it scales with $N^2$.
+This is the key number. The score matrix is **enormous**, precisely because it scales with $N^2$.
 
 **Output matrix $O$** has shape $(B, H, N, D)$, again $1.5$ MB.
 
-### Step 2 — HBM traffic per step (reads + writes)
+### Step 2: HBM traffic per step (reads + writes)
 
 **1. First matmul, $Q K^{\top}$:**
 
@@ -62,19 +62,15 @@ This is the key number — the score matrix is **enormous**, because it scales w
 - write $O$: 1.5 MB
 - **total: 27 MB**
 
-### Step 3 — the conclusion
+### Step 3: the conclusion
 
-The combined HBM traffic of mask + softmax + dropout (48 MB) is **almost double** that of either matmul (27 MB each).
+Add it up, and the combined HBM traffic of mask, softmax, and dropout (48 MB) is **almost double** that of either matmul (27 MB each). The supposedly heavy operation turns out to be the cheap one.
 
 - Although matmul has far more FLOPs than the other operations, modern GPU Tensor Cores accelerate that compute so aggressively that the **bottleneck shifts to data movement.**
-- For the three intermediate elementwise operations, the GPU cores finish the trivial arithmetic almost instantly; the time is spent waiting on the **HBM read/write of that 24 MB score matrix.**
+- For the three intermediate elementwise operations, the GPU cores finish the trivial arithmetic almost instantly, so the time is spent instead waiting on the **HBM read/write of that 24 MB score matrix.**
 
 ## Why FlashAttention wins
 
-The chart tells the whole story. Vanilla PyTorch materializes the 24 MB $S$ matrix in HBM, reads it back, writes it again — once per elementwise op. FlashAttention **fuses** the matmuls, masking, softmax, and dropout into a single kernel that keeps the score tiles in fast on-chip SRAM and never spills the full $S$ matrix to HBM. The FLOPs barely change; the HBM traffic plummets, and so does the runtime.
+The chart tells the whole story. Vanilla PyTorch materializes the 24 MB $S$ matrix in HBM, reads it back, then writes it out again, and it pays that toll once per elementwise op. FlashAttention **fuses** the matmuls, masking, softmax, and dropout into a single kernel that keeps the score tiles in fast on-chip SRAM and never spills the full $S$ matrix to HBM. The FLOPs barely change, yet the HBM traffic plummets, and the runtime falls right along with it.
 
-The lesson generalizes: when an operation is **memory-bound**, the path to speed is not "do less math" — it is "move fewer bytes."
-
----
-
-*This post is part of a collected series of curated notes and has no formal references of its own.*
+The lesson generalizes. When an operation is **memory-bound**, the path to speed is not "do less math." It is "move fewer bytes."

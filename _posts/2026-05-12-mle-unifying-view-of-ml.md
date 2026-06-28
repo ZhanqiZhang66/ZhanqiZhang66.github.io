@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Maximum Likelihood Estimation as a Unifying View of ML"
-subtitle: "From linear regression to GPT, most training losses are just negative log-likelihood under a probabilistic model"
+title: "MLE, a Unifying View"
+subtitle: "From regression to GPT"
 tags: [tutorials, machine-learning, statistics, notes]
-cover-img: /assets/img/blog/tutorial-cover.svg
+cover-img: /assets/img/blog/covers/mle.svg
 head-extra: [mathjax.html]
 ---
 
@@ -396,7 +396,3 @@ GPT training is literally maximum likelihood estimation over next-token probabil
 | Logistic Regression | $$y \mid x \sim \text{Bernoulli}(p_\theta(x))$$ | Binary Cross Entropy |
 | Softmax Classifier | $$y \mid x \sim \text{Categorical}(p)$$ | Multiclass Cross Entropy |
 | GPT / Language Model | $$p(x_t \mid x_{<t})$$ | Token Cross Entropy |
-
----
-
-*This post is part of a collected series of curated notes and has no formal references of its own.*

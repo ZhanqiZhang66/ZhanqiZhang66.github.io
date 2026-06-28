@@ -4,7 +4,7 @@ title: But, what is Attention in transformers?
 subtitle: Q,K,V, with code snippets
 gh-repo: zhanqizhang66/zhanqizhang66.github.io
 gh-badge: [star, fork, follow]
-cover-img: /assets/img/blog/tutorial-cover.svg
+cover-img: /assets/img/blog/covers/transformer.svg
 thumbnail-img:
 share-img: /assets/img/photograph/19AF8CFD-3763-4B3F-8735-AA01887F3315.jpg
 tags: [tutorials]
