@@ -4,7 +4,6 @@ title: "Attention: Why Matmul Is Not the Bottleneck"
 subtitle: "Counting HBM traffic on GPT-2 shows that masking, softmax, and dropout move twice the bytes of the two matmuls"
 tags: [tutorials, llm, gpu, attention, performance, notes]
 cover-img: /assets/img/blog/tutorial-cover.svg
-thumbnail-img: /assets/img/blog/llm_notes/attention-flashattention-bars.jpg
 head-extra: [mathjax.html]
 ---
 
@@ -12,8 +11,6 @@ head-extra: [mathjax.html]
 > **Me:** ...Matmul? *(Instantly busted.)*
 
 It feels obvious — matrix multiplication has by far the most floating-point operations, so it must dominate the runtime. On a modern GPU this intuition is **wrong**. The two matmuls in attention are not where the time goes.
-
-![Attention timing on GPT-2: in vanilla PyTorch, masking, softmax, and dropout dominate, while a fused FlashAttention kernel collapses the whole thing.](/assets/img/blog/llm_notes/attention-flashattention-bars.jpg)
 
 To see why, let us actually count the bytes.
 

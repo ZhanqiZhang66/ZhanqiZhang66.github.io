@@ -4,7 +4,6 @@ title: "The Temperature Knob: Sampling, Penalties, and Hallucination"
 subtitle: "A decoding-side tour from softmax temperature to repetition loops and made-up facts"
 tags: [tutorials, llm, decoding, notes]
 cover-img: /assets/img/blog/tutorial-cover.svg
-thumbnail-img: /assets/img/blog/llm_notes/temp-feedback-loop.png
 head-extra: [mathjax.html]
 ---
 
@@ -61,8 +60,6 @@ $$
 
 The model does not "know" it is repeating. It only sees that "very" has appeared three times and, by the regularities it learned, judges a fourth "very" to be a reasonable continuation. This is structural, not a sign the model got dumber: unless the sampling strategy actively breaks up the local pattern, the loop reinforces itself.
 
-![The autoregressive feedback loop that drives repetition: generated tokens re-enter the context, raise their own probability, and get sampled again.](/assets/img/blog/llm_notes/temp-feedback-loop.png)
-
 ## 3. Three penalties: operating directly on the distribution
 
 If the loop comes from "already-generated tokens raising their own probability," the cure is direct — actively push down the probability of tokens that have already appeared, *before* each sampling step. That is what penalties do. They all act on the logits before softmax, but their mechanisms differ.
@@ -113,8 +110,6 @@ Finally, *hallucination* — when a model confidently invents a nonexistent fact
 **Layer 2 — long-tail amplification.** Top-$p$ was designed to cut off the unreliable tail: when the distribution is sharp the nucleus tightens; only when it is flat does the nucleus widen. The problem is that it cannot tell "flat because the model is genuinely weighing several reasonable options" from "flat because the model cannot tell the boundary." Exactly where the model is unsure (say, what follows a rare proper noun), the distribution naturally flattens, the nucleus expands, and more low-probability tokens are admitted — and a slightly high temperature flattens it further, admitting yet more. Once one of these tokens is drawn, it becomes the seed of fabricated content: it was never high-probability; sampling promoted it to the page.
 
 **Layer 3 — model overconfidence (out-of-distribution).** The first two layers assume the model is at least honest about its own uncertainty — but it often is not. When the input falls outside the training distribution (OOD), the model frequently still produces a *sharp* distribution: it has not seen this question, yet it overlays patterns learned from similar ones and outputs a confident-looking answer. This layer has nothing to do with sampling or penalties — set $T = 0$, turn every penalty off, and the model will still make things up.
-
-![The three stacked layers of hallucination, from the decoding view: sampling randomness, long-tail amplification, and model overconfidence.](/assets/img/blog/llm_notes/temp-hallucination-layers.png)
 
 > Talking nonsense is not one phenomenon but the superposition of three: sampling randomness, the long tail being admitted into the candidate pool, and the model's overconfidence about the unknown.
 
