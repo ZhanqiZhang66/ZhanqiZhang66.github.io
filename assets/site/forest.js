@@ -87,8 +87,8 @@ function step(){t+=1/60;var night=isNight();
       if(dist<5){b.fly=false;b.v=0;b.wait=rnd(4,12);b.look=b.home.night?-1.5708:b.a;}
       return;}
     b.alt*=.86;
-    if(b.hop){var h=b.hop;h.u=Math.min(1,h.u+1/15);var e=h.u*h.u*(3-2*h.u);b.x=h.x0+(h.x1-h.x0)*e;b.y=h.y0+(h.y1-h.y0)*e;b.lift=Math.sin(h.u*3.1416);
-      if(h.u>=1){b.hop=null;b.lift=0;b.home={x:b.x,y:b.y,tr:b.home.tr};b.wait=b.hops>0?rnd(.2,.5):rnd(4,12);}return;}
+    if(b.hop){var h=b.hop;h.u=Math.min(1,h.u+1/11);var e=h.u*h.u*(3-2*h.u);b.x=h.x0+(h.x1-h.x0)*e;b.y=h.y0+(h.y1-h.y0)*e;b.lift=Math.sin(h.u*3.1416);
+      if(h.u>=1){b.hop=null;b.lift=0;b.home={x:b.x,y:b.y,tr:b.home.tr};b.wait=b.hops>0?rnd(.5,1.4):rnd(4,12);}return;}
     var sleepy=night&&b.home.night;b.tuck+=((sleepy?1:0)-b.tuck)*.03;
     if(b.poke){b.poke=false;var sp=pick(b,true);sp.night=night;go(b,sp,true);birds.forEach(function(o){if(o.mate===b&&!o.fly)o.delay=.3;});return;}
     if(b.delay>=0){b.delay-=1/60;if(b.delay<0){var m=b.mate,s2=spot(m.home.tr);s2.night=m.home.night;go(b,s2,m.fast);}return;}
@@ -98,7 +98,7 @@ function step(){t+=1/60;var night=isNight();
     if(b.wait<0){
       if(night){if(b.home.night){b.wait=999;}else{var r=pick(b);r.night=true;go(b,r,false);}}
       else if(b.hops>0||Math.random()<.5){ // a few quick hops across the same treetop
-        if(!(b.hops>0))b.hops=1+(Math.random()*3|0);b.hops--;var tr=b.home.tr,ha=b.a+rnd(-.9,.9),hd=rnd(13,24),hx=b.x+Math.cos(ha)*hd,hy=b.y+Math.sin(ha)*hd;
+        if(!(b.hops>0))b.hops=1+(Math.random()*2|0);b.hops--;var tr=b.home.tr,ha=b.a+rnd(-.45,.45),hd=rnd(6,11),hx=b.x+Math.cos(ha)*hd,hy=b.y+Math.sin(ha)*hd;
         if(Math.hypot(hx-tr.px,hy-tr.py)>tr.pr){ha=Math.atan2(tr.py-b.y,tr.px-b.x)+rnd(-.5,.5);hx=b.x+Math.cos(ha)*hd;hy=b.y+Math.sin(ha)*hd;}
         b.a=b.look=ha;b.hop={x0:b.x,y0:b.y,x1:hx,y1:hy,u:0};}
       else if(Math.random()<.3){b.look=b.a+rnd(-1.2,1.2);b.wait=rnd(4,10);}
@@ -117,8 +117,8 @@ function wingMarks(c,g,span,sw){ // the same markings as on the folded wing, cli
   if(c.stripe){ctx.strokeStyle=c.stripe;ctx.lineWidth=.42;ctx.lineCap='round';ctx.beginPath();for(var f=.24;f<.97;f+=.105){ctx.moveTo(7,g*span*f);ctx.quadraticCurveTo(2-k,g*span*(f+.05),-3.2-k*1.4,g*span*f);}ctx.stroke();}
   ctx.restore();}
 function drawBird(b){var c=KIND[b.k],s=c.s*(1+b.alt*.1),tk=b.tuck,bob=1;
-  var lift=b.lift||0,flap=Math.sin(t*c.flap+b.ph),open=Math.max(Math.min(1,b.alt*1.4),lift*.45),sp=c.span;s*=1+lift*.1;
-  if(lift>.05&&b.alt<=.03){ctx.save();ctx.translate(b.x+3*lift,b.y+5*lift);ctx.rotate(b.a);ctx.scale(c.s,c.s);ctx.fillStyle=P.shade;ctx.beginPath();ctx.ellipse(-2,0,11,5.5,0,0,6.283);ctx.fill();ctx.restore();}
+  var lift=b.lift||0,flap=Math.sin(t*c.flap+b.ph),open=Math.min(1,b.alt*1.4),sp=c.span;s*=1+lift*.04;
+  if(lift>.05&&b.alt<=.03){ctx.save();ctx.translate(b.x+1.2*lift,b.y+2*lift);ctx.rotate(b.a);ctx.scale(c.s,c.s);ctx.fillStyle=P.shade;ctx.beginPath();ctx.ellipse(-2,0,11,5.5,0,0,6.283);ctx.fill();ctx.restore();}
   if(b.alt>.03){ctx.save();ctx.translate(b.x+5*b.alt,b.y+8*b.alt);ctx.rotate(b.a);ctx.scale(c.s,c.s);ctx.fillStyle=P.shade;
     ctx.beginPath();ctx.ellipse(-2,0,12,5.5,0,0,6.283);ctx.fill();wing(1,(7+(sp-7)*open)*(.78+.22*flap),4);wing(-1,(7+(sp-7)*open)*(.78+.22*flap),4);ctx.restore();}
   ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.a);ctx.scale(s*bob,s*bob);

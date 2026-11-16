@@ -583,11 +583,11 @@ def build():
     cover = HOME_MAIN[HOME_MAIN.index('<div class="cover">'):HOME_MAIN.index('<section id="news">')]
     old = '<p class="tag">Ph.D. candidate at UC San Diego. Previously at Google and Meta.</p>'
     assert old in cover
-    cover = cover.replace(old, '<p class="tag"><span class="nw">Machine Learning Research Scientist</span> · <span class="nw">Ph.D., UC San Diego</span> · <span class="nw">Ex-Google &amp; Meta</span></p>')
+    cover = cover.replace(old, '<p class="tag"><span class="nw">Machine Learning Research Scientist</span><br><span class="nw">Ph.D., UC San Diego</span> · <span class="nw">Ex-Google &amp; Meta</span></p>')
     cover = must(cover, '<p class="tag">Working on <b>representation learning</b> and <b>retrieval</b>.</p>',
                  '<p class="tag">Representation · AI Agents · Reasoning · Adaptation</p>')
     cover = must(cover, '<a href="https://twitter.com/ZhangZhanqi"><i class="fa-brands fa-x-twitter"></i>X</a>',
-                 '<a href="https://twitter.com/ZhangZhanqi" aria-label="X"><i class="fa-brands fa-x-twitter" style="margin-right:0"></i></a>')
+                 '<a href="https://twitter.com/ZhangZhanqi"><i class="fa-brands fa-x-twitter"></i>X</a>')
     about = re.search(r'<section class="about">.*?</section>', HOME_MAIN, re.S).group(0)
     teach = re.search(r'<section><h3>Teaching</h3>.*?</section>', HOME_MAIN, re.S).group(0)
     exp = re.search(r'<section><h3>Experience</h3>.*?</section>', HOME_MAIN, re.S).group(0)
