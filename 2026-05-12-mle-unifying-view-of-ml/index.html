@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLE, a Unifying View · Victoria Zhang</title>
+<meta name="description" content="From regression to GPT">
+<link rel="canonical" href="https://zhanqizhang66.github.io/2026-05-12-mle-unifying-view-of-ml/">
+<meta property="og:site_name" content="Victoria Zhang">
+<meta property="og:title" content="MLE, a Unifying View · Victoria Zhang">
+<meta property="og:description" content="From regression to GPT">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhanqizhang66.github.io/2026-05-12-mle-unifying-view-of-ml/">
+<meta property="og:image" content="https://zhanqizhang66.github.io/assets/img/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ZhangZhanqi">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y06S3E3WTE');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){
+  // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
+  var root=document.documentElement,KEY='vz-theme';
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+  function hourNow(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+  function manual(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  window.vzNight=function(h){return h>=19||h<6;};
+  window.vzApplyTheme=function(h){root.setAttribute('data-theme',manual()||(vzNight(h)?'dark':'light'));};
+  window.toggleTheme=function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{sessionStorage.setItem(KEY,next);}catch(e){}};
+  vzApplyTheme(hourNow());
+})();</script>
+<link rel="stylesheet" href="/assets/site/site.css?v=1df954ac">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true,tags:'none'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+<header class="top"><a class="brand" href="/">Victoria Zhang</a><nav><a class="" href="/">Home</a><a class="" href="/publications/">Research</a><a class="on" href="/blog/">Blog</a><a class="" href="/art/">Art</a><a href="/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Light or dark"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main class="post"><a class="back" href="/blog/">← All posts</a><h1>MLE, a Unifying View</h1><p class="sub" style="margin-bottom:10px">From regression to GPT</p><p class="pmeta" style="margin-top:0">May 12, 2026 &nbsp;·&nbsp; <span class="tg">tutorials</span> <span class="tg">machine-learning</span> <span class="tg">statistics</span> <span class="tg">notes</span></p><img class="cover-img" src="/assets/site/covers/mle.svg" alt=""><article class="prose" id="content"></article><div class="share"><span>Share</span><a href="https://twitter.com/intent/tweet?text=MLE%2C%20a%20Unifying%20View&url=https%3A%2F%2Fzhanqizhang66.github.io%2F2026-05-12-mle-unifying-view-of-ml%2F" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhanqizhang66.github.io%2F2026-05-12-mle-unifying-view-of-ml%2F" aria-label="Share on Facebook"><i class="fa-brands fa-facebook"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhanqizhang66.github.io%2F2026-05-12-mle-unifying-view-of-ml%2F" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin"></i></a><button type="button" id="copylink" data-u="https://zhanqizhang66.github.io/2026-05-12-mle-unifying-view-of-ml/" aria-label="Copy link"><i class="fa-solid fa-link"></i></button></div><section class="comments"><h3>Likes and comments</h3><div id="disqus_thread"></div></section><script>document.getElementById("copylink").onclick=function(){var b=this;navigator.clipboard&&navigator.clipboard.writeText(b.getAttribute("data-u")).then(function(){b.classList.add("ok");setTimeout(function(){b.classList.remove("ok");},1200);});};var disqus_config=function(){this.page.url="https://zhanqizhang66.github.io/2026-05-12-mle-unifying-view-of-ml/";};(function(){var d=document.createElement("script");d.async=true;d.src="https://https-zhanqizhang66-github-io.disqus.com/embed.js";document.body.appendChild(d);})();</script><nav class="pn"><a href="/2026-05-07-Mothers-day-bouquet/"><span>Older</span>Mother&#x27;s Day Bouquet</a><a href="/2026-06-20-temperature-sampling-penalties/" style="text-align:right"><span>Newer</span>The Temperature Knob</a></nav></main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<script>window.MATH=true;window.MD="A large fraction of machine learning can be viewed as:\n\n```text\nChoose a probabilistic model\n        \u2193\nWrite likelihood\n        \u2193\nTake log likelihood\n        \u2193\nMaximize likelihood\n        \u2193\nEquivalent to minimizing negative log likelihood\n        \u2193\nObtain the training loss\n```\n\n---\n\n# General Framework\n\nAssume data is generated from a probabilistic model:\n\n$$\np(y \\mid x; \\theta)\n$$\n\nwhere:\n\n- $$x$$ = input\n- $$y$$ = target\n- $$\\theta$$ = model parameters\n\nGiven dataset:\n\n$$\n\\{(x_i, y_i)\\}_{i=1}^{N}\n$$\n\nAssuming samples are independent, the likelihood is:\n\n$$\nL(\\theta)\n=\n\\prod_{i=1}^{N}\np(y_i \\mid x_i; \\theta)\n$$\n\nTake the logarithm:\n\n$$\n\\log L(\\theta)\n=\n\\sum_{i=1}^{N}\n\\log p(y_i \\mid x_i; \\theta)\n$$\n\nTraining objective:\n\n$$\n\\max_{\\theta} \\log L(\\theta)\n$$\n\nEquivalent to:\n\n$$\n\\min_{\\theta} -\\log L(\\theta)\n$$\n\nSo the loss is often:\n\n$$\n\\boxed{\n\\text{Loss} = -\\log \\text{Likelihood}\n}\n$$\n\n---\n\n# 1. Linear Regression \u2192 Mean Squared Error (MSE)\n\n## Probabilistic Assumption\n\nAssume Gaussian noise:\n\n$$\ny \\mid x\n\\sim\n\\mathcal{N}(f_\\theta(x), \\sigma^2)\n$$\n\nMeaning:\n\n$$\np(y \\mid x; \\theta)\n=\n\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\n\\exp\\left(\n-\\frac{(y - f_\\theta(x))^2}{2\\sigma^2}\n\\right)\n$$\n\nFor all samples:\n\n$$\nL(\\theta)\n=\n\\prod_{i=1}^{N}\np(y_i \\mid x_i; \\theta)\n$$\n\nTake log:\n\n$$\n\\log L(\\theta)\n=\n\\sum_{i=1}^{N}\n\\log p(y_i \\mid x_i; \\theta)\n$$\n\nSubstitute Gaussian density:\n\n$$\n=\n\\sum_{i=1}^{N}\n\\left[\n-\\frac{(y_i - f_\\theta(x_i))^2}{2\\sigma^2}\n-\\log \\sqrt{2\\pi\\sigma^2}\n\\right]\n$$\n\nConstants do not affect optimization, so:\n\n$$\n\\max_\\theta \\log L(\\theta)\n$$\n\nis equivalent to:\n\n$$\n\\min_\\theta\n\\sum_{i=1}^{N}\n(y_i - f_\\theta(x_i))^2\n$$\n\nFinal loss:\n\n$$\n\\boxed{\n\\text{MSE Loss}\n=\n\\sum_i (y_i - \\hat y_i)^2\n}\n$$\n\n---\n\n# 2. Logistic Regression \u2192 Binary Cross Entropy\n\n## Probabilistic Assumption\n\nAssume Bernoulli outputs:\n\n$$\ny \\mid x\n\\sim\n\\text{Bernoulli}(p_\\theta(x))\n$$\n\nwhere:\n\n$$\np_\\theta(x)\n=\n\\sigma(f_\\theta(x))\n=\n\\frac{1}{1+e^{-f_\\theta(x)}}\n$$\n\nBernoulli probability mass function:\n\n$$\np(y \\mid x; \\theta)\n=\np_\\theta(x)^y\n(1-p_\\theta(x))^{1-y}\n$$\n\nLikelihood:\n\n$$\nL(\\theta)\n=\n\\prod_{i=1}^{N}\np_\\theta(x_i)^{y_i}\n(1-p_\\theta(x_i))^{1-y_i}\n$$\n\nTake log:\n\n$$\n\\log L(\\theta)\n=\n\\sum_{i=1}^{N}\n\\left[\ny_i \\log p_\\theta(x_i)\n+\n(1-y_i)\\log(1-p_\\theta(x_i))\n\\right]\n$$\n\nTraining objective:\n\n$$\n\\max_\\theta \\log L(\\theta)\n$$\n\nEquivalent to minimizing negative log likelihood:\n\n$$\n\\min_\\theta\n-\\sum_{i=1}^{N}\n\\left[\ny_i \\log p_\\theta(x_i)\n+\n(1-y_i)\\log(1-p_\\theta(x_i))\n\\right]\n$$\n\nFinal loss:\n\n$$\n\\boxed{\n\\text{Binary Cross Entropy}\n=\n-\\sum_i\n\\left[\ny_i \\log p_i\n+\n(1-y_i)\\log(1-p_i)\n\\right]\n}\n$$\n\n---\n\n# 3. Softmax Classification \u2192 Multiclass Cross Entropy\n\n## Probabilistic Assumption\n\nAssume categorical outputs:\n\n$$\ny \\mid x\n\\sim\n\\text{Categorical}(p_1, p_2, \\dots, p_K)\n$$\n\nwhere:\n\n$$\np_k\n=\n\\frac{e^{z_k}}\n{\\sum_j e^{z_j}}\n$$\n\n(softmax)\n\nProbability of true class:\n\n$$\np(y=k \\mid x)=\\text{softmax}(z_k)\n$$\n\nLikelihood for dataset:\n\n$$\nL(\\theta)\n=\n\\prod_{i=1}^{N}\np(y_i \\mid x_i)\n$$\n\nTake log:\n\n$$\n\\log L(\\theta)\n=\n\\sum_{i=1}^{N}\n\\log p(y_i \\mid x_i)\n$$\n\nMaximize likelihood:\n\n$$\n\\max_\\theta\n\\sum_i \\log p(y_i \\mid x_i)\n$$\n\nEquivalent to minimizing:\n\n$$\n\\min_\\theta\n-\\sum_i \\log p(y_i \\mid x_i)\n$$\n\nFinal loss:\n\n$$\n\\boxed{\n\\text{Cross Entropy Loss}\n=\n-\\sum_i \\log p(y_i)\n}\n$$\n\n---\n\n# 4. Language Models (GPT) \u2192 Token Cross Entropy\n\n## Probabilistic Assumption\n\nLanguage modeling assumes:\n\n$$\np(x_1, x_2, \\dots, x_T)\n=\n\\prod_{t=1}^{T}\np(x_t \\mid x_{<t})\n$$\n\nEach token depends on previous tokens.\n\nLikelihood:\n\n$$\nL(\\theta)\n=\n\\prod_{t=1}^{T}\np(x_t \\mid x_{<t}; \\theta)\n$$\n\nTake log:\n\n$$\n\\log L(\\theta)\n=\n\\sum_{t=1}^{T}\n\\log p(x_t \\mid x_{<t}; \\theta)\n$$\n\nTraining objective:\n\n$$\n\\max_\\theta\n\\sum_{t=1}^{T}\n\\log p(x_t \\mid x_{<t}; \\theta)\n$$\n\nEquivalent to minimizing:\n\n$$\n\\min_\\theta\n-\\sum_{t=1}^{T}\n\\log p(x_t \\mid x_{<t}; \\theta)\n$$\n\nFinal loss:\n\n$$\n\\boxed{\n\\text{Token Cross Entropy}\n=\n-\\sum_t \\log p(x_t \\mid x_{<t})\n}\n$$\n\nGPT training is literally maximum likelihood estimation over next-token probabilities.\n\n---\n\n# Summary Table\n\n| Model | Probabilistic Assumption | Final Loss |\n|---|---|---|\n| Linear Regression | $$y \\mid x \\sim \\mathcal{N}(f_\\theta(x), \\sigma^2)$$ | MSE |\n| Logistic Regression | $$y \\mid x \\sim \\text{Bernoulli}(p_\\theta(x))$$ | Binary Cross Entropy |\n| Softmax Classifier | $$y \\mid x \\sim \\text{Categorical}(p)$$ | Multiclass Cross Entropy |\n| GPT / Language Model | $$p(x_t \\mid x_{<t})$$ | Token Cross Entropy |";</script><script>
+(function(){
+  var md=window.MD,math=[];
+  md=md.replace(/\{%\s*highlight\s*(\w+)[^%]*%\}/g,'```$1').replace(/\{%\s*endhighlight\s*%\}/g,'```').replace(/\{%[^%]*%\}/g,'');
+  // keep the maths away from the markdown parser, the way kramdown does
+  md=md.replace(/(^|\n)[ \t]*\$\$([\s\S]+?)\$\$[ \t]*(?=\n|$)/g,function(m,a,t){math.push('\\['+t+'\\]');return a+'\n\n@@M'+(math.length-1)+'@@\n\n';});
+  md=md.replace(/\$\$([^\n]+?)\$\$/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  if(window.MATH)md=md.replace(/\$([^$\n]+?)\$/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  md=md.replace(/\\\(([\s\S]+?)\\\)/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  var h=marked.parse(md,{gfm:true});
+  h=h.replace(/\n?\{:\s*\.([\w-]+)[^}]*\}\s*<\/p>/g,'</p><!--k:$1-->').replace(/\{:[^}]*\}/g,'');
+  h=h.replace(/<p>([\s\S]*?)<\/p><!--k:([\w-]+)-->/g,'<p class="$2">$1</p>');
+  h=h.replace(/@@M(\d+)@@/g,function(m,i){return math[+i].replace(/&/g,'&amp;').replace(/</g,'&lt;');});
+  h=h.replace(/<table>/g,'<div class="tw"><table>').replace(/<\/table>/g,'</table></div>');
+  document.getElementById('content').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('#content iframe[src$=".pdf"]'),function(f){
+    var p=document.createElement('p');p.className='pdf';var a=document.createElement('a');a.href=f.getAttribute('src');a.target='_blank';a.rel='noopener';
+    a.textContent='Open the PDF: '+decodeURIComponent(f.getAttribute('src').split('/').pop())+' ↗';p.appendChild(a);f.parentNode.insertBefore(p,f);});
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise();
+})();
+</script>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script src="/assets/site/forest.js?v=1df954ac"></script>
+</body>
+</html>

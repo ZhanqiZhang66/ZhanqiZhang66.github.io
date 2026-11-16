@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Victoria Zhang</title>
+<meta name="description" content="Learning notes on machine learning, and personal essays, by Victoria Zhang.">
+<link rel="canonical" href="https://zhanqizhang66.github.io/blog/">
+<meta property="og:site_name" content="Victoria Zhang">
+<meta property="og:title" content="Blog · Victoria Zhang">
+<meta property="og:description" content="Learning notes on machine learning, and personal essays, by Victoria Zhang.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhanqizhang66.github.io/blog/">
+<meta property="og:image" content="https://zhanqizhang66.github.io/assets/img/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ZhangZhanqi">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y06S3E3WTE');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){
+  // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
+  var root=document.documentElement,KEY='vz-theme';
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+  function hourNow(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+  function manual(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  window.vzNight=function(h){return h>=19||h<6;};
+  window.vzApplyTheme=function(h){root.setAttribute('data-theme',manual()||(vzNight(h)?'dark':'light'));};
+  window.toggleTheme=function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{sessionStorage.setItem(KEY,next);}catch(e){}};
+  vzApplyTheme(hourNow());
+})();</script>
+<link rel="stylesheet" href="/assets/site/site.css?v=1df954ac">
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+<header class="top"><a class="brand" href="/">Victoria Zhang</a><nav><a class="" href="/">Home</a><a class="" href="/publications/">Research</a><a class="on" href="/blog/">Blog</a><a class="" href="/art/">Art</a><a href="/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Light or dark"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main><h1>Blog</h1><p class="sub">Learning notes and essays.</p><h2>Learning notes</h2><div class="grid"><a class="card" href="/2026-06-28-vision-language-double-helix/"><img src="/assets/site/covers/vision-language.svg" alt="" loading="lazy"><b>Vision and Language</b><span>A double helix</span><em>Jun 28, 2026</em></a><a class="card" href="/2026-06-27-gated-attention/"><img src="/assets/site/covers/gated-attention.svg" alt="" loading="lazy"><b>Gated Attention</b><span>One switch after softmax</span><em>Jun 27, 2026</em></a><a class="card" href="/2026-06-26-ai-infra-resource-map/"><img src="/assets/site/covers/ai-infra.svg" alt="" loading="lazy"><b>AI Infra Resource Map</b><span>Every trick is a trade</span><em>Jun 26, 2026</em></a><a class="card" href="/2026-06-25-decode-slower-than-prefill/"><img src="/assets/site/covers/decode-prefill.svg" alt="" loading="lazy"><b>Why Decode Is Slow</b><span>Shape, not the KV cache</span><em>Jun 25, 2026</em></a><a class="card" href="/2026-06-24-when-is-sft-done/"><img src="/assets/site/covers/sft.svg" alt="" loading="lazy"><b>When Is SFT Done?</b><span>Reading the signals</span><em>Jun 24, 2026</em></a><a class="card" href="/2026-06-23-attention-matmul-is-not-the-bottleneck/"><img src="/assets/site/covers/attention-matmul.svg" alt="" loading="lazy"><b>Attention Is Not Matmul Bound</b><span>Where the time really goes</span><em>Jun 23, 2026</em></a><a class="card" href="/2026-06-22-moe-experts-are-not-experts/"><img src="/assets/site/covers/moe.svg" alt="" loading="lazy"><b>Mixture of Experts</b><span>Experts are computation paths</span><em>Jun 22, 2026</em></a><a class="card" href="/2026-06-21-speculative-decoding/"><img src="/assets/site/covers/speculative-decoding.svg" alt="" loading="lazy"><b>Speculative Decoding</b><span>Same output, much faster</span><em>Jun 21, 2026</em></a><a class="card" href="/2026-06-20-temperature-sampling-penalties/"><img src="/assets/site/covers/temperature.svg" alt="" loading="lazy"><b>The Temperature Knob</b><span>How LLM sampling really works</span><em>Jun 20, 2026</em></a><a class="card" href="/2026-05-12-mle-unifying-view-of-ml/"><img src="/assets/site/covers/mle.svg" alt="" loading="lazy"><b>MLE, a Unifying View</b><span>From regression to GPT</span><em>May 12, 2026</em></a><a class="card" href="/2025-02-12-Intro-to_LLMs/"><img src="/assets/site/covers/llm.svg" alt="" loading="lazy"><b>Intro to LLMs</b><em>Feb 12, 2025</em></a><a class="card" href="/2023-03-13-Transformer-and-Attention/"><img src="/assets/site/covers/transformer.svg" alt="" loading="lazy"><b>But, what is Attention in transformers?</b><span>Q,K,V, with code snippets</span><em>Mar 13, 2023</em></a><a class="card" href="/2022-10-04-Intro-to-RNNs/"><img src="/assets/site/covers/rnn.svg" alt="" loading="lazy"><b>Intro to Recurrent Neural Networks (RNNs)</b><span>Part I</span><em>Oct 4, 2022</em></a></div><h2>Essays</h2><div class="grid three"><a class="card" href="/2026-05-07-Mothers-day-bouquet/"><img src="/assets/img/photograph/flower.JPG" alt="" loading="lazy"><b>Mother&#x27;s Day Bouquet</b><em>May 7, 2026</em></a><a class="card" href="/2025-10-24-The-Open-World/"><img src="/assets/img/photograph/Breath-of-the-Wild-Casual-Gamer-Culture.webp" alt="" loading="lazy"><b>The Open World</b><span>find your place</span><em>Oct 24, 2025</em></a><a class="card" href="/2025-01-01-River/"><img src="/assets/img/photograph/IMG_2671.JPEG" alt="" loading="lazy"><b>Life’s River</b><span>Navigating Change and Connections Along the Journey</span><em>Jan 1, 2025</em></a><a class="card" href="/2023-11-13-Battle-not-with-monsters/"><img src="/assets/img/photograph/IMG_9057.jpeg" alt="" loading="lazy"><b>Battle not with monsters, lest ye become a monster</b><span>fear and courage</span><em>Nov 13, 2023</em></a><a class="card" href="/2018-09-03-Writing,-the-Entropy-in-my-Universe/"><img src="/assets/img/photograph/IMG_9575.JPEG" alt="" loading="lazy"><b>Writing, the Entropy in my Universe</b><span>about words and soul</span><em>Sep 3, 2018</em></a><a class="card" href="/2017-02-04-Heat,-Anxiety-and-Release/"><img src="/assets/img/big-imgs/young.JPG" alt="" loading="lazy"><b>Heat, Anxiety and Release</b><span>self-forgiveness and self-acceptance</span><em>Feb 4, 2017</em></a></div></main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script src="/assets/site/forest.js?v=1df954ac"></script>
+</body>
+</html>

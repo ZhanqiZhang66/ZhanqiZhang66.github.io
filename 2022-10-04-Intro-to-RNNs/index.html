@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intro to Recurrent Neural Networks (RNNs) · Victoria Zhang</title>
+<meta name="description" content="Part I">
+<link rel="canonical" href="https://zhanqizhang66.github.io/2022-10-04-Intro-to-RNNs/">
+<meta property="og:site_name" content="Victoria Zhang">
+<meta property="og:title" content="Intro to Recurrent Neural Networks (RNNs) · Victoria Zhang">
+<meta property="og:description" content="Part I">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhanqizhang66.github.io/2022-10-04-Intro-to-RNNs/">
+<meta property="og:image" content="https://zhanqizhang66.github.io/assets/img/photograph/281AB3B5-547A-4CE3-BDAF-E0C43AEC29DE.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ZhangZhanqi">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y06S3E3WTE');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){
+  // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
+  var root=document.documentElement,KEY='vz-theme';
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+  function hourNow(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+  function manual(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  window.vzNight=function(h){return h>=19||h<6;};
+  window.vzApplyTheme=function(h){root.setAttribute('data-theme',manual()||(vzNight(h)?'dark':'light'));};
+  window.toggleTheme=function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{sessionStorage.setItem(KEY,next);}catch(e){}};
+  vzApplyTheme(hourNow());
+})();</script>
+<link rel="stylesheet" href="/assets/site/site.css?v=1df954ac">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true,tags:'none'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+<header class="top"><a class="brand" href="/">Victoria Zhang</a><nav><a class="" href="/">Home</a><a class="" href="/publications/">Research</a><a class="on" href="/blog/">Blog</a><a class="" href="/art/">Art</a><a href="/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Light or dark"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main class="post"><a class="back" href="/blog/">← All posts</a><h1>Intro to Recurrent Neural Networks (RNNs)</h1><p class="sub" style="margin-bottom:10px">Part I</p><p class="pmeta" style="margin-top:0">Oct 4, 2022 &nbsp;·&nbsp; <span class="tg">tutorials</span></p><img class="cover-img" src="/assets/site/covers/rnn.svg" alt=""><article class="prose" id="content"></article><div class="share"><span>Share</span><a href="https://twitter.com/intent/tweet?text=Intro%20to%20Recurrent%20Neural%20Networks%20%28RNNs%29&url=https%3A%2F%2Fzhanqizhang66.github.io%2F2022-10-04-Intro-to-RNNs%2F" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhanqizhang66.github.io%2F2022-10-04-Intro-to-RNNs%2F" aria-label="Share on Facebook"><i class="fa-brands fa-facebook"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhanqizhang66.github.io%2F2022-10-04-Intro-to-RNNs%2F" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin"></i></a><button type="button" id="copylink" data-u="https://zhanqizhang66.github.io/2022-10-04-Intro-to-RNNs/" aria-label="Copy link"><i class="fa-solid fa-link"></i></button></div><section class="comments"><h3>Likes and comments</h3><div id="disqus_thread"></div></section><script>document.getElementById("copylink").onclick=function(){var b=this;navigator.clipboard&&navigator.clipboard.writeText(b.getAttribute("data-u")).then(function(){b.classList.add("ok");setTimeout(function(){b.classList.remove("ok");},1200);});};var disqus_config=function(){this.page.url="https://zhanqizhang66.github.io/2022-10-04-Intro-to-RNNs/";};(function(){var d=document.createElement("script");d.async=true;d.src="https://https-zhanqizhang66-github-io.disqus.com/embed.js";document.body.appendChild(d);})();</script><nav class="pn"><a href="/2018-09-03-Writing,-the-Entropy-in-my-Universe/"><span>Older</span>Writing, the Entropy in my Universe</a><a href="/2023-03-13-Transformer-and-Attention/" style="text-align:right"><span>Newer</span>But, what is Attention in transformers?</a></nav></main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<script>window.MATH=false;window.MD="<h2>Intro to Recurrent Neural Networks (RNNs)<\/h2>\n\n* Before RNNs: Perceptron and ConvNets\n* RNNs, and Why?\n* Some Math\n  * Forward pass\n  * Backpropagation refresher\n  * The RNN backward pass\n* Some pros and cons\n* On the difficulty of training RNNs\n* Applications\n\n\n\n<iframe width=\"100%\" height=\"800\" src=\"/files/Intro to RNNs.pdf\">\n\n\n<!-- This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.\n\n**Here is some bold text**\n\n## Here is a secondary heading\n\nHere's a useless table:\n\n| Number | Next number | Previous number |\n| :------ |:--- | :--- |\n| Five | Six | Four |\n| Ten | Eleven | Nine |\n| Seven | Eight | Six |\n| Two | Three | One |\n\n\nHow about a yummy crepe?\n\n![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)\n\nIt can also be centered!\n\n![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}\n\nHere's a code chunk:\n\n~~~\nvar foo = function(x) {\n  return(x + 5);\n}\nfoo(3)\n~~~\n\nAnd here is the same code with syntax highlighting:\n\n```javascript\nvar foo = function(x) {\n  return(x + 5);\n}\nfoo(3)\n```\n\nAnd here is the same code yet again but with line numbers:\n\n{% highlight javascript linenos %}\nvar foo = function(x) {\n  return(x + 5);\n}\nfoo(3)\n{% endhighlight %}\n\n## Boxes\nYou can add notification, warning and error boxes like this:\n\n### Notification\n\n{: .box-note}\n**Note:** This is a notification box.\n\n### Warning\n\n{: .box-warning}\n**Warning:** This is a warning box.\n\n### Error\n\n{: .box-error}\n**Error:** This is an error box. -->";</script><script>
+(function(){
+  var md=window.MD,math=[];
+  md=md.replace(/\{%\s*highlight\s*(\w+)[^%]*%\}/g,'```$1').replace(/\{%\s*endhighlight\s*%\}/g,'```').replace(/\{%[^%]*%\}/g,'');
+  // keep the maths away from the markdown parser, the way kramdown does
+  md=md.replace(/(^|\n)[ \t]*\$\$([\s\S]+?)\$\$[ \t]*(?=\n|$)/g,function(m,a,t){math.push('\\['+t+'\\]');return a+'\n\n@@M'+(math.length-1)+'@@\n\n';});
+  md=md.replace(/\$\$([^\n]+?)\$\$/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  if(window.MATH)md=md.replace(/\$([^$\n]+?)\$/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  md=md.replace(/\\\(([\s\S]+?)\\\)/g,function(m,t){math.push('\\('+t+'\\)');return '@@M'+(math.length-1)+'@@';});
+  var h=marked.parse(md,{gfm:true});
+  h=h.replace(/\n?\{:\s*\.([\w-]+)[^}]*\}\s*<\/p>/g,'</p><!--k:$1-->').replace(/\{:[^}]*\}/g,'');
+  h=h.replace(/<p>([\s\S]*?)<\/p><!--k:([\w-]+)-->/g,'<p class="$2">$1</p>');
+  h=h.replace(/@@M(\d+)@@/g,function(m,i){return math[+i].replace(/&/g,'&amp;').replace(/</g,'&lt;');});
+  h=h.replace(/<table>/g,'<div class="tw"><table>').replace(/<\/table>/g,'</table></div>');
+  document.getElementById('content').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('#content iframe[src$=".pdf"]'),function(f){
+    var p=document.createElement('p');p.className='pdf';var a=document.createElement('a');a.href=f.getAttribute('src');a.target='_blank';a.rel='noopener';
+    a.textContent='Open the PDF: '+decodeURIComponent(f.getAttribute('src').split('/').pop())+' ↗';p.appendChild(a);f.parentNode.insertBefore(p,f);});
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise();
+})();
+</script>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script src="/assets/site/forest.js?v=1df954ac"></script>
+</body>
+</html>

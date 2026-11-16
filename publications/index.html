@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Victoria Zhang</title>
+<meta name="description" content="Papers, industry research and projects by Victoria Zhang.">
+<link rel="canonical" href="https://zhanqizhang66.github.io/publications/">
+<meta property="og:site_name" content="Victoria Zhang">
+<meta property="og:title" content="Research · Victoria Zhang">
+<meta property="og:description" content="Papers, industry research and projects by Victoria Zhang.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhanqizhang66.github.io/publications/">
+<meta property="og:image" content="https://zhanqizhang66.github.io/assets/img/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ZhangZhanqi">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y06S3E3WTE');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){
+  // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
+  var root=document.documentElement,KEY='vz-theme';
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+  function hourNow(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+  function manual(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  window.vzNight=function(h){return h>=19||h<6;};
+  window.vzApplyTheme=function(h){root.setAttribute('data-theme',manual()||(vzNight(h)?'dark':'light'));};
+  window.toggleTheme=function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{sessionStorage.setItem(KEY,next);}catch(e){}};
+  vzApplyTheme(hourNow());
+})();</script>
+<link rel="stylesheet" href="/assets/site/site.css?v=1df954ac">
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+<header class="top"><a class="brand" href="/">Victoria Zhang</a><nav><a class="" href="/">Home</a><a class="on" href="/publications/">Research</a><a class="" href="/blog/">Blog</a><a class="" href="/art/">Art</a><a href="/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Light or dark"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main><h1>Selected Projects</h1><p class="sub">Papers, industry work and early projects.</p>
+
+<h2>Conferences and Publications</h2>
+
+
+
+
+<div class="publication-row"><div class="publication-content"><div class="pub-title"><a href="https://arxiv.org/abs/2610.30520">NEST: Nested Embedding Representation for Multiscale Clustering</a></div><div class="pub-authors"><b>Zhang, Z.</b>, Aoi, M., &amp; Mishne, G.</div><div class="pub-venue"><b>preprint</b></div><div class="pub-abstract"><details><summary>TL;DR: NEST learns one embedding whose nested prefixes reveal clusters from coarse to fine, so clustering granularity becomes a property of the representation rather than a separate hierarchy.</summary>Real-world data often exhibits cluster structure at multiple resolutions, yet existing methods typically learn a single partition or construct an explicit hierarchy. Inspired by Matryoshka Representation Learning, we introduce NEST, an unsupervised framework that encodes coarse-to-fine structure within a single embedding. NEST jointly optimizes clustering and separation across nested prefix subspaces, enabling progressively finer distinctions as embedding dimensionality increases, with rank and within-cluster regularization that keep the embedding from collapsing. Empirically, distances in the learned embedding follow the hierarchy distance more closely than those of the input, although the hierarchy is never observed during training. On synthetic hierarchies, NEST recovers multiscale structure given only the number of clusters per level. Experiments on vision, text, and single-cell data further demonstrate multiscale organization across real-world representations. By making clustering granularity an intrinsic property of the representation, NEST provides a unified approach to multiscale structure discovery.</details></div><div class="publication-image"><img loading="lazy" src="/assets/img/paper_fig/nest.png" alt="NEST"></div></div></div>
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2605.07127">The Position Curse: LLMs Struggle to Locate the Last Few Items in a List</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b>*, Xiong, H.-D.*, Wilson, R. C., Aoi, M., Mattar, M. G., & Ji-An, L.† <br/><em>*Co-first authors. †Senior author.</em></div>
+        <div class="pub-venue"><b>preprint</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: LLMs can find a needle in a haystack but fail to retrieve the last few items in a short list — we name this the <em>Position Curse</em>, characterize it across open- and closed-source models, and show LoRA fine-tuning on PosBench helps but doesn't saturate.</summary>
+                Modern large language models (LLMs) can find a needle in a haystack (locating a single relevant fact buried among hundreds of thousands of irrelevant tokens) with near-saturated accuracy, yet fail to retrieve the last few items in a short list. We call this failure the <em>Position Curse</em>. For instance, even in a two-line code snippet, Claude Opus 4.6 misidentifies the second-to-last line most of the time. To characterize this failure, we evaluated two complementary queries: given a position in a sequence (of letters or words), retrieve the corresponding item; and given an item, return its position. Each position is specified as a forward or backward offset from an anchor, either an endpoint of the list (its start or end) or another item in the list. Across both open-source and frontier closed-source models, backward retrieval substantially lags forward retrieval. To test whether this capability can be rescued by post-training, we constructed <b>PosBench</b>, a position-focused training dataset. LoRA fine-tuning improves both forward and backward retrieval and generalizes to a held-out code-understanding benchmark (<b>PyIndex</b>), yet absolute performance remains far from saturated. As LLM coding agents increasingly operate over large codebases where precise indexing becomes essential for code understanding and editing, position-based retrieval emerges as a key capability for future pretraining objectives and model design.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/pos_retrieval.png" alt="Position Curse" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2603.18299">ALIGN: Adversarial Learning for Generalizable Speech Neuroprosthesis</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b>*, Li, S.*, Sabatini, B. L., Aoi, M., & Mishne, G. <br/><em>*Co-first authors.</em></div>
+        <div class="pub-venue"><b>preprint</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: ALIGN is an adversarial domain-alignment framework for intracortical speech BCIs that generalizes to unseen sessions, lowering phoneme and word error rates relative to baselines.</summary>
+                Intracortical brain-computer interfaces (BCIs) can decode speech from neural activity with high accuracy when trained on data pooled across recording sessions. In realistic deployment, however, models must generalize to new sessions without labeled data, and performance often degrades due to cross-session nonstationarities (e.g., electrode shifts, neural turnover, and changes in user strategy). In this paper, we propose ALIGN, a session-invariant learning framework based on multi-domain adversarial neural networks for semi-supervised cross-session adaptation. ALIGN trains a feature encoder jointly with a phoneme classifier and a domain classifier operating on the latent representation. Through adversarial optimization, the encoder is encouraged to preserve task-relevant information while suppressing session-specific cues. We evaluate ALIGN on intracortical speech decoding and find that it generalizes consistently better to previously unseen sessions, improving both phoneme error rate and word error rate relative to baselines. These results indicate that adversarial domain alignment is an effective approach for mitigating session-level distribution shift and enabling robust longitudinal BCI decoding.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/align.png" alt="ALIGN BCI" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.science.org/doi/10.1126/sciadv.adq7342">Brain Feature Maps Reveal Progressive Animal-Feature Representations</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b>, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2025)</div>
+        <div class="pub-venue"><b>Science Advances</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Heatmap recordings across V1/V2, V4, and PIT show monkey ventral-stream neurons preferentially encode local animal features over generic objects, with this trend strengthening up the visual hierarchy.</summary>
+                What are the fundamental principles that inform representation in the primate visual brain? While objects have become an intuitive framework for studying neurons in many parts of cortex, it is possible that neurons follow a more expressive organizational principle, such as encoding generic features present across textures, places, and objects. In this study, we used multielectrode arrays to record from neurons in the early (V1/V2), middle (V4), and later [posterior inferotemporal (PIT) cortex] areas across the visual hierarchy, estimating each neuron's local operation across natural scene via "heatmaps." We found that, while populations of neurons with foveal receptive fields across V1/V2, V4, and PIT responded over the full scene, they focused on salient subregions within object outlines. Notably, neurons preferentially encoded animal features rather than general objects, with this trend strengthening along the visual hierarchy. These results show that the monkey ventral stream is partially organized to encode local animal features over objects, even as early as primary visual cortex.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        
+        <img loading="lazy" src="/assets/img/paper_fig/featuremap.png" alt="Brain Feature Maps" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.nature.com/articles/s41586-025-09544-4">Arousal as a universal embedding for spatiotemporal brain dynamics</a></div>
+        <div class="pub-authors">Raut, R. V., ..., <b>Zhang, Z.</b>, et al. (2023)</div>
+        <div class="pub-venue"><b>Nature</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: A single scalar measure of arousal (e.g., pupil diameter) suffices to reconstruct multimodal, brain-wide spatiotemporal physiology — reframing many "spontaneous" fluctuations as reflections of a unified arousal-related process.</summary>
+                Neural activity in awake organisms shows widespread and spatiotemporally diverse correlations with behavioral and physiological measurements. We propose that this covariation reflects in part the dynamics of a unified, arousal-related process that regulates brain-wide physiology on the timescale of seconds. Taken together with theoretical foundations in dynamical systems, this interpretation leads us to a surprising prediction: that a single, scalar measurement of arousal (e.g., pupil diameter) should suffice to reconstruct the continuous evolution of multimodal, spatiotemporal measurements of large-scale brain physiology. To test this hypothesis, we perform multimodal, cortex-wide optical imaging and behavioral monitoring in awake mice. We demonstrate that spatiotemporal measurements of neuronal calcium, metabolism, and blood-oxygen can be accurately and parsimoniously modeled from a low-dimensional state-space reconstructed from the time history of pupil diameter. Extending this framework to behavioral and electrophysiological measurements from the Allen Brain Observatory, we demonstrate the ability to integrate diverse experimental data into a unified generative model via mappings from an intrinsic arousal manifold. Our results support the hypothesis that spontaneous, spatially structured fluctuations in brain-wide physiology—widely interpreted to reflect regionally-specific neural communication—are in large part reflections of an arousal-related process. This enriched view of arousal dynamics has broad implications for interpreting observations of brain, body, and behavior as measured across modalities, contexts, and scales.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        
+        <img loading="lazy" src="/assets/img/paper_fig/arousal.png" alt="Arousal Dynamics" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v2">Characterizing Behavioral Dynamics in Bipolar Disorder with Computational Ethology</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b> et al. (2024)</div>
+        <div class="pub-venue"><b>preprint on medRxiv</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Computational ethology applied to free-moving open-field human behavior identifies fine-grained motifs that distinguish bipolar disorder from controls better than traditional ethological and psychiatric measures.</summary>
+                New technologies for the quantification of behavior have revolutionized animal studies in social, cognitive, and pharmacological neurosciences. However, comparable studies in understanding human behavior, especially in psychiatry, are lacking. In this study, we utilized data-driven machine learning to analyze natural, spontaneous open-field human behaviors from people with euthymic bipolar disorder (BD) and non-BD participants. Our computational paradigm identified representations of distinct sets of actions (motifs) that capture the physical activities of both groups of participants. We propose novel measures for quantifying dynamics, variability, and stereotypy in BD behaviors. These fine-grained behavioral features reflect patterns of cognitive functions of BD and better predict BD compared with traditional ethological and psychiatric measures and action recognition approaches. This research represents a significant computational advancement in human ethology, enabling the quantification of complex behaviors in real-world conditions and opening new avenues for characterizing neuropsychiatric conditions from behavior.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        
+        <img loading="lazy" src="/assets/img/paper_fig/bd.png" alt="Behavioral Dynamics" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.cosyne.org/">Unsupervised quantification and classification of free-moving human behavior in euthymic bipolar disorder</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b> et al. (2024)</div>
+        <div class="pub-venue"><b>Accepted for Computational and Systems Neuroscience (COSYNE)</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Unsupervised pose-based modeling of free-moving humans identifies behavioral motifs that classify bipolar disorder vs. healthy controls, outperforming CV models, expert annotation, and clinical scales.</summary>
+                Free-moving spontaneous behavior is the window to probe the brain and mind. Individuals with neuropsychiatric conditions such as bipolar disorder (BD) can exhibit distinctive patterns of behavior (McReynolds, 1962). Our objective was to quantify free-moving spontaneous human behavior in real-world contexts among euthymic BD individuals and differentiate them from a healthy control (HC) population based on these identified behavioral features. We analyzed videos of 25 BD patients and 25 HC participants freely moving in an unexplored room for 15 minutes (Young et al, 2007). Utilizing a key-point estimation toolbox (Mathis et al., 2018), we extracted human poses and represented them through a latent variable model (Luxem et al., 2022). Clustering the latent representations identified repeated behavioral motifs, revealing unique features of BD aligned with known clinical observations. Our approach outperformed CV models, expert human annotation, and even established clinical assessment scales in distinguishing BD from HC.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/bd_cosyne.png" alt="Unsupervised Behavior Analysis" />
+    </div>
+</div>
+
+
+
+
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.sfn.org/meetings/neuroscience-2021">Animal-feature Encoding in Macaque Brain and in Artificial Networks</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b>, Hartmann, T. S., Livingstone, M. S., Born, R. T., & Ponce, C. R. (2022)</div>
+        <div class="pub-venue"><b>Accepted as a poster for Society for Neuroscience (SfN)</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Animal-mask AUC values rise from V1 (0.19) to V4 (0.63) to IT (0.73), supporting animal-feature encoding as an organizing principle of the macaque ventral stream.</summary>
+                Macaque monkeys are foraging and social animals that spend a significant fraction of their time identifying conspecifics, classifying their actions, and avoiding threats from other animals. This suggests that in learning information from the visual world, many neurons of the monkey ventral stream might focus on encoding animal-based features. We discovered that animal masks identified regions with strong neuronal activity for IT better than they did for V4 and for V4 better than for V1 (AUC values, median ± SE; V1: 0.19 ± 0.01, V4: 0.63 ± 0.06, IT: 0.73 ± 0.08). Collectively, our results provide further evidence of an organizing principle of the monkey ventral stream — to encode information diagnostic of animals.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/heatmao_sfn.png" alt="Animal-feature Encoding" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.cosyne.org/">Do you see what I see? Representations in brains and neural networks. Brain-Score and Beyond: Confronting Brain-like ANNs with Neuroscientific Data</a></div>
+        <div class="pub-authors"><b>Zhang, Z.</b>, Ponce, C. R. (2022)</div>
+        <div class="pub-venue"><b>Accepted as a workshop presentation for Computational and Systems Neuroscience (COSYNE) 2022</b></div>
+        <div class="pub-abstract">Workshop presentation on representations in brains and neural networks.</div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/heatmap_cosyne.png" alt="Brain Representations" />
+    </div>
+</div>
+
+
+
+
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Shape Recognition in Ultrasound with Deep Learning (2020)</div>
+        <div class="pub-authors"><b>Zhang, Z.</b></div>
+        <div class="pub-venue"><b>Washington University in St. Louis, McKelvey School of Engineering, Department of Electrical and Systems Engineering Capstone Design Thesis</b></div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Pre-trained neural network recognizes geometric shapes in ultrasound images of 3D-printed samples with 96% accuracy; released a database for future ultrasound imaging research.</summary>
+                Ultrasound is one of the most common imaging techniques in clinical settings, but its functionalities are limited by its low resolution and high dependency on the operator skills. Here, we applied a pre-trained neural network to recognize geometric shapes in ultrasound images of 3D-printed samples. We achieved 96% task accuracy and created a database available for future research in ultrasound imaging.
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/sonification.png" alt="Ultrasound Shape Recognition" />
+    </div>
+</div>
+
+<h2>Industry Research</h2>
+
+<div class="publication-row" id="google"><div class="publication-content"><div class="pub-title">Filtered vector search at billion scale</div><div class="pub-authors">Work done as a Student Researcher at Google (Summer 2026)</div><div class="pub-abstract"><details><summary>TL;DR: Made approximate nearest neighbor search maintain its target recall even with highly restrictive metadata filters, at the scale of billions of vectors.</summary><p>Vector search finds documents based on <b>embedding similarity</b>, while metadata filters narrow the results based on conditions like language, date, or access permissions. In practice, search systems often need to do both: find the most similar documents that also satisfy the query’s filters.</p><p>Large-scale vector search systems speed things up by clustering similar embeddings and searching only a small number of promising clusters. This works well without filters, but becomes challenging when filters are highly selective. For example, if only 1 in 1,000 documents passes a filter, the nearest matching documents may be much harder to find. Searching the usual number of clusters can miss them entirely, causing recall to fall below its target.</p><p>I designed and implemented <b>selectivity-aware autotuning</b> for a production vector search system. The system estimates how restrictive each query’s filter is at runtime and adjusts the search budget across different levels of the index. This allows it to search more broadly when needed while maintaining the target recall across different filter selectivities.</p><p>I also evaluated the impact on throughput and latency through large-scale distributed load tests, and explored ways to update index centroids as the data changes without rebuilding the entire index.</p></details></div><div class="publication-image"><img loading="lazy" src="/assets/img/paper_fig/google_vector_search.jpg" alt="Partitioned vector search: centroids, leaf partitions and re-scoring"><p class="figsrc">Figure source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/scaling-deep-retrieval-tensorflow-two-towers-architecture">Google Cloud Blog, Scaling deep retrieval with TensorFlow Recommenders and Vertex AI Matching Engine</a>.</p></div></div></div>
+<div class="publication-row" id="meta">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://www.meta.com/ai-glasses/meta-ray-ban-display/?srsltid=AfmBOoqJgguuzbd2lgoz1FicSW5Bnj5K1sXeNkIHcpDYIU3ILs_aoC2d">Meta Neural Band real-time and multi-modality model</a></div>
+        <div class="pub-authors">Work done during research scientist internship at Meta (2025)</div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Built models that made handwriting recognition on the Meta Neural Band more robust; shipped in the product, live demoed at Meta Connect 2025, and named one of <em>TIME</em>’s Best Inventions of 2025.</summary><p>The <a href="https://www.meta.com/ai-glasses/meta-ray-ban-display/?srsltid=AfmBOoqJgguuzbd2lgoz1FicSW5Bnj5K1sXeNkIHcpDYIU3ILs_aoC2d">Meta Neural Band</a> is a wristband that reads <b>surface EMG</b>, the electrical activity of forearm muscles, and turns subtle finger movements into input for AI glasses. One of its features is handwriting: you trace letters with your finger on any surface, and the band decodes them into text.</p><p>Decoding handwriting from muscle signals is hard to make reliable. The signals differ from person to person and from one wearing of the band to the next, and the model has to run in real time on a product people use every day.</p><p>I developed models that improved the <b>robustness</b> of the handwriting recognition system productionized in the Neural Band. The work was <a href="https://www.youtube.com/live/D97ILdUbYww?si=krptKIikEhFvF9O9&t=2975">live demoed at Meta Connect 2025</a> and later recognized as one of <a href="https://time.com/collections/best-inventions-2025/7318319/meta-ray-ban-display/"><em>TIME</em>’s Best Inventions of 2025</a>.</p>
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/meta.png" alt="Meta Neural Band Handwriting" />
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title"><a href="https://research.facebook.com/">EMG–Vision Multimodal Foundation Models for Neural Wristbands</a></div>
+        <div class="pub-authors">Work done during research scientist internship at Meta (2024)</div>
+        <div class="pub-abstract">
+            <details>
+                <summary>TL;DR: Developed EMG–vision multimodal foundation models for Meta’s neural wristbands, improving several downstream tasks including pose estimation.</summary><p>Neural wristbands read <b>surface EMG</b>, the electrical activity of forearm muscles. The signal says a lot about what the hand is doing, but it is noisy, and it differs from person to person, so a model trained on one task or one group of users often does not carry over to another.</p><p>Vision gives a complementary view of the same movement: a camera sees the hand’s pose directly, while EMG senses the muscle activity that produces it. Learning from both together can give a representation that neither signal provides alone.</p><p>I developed <b>EMG–vision multimodal foundation models</b> at <a href="https://research.facebook.com/">Meta</a>, using joint representation learning between EMG signals and synchronized vision streams. The models improved performance on multiple downstream tasks, such as pose estimation, and were built to generalize across users and tasks.</p>
+            </details>
+        </div>
+    </div>
+    <div class="publication-image">
+        <img loading="lazy" src="/assets/img/paper_fig/neural_band.avif" alt="EMG-Vision Multimodal Model" />
+    </div>
+</div>
+
+<h2>Undergraduate Projects</h2>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Embedded Systems: Closed-Loop Incubator with Remote Monitoring</div>
+        <div class="pub-authors"><b>Zhang, Z.</b>, Liao, X. (2019)</div>
+        <div class="pub-venue"><b>Embedded Systems & IoT Project</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> Arduino, Photon, Adafruit SI7021, Embedded Systems<br/>
+            <strong>Features:</strong>
+            <ul>
+                <li>Plastic bottles: recycle and reuse</li>
+                <li>Hardware: wires, resistors, fan, Adafruit SI7021, Photon, Arduino</li>
+                <li>Embedded system: Sensors and Actuators + Feedback Control</li>
+                <li>UI: graphical sliders and other information of the incubator</li>
+                <li>Networking infrastructure: monitor and control the incubator remotely</li>
+            </ul>
+<a class="code" href="https://github.com/ZhanqiZhang66/Incubator">Code</a>  
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-microchip" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Embedded Systems: Networked Garage Controller with Web UI</div>
+        <div class="pub-authors"><b>Zhang, Z.</b>, Liao, X. (2019)</div>
+        <div class="pub-venue"><b>C++, JavaScript, HTML, Embedded Systems</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> C++, JavaScript, HTML, Photon, Arduino<br/>
+            <strong>Features:</strong>
+            <ul>
+                <li>Hardware: wires, resistors, buttons, LEDs, Two Photons</li>
+                <li>Embedded system: Sensors and Actuators + Remote Control</li>
+                <li>UI: responsive website and app</li>
+                <li>Networking infrastructure: monitor and control the garage light and door remotely</li>
+                <li>Functionality: Close the door and turn off the light automatically with the time set</li>
+            </ul>
+<a class="code" href="https://github.com/ZhanqiZhang66/GarageController">Code</a>  
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-warehouse" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Computer Vision Projects in Python</div>
+        <div class="pub-authors"><b>Zhang, Z.</b> (2019)</div>
+        <div class="pub-venue"><b>Computer Vision & Machine Learning</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> Python, OpenCV, TensorFlow, PyTorch<br/>
+            <strong>Projects Include:</strong>
+            <ul>
+                <li>Edge detection + Line detection</li>
+                <li>Image Restoration & Optimization</li>
+                <li>Photometric Stereo</li>
+                <li>Camera Projection and Transformations</li>
+                <li>Estimation, Sampling, Robust Fitting</li>
+                <li>Epipolar Geometry, Binocular Stereo</li>
+                <li>Optical flow</li>
+                <li>Neural Networks</li>
+                <li>Semantic Vision Tasks</li>
+                <li>GAN and VAEs. Unsupervised Learning</li>
+            </ul>
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-eye" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Object-Oriented Web App: Task Manager in React</div>
+        <div class="pub-authors"><b>Zhang, Z.</b> (2019)</div>
+        <div class="pub-venue"><b>React.js, Web Development</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> React.js, JavaScript, HTML, CSS<br/>
+            Interactive web application for task management with modern React.js framework.
+            
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-list-alt" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Control Systems: 3R Manipulator Kinematics and Dynamics in MATLAB/Simulink</div>
+        <div class="pub-authors"><b>Zhang, Z.</b> (2018)</div>
+        <div class="pub-venue"><b>Matlab, Simulink, Robotics</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> MATLAB, Simulink, Robotics Control Systems<br/>
+            Development of 3D rotational robotics control systems using MATLAB and Simulink for kinematic and dynamic analysis.
+<a class="code" href="https://github.com/ZhanqiZhang66/3R-Robotics">Code</a>  
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-robot" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+
+<div class="publication-row">
+    <div class="publication-content">
+        <div class="pub-title">Object-Oriented AI: Game-Playing Engine for Tic-Tac-Toe and Gomoku in C++</div>
+        <div class="pub-authors"><b>Zhang, Z.</b> (2018)</div>
+        <div class="pub-venue"><b>C++, Artificial Intelligence</b></div>
+        <div class="pub-abstract">
+            <strong>Technologies:</strong> C++, AI Algorithms, Game Theory<br/>
+            Implementation of artificial intelligence algorithms for classic board games including tic-tac-toe and Gomoku with intelligent move prediction and strategy optimization.
+<a class="code" href="https://github.com/ZhanqiZhang66/AI-Gomuku">Code</a>
+        </div>
+    </div>
+    <div class="publication-image">
+        <i class="fas fa-gamepad" style="font-size: 6em; color: #7f8c8d;"></i>
+    </div>
+</div>
+</main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script src="/assets/site/forest.js?v=1df954ac"></script>
+</body>
+</html>

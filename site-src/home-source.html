@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victoria Zhang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+(function(){
+  var root=document.documentElement, KEY='vz-theme';
+  try{var s=localStorage.getItem(KEY); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  window.toggleTheme=function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark'
+             : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+  };
+})();
+</script>
+<style>
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
+:root{--bg:#fbfaf7;--surface:#ffffff;--ink:#1d1c1a;--muted:#6f6b64;--line:#e8e4dc;--link:#2f6f62;--hl:#e4efe9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151615;--surface:#1c1e1c;--ink:#ecebe6;--muted:#9b998f;--line:#2c2f2c;--link:#8cc9b6;--hl:#21302b}}
+:root[data-theme="dark"]{--bg:#151615;--surface:#1c1e1c;--ink:#ecebe6;--muted:#9b998f;--line:#2c2f2c;--link:#8cc9b6;--hl:#21302b}
+
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none;background-image:linear-gradient(var(--hl),var(--hl));background-size:100% .38em;background-position:0 88%;background-repeat:no-repeat;transition:background-size .2s}
+a:hover{background-size:100% 100%}
+.top{max-width:720px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;color:var(--ink);background:none}
+.top nav{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.top nav a{color:var(--muted);background:none;padding:6px 11px;border-radius:999px;font-size:14.5px;font-weight:500}
+.top nav a:hover,.top nav a.on{color:var(--ink);background:var(--line)}
+.theme-toggle{border:0;background:transparent;color:var(--muted);font-size:15px;cursor:pointer;padding:6px 10px;border-radius:999px}
+main{max-width:720px;margin:0 auto;padding:24px 24px 40px}
+h1{font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:6px 0 10px;font-weight:700}
+.sub{color:var(--muted);font-size:18px;margin:0 0 34px}
+/* cover: name, where, what. nothing else */
+.cover{min-height:calc(100vh - 84px);display:flex;flex-direction:column;justify-content:center;position:relative;padding:0 0 40px}
+.hello{font-size:clamp(44px,7vw,72px);letter-spacing:-.04em;margin:0 0 18px}
+.tag{font-size:20px;color:var(--muted);margin:0 0 4px}.tag b{color:var(--ink);font-weight:600}
+.cover .links{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14.5px;margin-top:26px}
+.cover .links a{color:var(--muted);background:none;display:inline-flex;gap:7px;align-items:center}.cover .links a:hover{color:var(--ink)}
+.down{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);background:none}
+.ln{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:6px 0;align-items:baseline}
+.ln .d{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}.ln .m{color:var(--muted)}.ln b{font-weight:600}
+.ln a{color:var(--ink);justify-self:start}.ln a:hover{color:var(--link)}
+.lead{margin:0}
+section{margin:0 0 52px}
+section > h3{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;margin:0 0 12px}
+.news{list-style:none;padding:0;margin:0}
+.news li{padding:5px 0}
+.news li:nth-child(n+5){display:none}.news.all li{display:block}
+.more{border:0;background:none;color:var(--link);font:inherit;font-size:14px;font-weight:600;padding:8px 0 0;cursor:pointer}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.row .t{font-weight:600}.row .t a{color:var(--ink)}.row .s{color:var(--muted);font-size:14.5px;grid-column:1/-1}
+.row .d{color:var(--muted);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.area h4{font-size:16px;margin:16px 0 2px}.area p{margin:0}
+.about p{margin:0 0 12px}
+.teach{list-style:none;padding:0;margin:0}.teach li{padding:6px 0;border-bottom:1px dashed var(--line)}
+/* one item = title, one line of why, details on demand */
+.item{padding:16px 0;border-bottom:1px solid var(--line)}
+.item:first-of-type{padding-top:0}
+.item .t{font-weight:700;font-size:16.5px;line-height:1.4}.item .t a{color:var(--ink)}
+.item .meta{font-size:13.5px;color:var(--muted);margin:2px 0 6px}
+.item .why{margin:0}
+.item details{margin-top:6px;font-size:14.5px;color:var(--muted)}
+.item details summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--link);list-style:none}
+.item details summary::-webkit-details-marker{display:none}
+.item details summary::before{content:"+ "}.item details[open] summary::before{content:"− "}
+.item details > div{margin-top:8px;color:var(--ink)}
+.item details img{max-width:100%;max-height:300px;border-radius:10px;margin-top:10px}
+.item ul{margin:6px 0;padding-left:20px}
+.near{font-size:13px;color:var(--muted);margin:6px 0 0}.near b{font-weight:600}
+.new{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--link);background:var(--hl);padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.ask{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--muted);background:var(--surface);margin:14px 0 6px}
+.ask input{flex:1;border:0;background:none;font:inherit;color:var(--ink);outline:none;min-width:0}
+.ask:focus-within{border-color:var(--link)}
+.ans{font-size:14px;color:var(--muted);margin:0 0 8px}.ans:empty{display:none}
+.foot{max-width:760px;margin:0 auto;padding:24px;color:var(--muted);font-size:13.5px;text-align:center}
+@media (max-width:640px){h1{font-size:32px}.tag{font-size:17px}.ln{grid-template-columns:72px 1fr}.row{grid-template-columns:1fr}.row .d{grid-row:1;grid-column:1}}
+
+
+/* ---- field notes palette and link style, plus the forest ---- */
+:root{--bg:#f6f3ec;--surface:rgba(255,253,248,.9);--ink:#1f2326;--muted:#6b6f70;--line:rgba(31,35,38,.10);--link:#2f7d7a;--hl:rgba(47,125,122,.12);--flow:47,86,92;
+  --t1:#b4d4b3;--t2:#c4dfc1;--t3:#d6ead0;--shade:rgba(40,70,55,.16)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14171a;--surface:rgba(26,30,34,.9);--ink:#e8e6e1;--muted:#9da2a4;--line:rgba(232,230,225,.10);--link:#8fd0cb;--hl:rgba(143,208,203,.14);--flow:170,205,210;
+  --t1:#1c3a2f;--t2:#23483a;--t3:#2b5744;--shade:rgba(0,0,0,.34)}}
+:root[data-theme="dark"]{--bg:#14171a;--surface:rgba(26,30,34,.9);--ink:#e8e6e1;--muted:#9da2a4;--line:rgba(232,230,225,.10);--link:#8fd0cb;--hl:rgba(143,208,203,.14);--flow:170,205,210;
+  --t1:#1c3a2f;--t2:#23483a;--t3:#2b5744;--shade:rgba(0,0,0,.34)}
+body{line-height:1.72}
+a{background-image:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.top nav{gap:20px}
+.top nav a{padding:0;border-radius:0}
+.top nav a:hover,.top nav a.on{background:none;text-decoration:none}
+.cover .links a:hover,.down:hover,.brand:hover{text-decoration:none}
+.theme-toggle{padding:4px}
+#forest{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0;pointer-events:none}
+.top,main,.foot{position:relative;z-index:1}
+.clock{position:fixed;z-index:3;right:16px;bottom:16px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.clock input{width:0;opacity:0;transition:width .3s,opacity .3s;margin:0;accent-color:var(--link);cursor:pointer}
+.clock:hover input,.clock input:focus{width:90px;opacity:1}
+.clock button{border:0;background:none;color:inherit;font:inherit;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px}
+.treepick{position:fixed;z-index:3;left:16px;bottom:16px;font-size:12.5px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.treepick button{border:0;background:none;color:inherit;font:inherit;cursor:pointer;padding:0}
+.treepick button.on{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:640px){.clock,.treepick{display:none}}
+.say{position:fixed;z-index:4;width:280px;padding:11px 14px 10px;border-radius:14px 14px 14px 4px;background:var(--surface);border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:14px;line-height:1.5;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;pointer-events:none}
+.say.on{opacity:1;transform:none}
+.say p{margin:0 0 6px;min-height:1.5em}
+.say span{display:block;font-size:11.5px;color:var(--muted);line-height:1.4}
+</style>
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+
+<header class="top"><a class="brand" href="index.html">Victoria Zhang</a><nav><a class="on" href="index.html">Home</a><a class="" href="research.html">Research</a><a class="" href="blog.html">Blog</a><a class="" href="art.html">Art</a><a class="" href="https://zhanqizhang66.github.io/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main><div class="cover">
+<h1 class="hello">Hi, I'm Victoria.</h1>
+<p class="tag">Ph.D. candidate at UC San Diego. Previously at Google and Meta.</p>
+<p class="tag">Working on <b>representation learning</b> and <b>retrieval</b>.</p>
+<div class="links"><a href="mailto:zhz091@ucsd.edu"><i class="fa-solid fa-envelope"></i>Email</a><a href="https://github.com/ZhanqiZhang66"><i class="fa-brands fa-github"></i>GitHub</a><a href="https://twitter.com/ZhangZhanqi"><i class="fa-brands fa-x-twitter"></i>X</a><a href="https://linkedin.com/in/victoria-zhanqi"><i class="fa-brands fa-linkedin"></i>LinkedIn</a><a href="https://scholar.google.com/citations?user=NjLyahEAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i>Scholar</a><a href="https://zhanqizhang66.github.io/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf"><i class="fa-solid fa-file-lines"></i>CV</a></div>
+<a class="down" href="#news" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+</div>
+<section id="news"><h3>News</h3><ul class="news"><li><strong>Hire Me</strong> — Open to full-time Research Scientist roles in 2026. Connect with me on <a href="https://www.linkedin.com/in/zhanqi-zhang-9873cle/">LinkedIn</a>!</li><li>New preprint <a href="https://arxiv.org/abs/2610.30520"><em>NEST: Nested Embedding Representation for Multiscale Clustering</em></a>, now available on arXiv.</li><li>Spent Aug–Sep 2026 at <strong>Google</strong> as a Student Researcher, working on vector search and retrieval.</li><li>New preprint <a href="https://arxiv.org/abs/2605.07127"><em>The Position Curse: LLMs Struggle to Locate the Last Few Items in a List</em></a>, now available on arXiv.</li><li>Latest work on adversarial domain adaptation <a href="https://arxiv.org/abs/2603.18299"><em>ALIGN</em></a>, accepcted at UAI.</li><li>My work, <a href="https://openreview.net/forum?id=hOE8xaCByN"> <em>BEHAVE: Behavioral Ethology for Human Assessment via Variational Encoding</em></a>, has been accepted at the <a href="https://data-brain-mind.github.io/">NeurIPS 2025 Workshop on Data on Brain and Mind (DBM)</a>.</li><li>My paper, <a href="https://www.science.org/doi/10.1126/sciadv.adq7342">Brain Feature Maps Reveal Progressive Animal-Feature Representations</a>, is published in <em>Science Advances</em> and featured as “<a href="https://brain.harvard.edu/hbi_news/when-neurons-discover-on-their-own/">When Neurons Discover on Their Own</a>” by Harvard Brain Institute News.</li><li>Check out my preprint on <a href="https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v2">Behavioral Dynamics in Bipolar Disorder</a> on medRxiv.</li><li>Co-authored paper <a href="https://www.nature.com/articles/s41586-025-09544-4">Arousal as a universal embedding for spatiotemporal brain dynamics</a> now published in <em>Nature</em>.</li></ul><button class="more" id="more">All news ↓</button></section>
+<section><h3>Experience</h3><div class="ln"><span class="d">2026</span><span><b>Google</b> <span class="m">Student Researcher, vector search and retrieval</span></span></div><div class="ln"><span class="d">2025</span><span><b>Meta</b> <span class="m">Research Scientist Intern, Meta Neural Band handwriting</span></span></div><div class="ln"><span class="d">2024</span><span><b>Meta</b> <span class="m">Research Scientist Intern, EMG–vision foundation models</span></span></div><div class="ln"><span class="d">2021 –</span><span><b>UC San Diego</b> <span class="m">Ph.D., Computer Science</span></span></div><div class="ln"><span class="d">2016 – 21</span><span><b>WashU</b> <span class="m">B.S. CS &amp; EE, M.S. CS</span></span></div></section>
+<section><h3>Research</h3><p class="lead">I develop robust machine learning methods for large-scale spatiotemporal data, studying how self-supervised and generative models learn hierarchical, multi-scale structure, including a single embedding whose nested subspaces capture coarse-to-fine clusters (<a href="https://arxiv.org/abs/2610.30520">paper</a>). My work includes developing machine learning methods for robust generalization under distribution shift, enabling effective few-shot and zero-shot adaptation for online sequence-to-text decoding (<a href="https://arxiv.org/abs/2603.18299">paper</a>), developing multimodal foundation models + language models, with a focus on scalable training, efficient on-device optimization, and robust real-time decoding under real-world kinematic variation for the <a href="https://www.meta.com/ai-glasses/meta-ray-ban-display/?srsltid=AfmBOoqJgguuzbd2lgoz1FicSW5Bnj5K1sXeNkIHcpDYIU3ILs_aoC2d">Meta Neural Band</a>.</p>
+<div style="margin-top:14px"><div class="ln"><span class="d">arXiv 2026</span><a href="https://arxiv.org/abs/2610.30520">NEST: Nested Embedding Representation for Multiscale Clustering</a></div><div class="ln"><span class="d">arXiv 2026</span><a href="https://arxiv.org/abs/2605.07127">The Position Curse: LLMs Struggle to Locate the Last Few Items in a List</a></div><div class="ln"><span class="d">UAI 2026</span><a href="https://arxiv.org/abs/2603.18299">ALIGN: Adversarial Learning for Generalizable Speech Neuroprosthesis</a></div><div class="ln"><span class="d">Google 2026</span><a href="research.html">Filtered vector search at billion scale</a></div><div class="ln"><span class="d">Meta 2025</span><a href="research.html">Handwriting decoding for the Meta Neural Band</a></div></div>
+<label class="ask"><i class="fa-solid fa-magnifying-glass"></i><input id="ask" type="text" placeholder="Ask about my work, e.g. clustering, retrieval, llm, emg" aria-label="Ask about my work"></label>
+<p class="ans" id="ans"></p><p><a href="research.html">All projects →</a></p></section>
+<section class="about"><h3>About</h3><p>Hi! I’m <strong>Victoria Zhanqi Zhang (张展旗)</strong>, a Ph.D. candidate in Computer Science at <a href="https://cse.ucsd.edu/">UC San Diego</a>, supported by the HDSI Ph.D. Fellowship. I’m co-advised by <a href="https://aoilab.biosci.ucsd.edu/">Dr. Mikio Aoi</a> and <a href="http://mishne.ucsd.edu/">Dr. Gal Mishne</a>. I earned dual B.S. in Computer Science and Electrical Engineering and a M.S. in Computer Science from <a href="https://engineering.wustl.edu/">Washington University in St. Louis</a>, where I worked with <a href="https://ponce.hms.harvard.edu/">Dr. Carlos Ponce</a> as an undergraduate researcher.</p><p>I enjoy traveling, art, and animals, and share my home with birds. See my <a href="https://zhanqizhang66.github.io/art/">art portfolio</a>.</p></section>
+<section><h3>Teaching</h3><div class="ln"><span class="d">Spring 2026</span><span><b><a href="https://sites.google.com/view/cse151b">CSE 151B</a></b> <span class="m">UCSD</span></span></div><div class="ln"><span class="d">Fall 2024</span><span><b><a href="https://omds.ucsd.edu/courses/dsc-257r-unsupervised-learning">DSC 257R</a></b> <span class="m">UCSD</span></span></div><div class="ln"><span class="d">Fall 2020 & Spring 2021</span><span><b><a href="https://courses.wustl.edu/CourseInfo.aspx?sch=E&dept=E81&crs=417T">CSE 417T</a></b> <span class="m">WashU</span></span></div><div class="ln"><span class="d">Fall 2019</span><span><b><a href="https://courses.wustl.edu/CourseInfo.aspx?sch=E&dept=E81&crs=247">CSE 247</a></b> <span class="m">WashU</span></span></div><div class="ln"><span class="d">Fall 2018 – Fall 2019</span><span><b><a href="https://courses.wustl.edu/CourseInfo.aspx?sch=E&dept=E35&crs=230">ESE 230</a></b> <span class="m">WashU</span></span></div><div class="ln"><span class="d">Fall 2018</span><span><b><a href="https://courses.wustl.edu/CourseInfo.aspx?sch=E&dept=E81&crs=240">CSE 240</a></b> <span class="m">WashU</span></span></div></section></main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<script>window.WORK={"items":[{"label":"NEST","url":"https://arxiv.org/abs/2610.30520"},{"label":"The Position Curse","url":"https://arxiv.org/abs/2605.07127"},{"label":"ALIGN","url":"https://arxiv.org/abs/2603.18299"},{"label":"Brain Feature Maps Reveal Progressive Animal-Feature Representations","url":"https://www.science.org/doi/10.1126/sciadv.adq7342"},{"label":"Arousal as a universal embedding for spatiotemporal brain dynamics","url":"https://www.nature.com/articles/s41586-025-09544-4"},{"label":"Characterizing Behavioral Dynamics in Bipolar Disorder with Computational Ethology","url":"https://www.medrxiv.org/content/10.1101/2024.11.14.24317348v2"},{"label":"Unsupervised quantification and classification of free-moving human behavior in euthymic bipolar disorder","url":"https://www.cosyne.org/"},{"label":"Animal-feature Encoding in Macaque Brain and in Artificial Networks","url":"https://www.sfn.org/meetings/neuroscience-2021"},{"label":"Do you see what I see? Representations in brains and neural networks. Brain-Score and Beyond: Confronting Brain-like ANNs with Neuroscientific Data","url":"https://www.cosyne.org/"},{"label":"Shape Recognition in Ultrasound with Deep Learning (2020)","url":"research.html"},{"label":"Filtered Vector Search at Billion Scale","url":"https://research.google/"},{"label":"Meta Neural Band real-time and multi-modality model","url":"https://www.meta.com/ai-glasses/meta-ray-ban-display/?srsltid=AfmBOoqJgguuzbd2lgoz1FicSW5Bnj5K1sXeNkIHcpDYIU3ILs_aoC2d"},{"label":"EMG–Vision Multimodal Foundation Models for Neural Wristbands","url":"https://research.facebook.com/"},{"label":"Embedded Systems","url":"research.html"},{"label":"Embedded Systems","url":"research.html"},{"label":"Computer Vision Projects in Python","url":"research.html"},{"label":"Object-Oriented Web App","url":"research.html"},{"label":"Control Systems","url":"research.html"},{"label":"Object-Oriented AI","url":"research.html"}],"post":{"nest":[3.303,[[0,0.254]]],"nested":[3.303,[[0,0.191]]],"embedd":[2.897,[[0,0.223],[4,0.067]]],"represent":[1.916,[[0,0.138],[2,0.049],[3,0.088],[5,0.09],[6,0.056],[8,0.247],[12,0.082]]],"multiscale":[3.303,[[0,0.217]]],"cluster":[2.897,[[0,0.235],[6,0.085]]],"learn":[1.916,[[0,0.111],[2,0.083],[5,0.053],[7,0.068],[9,0.077],[12,0.082],[15,0.085]]],"whose":[3.303,[[0,0.091]]],"prefix":[3.303,[[0,0.154]]],"reveal":[2.609,[[0,0.072],[3,0.071],[6,0.077]]],"coarse":[3.303,[[0,0.091]]],"fine":[3.303,[[0,0.091]]],"granularity":[3.303,[[0,0.154]]],"becom":[2.897,[[0,0.08],[1,0.065]]],"property":[3.303,[[0,0.154]]],"rather":[2.897,[[0,0.08],[3,0.078]]],"separate":[3.303,[[0,0.091]]],"hierarchy":[2.897,[[0,0.208],[3,0.164]]],"real-world":[2.609,[[0,0.122],[5,0.072],[6,0.077]]],"often":[2.897,[[0,0.08],[2,0.074]]],"exhibit":[2.897,[[0,0.08],[6,0.085]]],"structure":[3.303,[[0,0.217]]],"multiple":[2.897,[[0,0.08],[12,0.211]]],"resolution":[2.897,[[0,0.08],[9,0.116]]],"yet":[2.897,[[0,0.08],[1,0.109]]],"exist":[3.303,[[0,0.091]]],"typically":[3.303,[[0,0.091]]],"single":[2.609,[[0,0.122],[1,0.058],[4,0.102]]],"partition":[3.303,[[0,0.091]]],"construct":[3.303,[[0,0.091]]],"explicit":[3.303,[[0,0.091]]],"inspired":[3.303,[[0,0.091]]],"matryoshka":[3.303,[[0,0.091]]],"introduce":[3.303,[[0,0.091]]],"unsupervised":[2.609,[[0,0.072],[6,0.13],[15,0.116]]],"framework":[2.204,[[0,0.061],[2,0.096],[3,0.06],[4,0.051],[16,0.158]]],"encod":[2.609,[[0,0.072],[3,0.071],[7,0.196]]],"coarse-to-fine":[3.303,[[0,0.091]]],"within":[2.897,[[0,0.08],[3,0.078]]],"jointly":[2.897,[[0,0.08],[2,0.074]]],"optimiz":[2.386,[[0,0.066],[2,0.061],[15,0.106],[18,0.135]]],"separ":[3.303,[[0,0.091]]],"subspac":[3.303,[[0,0.091]]],"enabl":[2.609,[[0,0.072],[2,0.067],[5,0.072]]],"progressively":[3.303,[[0,0.091]]],"finer":[3.303,[[0,0.091]]],"distinction":[3.303,[[0,0.091]]],"dimensionality":[3.303,[[0,0.091]]],"increas":[3.303,[[0,0.091]]],"rank":[3.303,[[0,0.091]]],"within-cluster":[3.303,[[0,0.091]]],"regulariz":[3.303,[[0,0.091]]],"keep":[3.303,[[0,0.091]]],"collaps":[3.303,[[0,0.091]]],"empirically":[3.303,[[0,0.091]]],"distanc":[3.303,[[0,0.091]]],"learned":[3.303,[[0,0.091]]],"follow":[2.897,[[0,0.08],[3,0.078]]],"distance":[3.303,[[0,0.091]]],"closely":[3.303,[[0,0.091]]],"input":[2.897,[[0,0.08],[11,0.117]]],"although":[3.303,[[0,0.091]]],"never":[3.303,[[0,0.091]]],"observed":[3.303,[[0,0.091]]],"during":[3.303,[[0,0.091]]],"train":[2.609,[[0,0.072],[1,0.058],[2,0.067]]],"synthetic":[3.303,[[0,0.091]]],"recover":[2.897,[[0,0.08],[10,0.108]]],"given":[2.897,[[0,0.08],[1,0.109]]],"number":[3.303,[[0,0.091]]],"per":[3.303,[[0,0.091]]],"level":[3.303,[[0,0.091]]],"experiment":[3.303,[[0,0.091]]],"vision":[2.609,[[0,0.072],[12,0.268],[15,0.196]]],"text":[3.303,[[0,0.091]]],"single-cell":[3.303,[[0,0.091]]],"further":[2.897,[[0,0.08],[7,0.103]]],"demonstrate":[2.897,[[0,0.08],[4,0.114]]],"organiz":[2.897,[[0,0.08],[7,0.175]]],"making":[3.303,[[0,0.091]]],"intrinsic":[2.897,[[0,0.08],[4,0.067]]],"provid":[3.303,[[0,0.091]]],"unified":[2.897,[[0,0.08],[4,0.141]]],"approach":[2.386,[[0,0.066],[2,0.061],[5,0.066],[6,0.07]]],"discovery":[3.303,[[0,0.091]]],"position":[3.303,[[1,0.206]]],"curse":[3.303,[[1,0.155]]],"llms":[3.303,[[1,0.155]]],"struggle":[3.303,[[1,0.074]]],"locate":[3.303,[[1,0.074]]],"last":[3.303,[[1,0.155]]],"few":[3.303,[[1,0.155]]],"item":[3.303,[[1,0.206]]],"list":[3.303,[[1,0.192]]],"find":[2.897,[[1,0.109],[2,0.074]]],"needle":[3.303,[[1,0.125]]],"haystack":[3.303,[[1,0.125]]],"fail":[3.303,[[1,0.125]]],"retrieve":[3.303,[[1,0.155]]],"short":[3.303,[[1,0.125]]],"name":[3.303,[[1,0.074]]],"characterize":[3.303,[[1,0.125]]],"open-":[3.303,[[1,0.074]]],"closed-source":[3.303,[[1,0.125]]],"show":[2.609,[[1,0.058],[3,0.119],[4,0.06]]],"lora":[3.303,[[1,0.125]]],"fine-tun":[3.303,[[1,0.125]]],"posbench":[3.303,[[1,0.125]]],"help":[3.303,[[1,0.074]]],"doesn":[3.303,[[1,0.074]]],"saturate":[3.303,[[1,0.074]]],"modern":[2.897,[[1,0.065],[16,0.208]]],"large":[2.897,[[1,0.109],[4,0.067]]],"language":[3.303,[[1,0.074]]],"locat":[3.303,[[1,0.074]]],"relevant":[2.897,[[1,0.065],[10,0.108]]],"fact":[3.303,[[1,0.074]]],"buried":[3.303,[[1,0.074]]],"among":[2.897,[[1,0.065],[6,0.085]]],"hundred":[3.303,[[1,0.074]]],"thousand":[3.303,[[1,0.074]]],"irrelevant":[3.303,[[1,0.074]]],"token":[3.303,[[1,0.074]]],"near-saturated":[3.303,[[1,0.074]]],"accuracy":[2.609,[[1,0.058],[2,0.067],[9,0.177]]],"call":[3.303,[[1,0.074]]],"failure":[3.303,[[1,0.125]]],"instance":[3.303,[[1,0.074]]],"even":[2.609,[[1,0.058],[3,0.071],[6,0.077]]],"two-line":[3.303,[[1,0.074]]],"code":[2.204,[[1,0.083],[13,0.105],[14,0.102],[17,0.126],[18,0.125]]],"snippet":[3.303,[[1,0.074]]],"claude":[3.303,[[1,0.074]]],"opus":[3.303,[[1,0.074]]],"misidentify":[3.303,[[1,0.074]]],"second-to-last":[3.303,[[1,0.074]]],"line":[2.897,[[1,0.065],[15,0.129]]],"time":[2.204,[[1,0.049],[4,0.051],[7,0.079],[11,0.151],[14,0.102]]],"evaluated":[3.303,[[1,0.074]]],"complementary":[3.303,[[1,0.074]]],"query":[3.303,[[1,0.074]]],"sequence":[3.303,[[1,0.074]]],"letter":[3.303,[[1,0.074]]],"word":[2.897,[[1,0.065],[2,0.126]]],"correspond":[3.303,[[1,0.074]]],"return":[3.303,[[1,0.074]]],"specified":[3.303,[[1,0.074]]],"forward":[3.303,[[1,0.155]]],"backward":[3.303,[[1,0.155]]],"offset":[3.303,[[1,0.074]]],"anchor":[3.303,[[1,0.074]]],"either":[3.303,[[1,0.074]]],"endpoint":[3.303,[[1,0.074]]],"start":[3.303,[[1,0.074]]],"end":[3.303,[[1,0.074]]],"another":[3.303,[[1,0.074]]],"open-source":[3.303,[[1,0.074]]],"frontier":[3.303,[[1,0.074]]],"retrieval":[2.897,[[1,0.154],[10,0.183]]],"substantially":[3.303,[[1,0.074]]],"lags":[3.303,[[1,0.074]]],"test":[2.897,[[1,0.065],[4,0.067]]],"whether":[3.303,[[1,0.074]]],"capability":[3.303,[[1,0.125]]],"rescued":[3.303,[[1,0.074]]],"post-train":[3.303,[[1,0.074]]],"constructed":[3.303,[[1,0.074]]],"position-focused":[3.303,[[1,0.074]]],"dataset":[3.303,[[1,0.074]]],"improv":[2.609,[[1,0.058],[2,0.067],[12,0.19]]],"generaliz":[2.609,[[1,0.058],[2,0.114],[12,0.112]]],"held-out":[3.303,[[1,0.074]]],"code-understand":[3.303,[[1,0.074]]],"benchmark":[3.303,[[1,0.074]]],"pyindex":[3.303,[[1,0.074]]],"absolute":[3.303,[[1,0.074]]],"performance":[2.609,[[1,0.058],[2,0.067],[12,0.19]]],"remain":[3.303,[[1,0.074]]],"far":[3.303,[[1,0.074]]],"saturated":[3.303,[[1,0.074]]],"llm":[3.303,[[1,0.074]]],"coding":[3.303,[[1,0.074]]],"agent":[3.303,[[1,0.074]]],"increasingly":[3.303,[[1,0.074]]],"operate":[3.303,[[1,0.074]]],"codebas":[3.303,[[1,0.074]]],"precise":[3.303,[[1,0.074]]],"index":[2.897,[[1,0.065],[10,0.183]]],"essential":[3.303,[[1,0.074]]],"understand":[2.897,[[1,0.065],[5,0.08]]],"edit":[3.303,[[1,0.074]]],"position-based":[3.303,[[1,0.074]]],"emerg":[3.303,[[1,0.074]]],"key":[3.303,[[1,0.074]]],"future":[2.897,[[1,0.065],[9,0.196]]],"pretrain":[3.303,[[1,0.074]]],"objectiv":[3.303,[[1,0.074]]],"design":[3.303,[[1,0.074]]],"align":[3.303,[[2,0.221]]],"adversarial":[3.303,[[2,0.221]]],"generalizable":[3.303,[[2,0.085]]],"speech":[3.303,[[2,0.203]]],"neuroprosthesi":[3.303,[[2,0.085]]],"domain-alignment":[3.303,[[2,0.085]]],"intracortical":[3.303,[[2,0.178]]],"bcis":[3.303,[[2,0.144]]],"unseen":[3.303,[[2,0.144]]],"session":[3.303,[[2,0.203]]],"lower":[3.303,[[2,0.085]]],"phoneme":[3.303,[[2,0.178]]],"error":[3.303,[[2,0.178]]],"rate":[3.303,[[2,0.178]]],"relative":[3.303,[[2,0.144]]],"baselin":[3.303,[[2,0.144]]],"brain-computer":[3.303,[[2,0.085]]],"interfac":[3.303,[[2,0.085]]],"decode":[3.303,[[2,0.085]]],"neural":[1.916,[[2,0.103],[4,0.075],[8,0.247],[9,0.13],[11,0.162],[12,0.173],[15,0.085]]],"activity":[2.204,[[2,0.057],[4,0.051],[5,0.061],[7,0.079],[11,0.089]]],"trained":[3.303,[[2,0.085]]],"pooled":[3.303,[[2,0.085]]],"record":[2.897,[[2,0.074],[3,0.133]]],"realistic":[3.303,[[2,0.085]]],"deployment":[3.303,[[2,0.085]]],"however":[2.897,[[2,0.074],[5,0.08]]],"must":[3.303,[[2,0.085]]],"generalize":[3.303,[[2,0.085]]],"without":[3.303,[[2,0.085]]],"labeled":[3.303,[[2,0.085]]],"degrad":[3.303,[[2,0.085]]],"due":[2.897,[[2,0.074],[15,0.129]]],"cross-session":[3.303,[[2,0.144]]],"nonstationarity":[3.303,[[2,0.085]]],"electrode":[3.303,[[2,0.085]]],"shift":[3.303,[[2,0.144]]],"turnover":[3.303,[[2,0.085]]],"chang":[3.303,[[2,0.085]]],"user":[2.897,[[2,0.074],[12,0.125]]],"strategy":[2.897,[[2,0.074],[18,0.164]]],"paper":[3.303,[[2,0.085]]],"propose":[2.609,[[2,0.067],[4,0.06],[5,0.072]]],"session-invariant":[3.303,[[2,0.085]]],"based":[2.897,[[2,0.074],[6,0.085]]],"multi-domain":[3.303,[[2,0.085]]],"network":[1.916,[[2,0.049],[7,0.068],[8,0.247],[9,0.13],[13,0.091],[14,0.089],[15,0.085]]],"semi-supervised":[3.303,[[2,0.085]]],"adapt":[3.303,[[2,0.085]]],"feature":[2.897,[[2,0.074],[3,0.078]]],"encoder":[3.303,[[2,0.144]]],"classifier":[3.303,[[2,0.144]]],"domain":[3.303,[[2,0.144]]],"operat":[3.303,[[2,0.085]]],"latent":[2.897,[[2,0.074],[6,0.144]]],"encouraged":[3.303,[[2,0.085]]],"preserve":[3.303,[[2,0.085]]],"task-relevant":[3.303,[[2,0.085]]],"inform":[2.386,[[2,0.061],[3,0.065],[7,0.144],[13,0.114]]],"suppress":[3.303,[[2,0.085]]],"session-specific":[3.303,[[2,0.085]]],"cues":[3.303,[[2,0.085]]],"evaluate":[3.303,[[2,0.085]]],"decod":[3.303,[[2,0.144]]],"consistently":[3.303,[[2,0.085]]],"better":[2.609,[[2,0.067],[5,0.123],[7,0.158]]],"previously":[3.303,[[2,0.085]]],"result":[2.386,[[2,0.061],[3,0.065],[4,0.055],[7,0.085]]],"indicate":[3.303,[[2,0.085]]],"alignment":[3.303,[[2,0.085]]],"effective":[3.303,[[2,0.085]]],"mitigat":[3.303,[[2,0.085]]],"session-level":[3.303,[[2,0.085]]],"distribution":[3.303,[[2,0.085]]],"robust":[2.897,[[2,0.074],[15,0.129]]],"longitudinal":[3.303,[[2,0.085]]],"bci":[3.303,[[2,0.085]]],"brain":[2.204,[[3,0.101],[4,0.122],[6,0.065],[7,0.079],[8,0.284]]],"maps":[3.303,[[3,0.089]]],"progressive":[3.303,[[3,0.089]]],"animal-feature":[2.897,[[3,0.078],[7,0.175]]],"heatmap":[3.303,[[3,0.151]]],"pit":[3.303,[[3,0.187]]],"monkey":[2.897,[[3,0.133],[7,0.217]]],"ventral-stream":[3.303,[[3,0.089]]],"neuron":[2.897,[[3,0.231],[7,0.103]]],"preferentially":[3.303,[[3,0.151]]],"encode":[2.897,[[3,0.133],[7,0.103]]],"local":[3.303,[[3,0.187]]],"animal":[2.609,[[3,0.148],[5,0.072],[7,0.222]]],"featur":[2.05,[[3,0.132],[5,0.057],[6,0.102],[7,0.073],[13,0.098],[14,0.095]]],"generic":[3.303,[[3,0.151]]],"object":[3.303,[[3,0.249]]],"trend":[3.303,[[3,0.151]]],"strengthen":[3.303,[[3,0.151]]],"visual":[2.897,[[3,0.204],[7,0.103]]],"fundamental":[3.303,[[3,0.089]]],"principl":[3.303,[[3,0.089]]],"primate":[3.303,[[3,0.089]]],"become":[3.303,[[3,0.089]]],"intuitive":[2.897,[[3,0.078],[11,0.117]]],"study":[2.897,[[3,0.133],[5,0.169]]],"many":[2.609,[[3,0.071],[4,0.06],[7,0.093]]],"part":[2.897,[[3,0.078],[4,0.114]]],"cortex":[3.303,[[3,0.187]]],"possible":[3.303,[[3,0.089]]],"expressive":[3.303,[[3,0.089]]],"organizational":[3.303,[[3,0.089]]],"principle":[2.897,[[3,0.078],[7,0.175]]],"present":[2.897,[[3,0.078],[8,0.221]]],"textur":[3.303,[[3,0.089]]],"plac":[3.303,[[3,0.089]]],"multielectrode":[3.303,[[3,0.089]]],"array":[3.303,[[3,0.089]]],"early":[3.303,[[3,0.151]]],"middle":[3.303,[[3,0.089]]],"later":[2.897,[[3,0.078],[11,0.117]]],"posterior":[3.303,[[3,0.089]]],"inferotemporal":[3.303,[[3,0.089]]],"area":[3.303,[[3,0.089]]],"estimat":[3.303,[[3,0.089]]],"oper":[3.303,[[3,0.089]]],"natural":[2.897,[[3,0.078],[5,0.08]]],"scene":[3.303,[[3,0.151]]],"found":[2.609,[[3,0.071],[4,0.06],[12,0.236]]],"popul":[2.897,[[3,0.078],[6,0.085]]],"foveal":[3.303,[[3,0.089]]],"receptive":[3.303,[[3,0.089]]],"field":[3.303,[[3,0.089]]],"responded":[3.303,[[3,0.089]]],"full":[3.303,[[3,0.089]]],"focused":[3.303,[[3,0.089]]],"salient":[3.303,[[3,0.089]]],"subregion":[3.303,[[3,0.089]]],"outlin":[3.303,[[3,0.089]]],"notably":[3.303,[[3,0.089]]],"encoded":[3.303,[[3,0.089]]],"general":[3.303,[[3,0.089]]],"along":[3.303,[[3,0.089]]],"ventral":[2.897,[[3,0.078],[7,0.217]]],"stream":[2.609,[[3,0.071],[7,0.196],[12,0.112]]],"partially":[3.303,[[3,0.089]]],"organized":[3.303,[[3,0.089]]],"primary":[3.303,[[3,0.089]]],"arousal":[3.303,[[4,0.2]]],"universal":[3.303,[[4,0.076]]],"spatiotemporal":[3.303,[[4,0.183]]],"dynamic":[2.609,[[4,0.127],[5,0.123],[17,0.253]]],"scalar":[3.303,[[4,0.13]]],"measure":[3.303,[[4,0.076]]],"pupil":[3.303,[[4,0.161]]],"diameter":[3.303,[[4,0.161]]],"suffic":[3.303,[[4,0.076]]],"reconstruct":[3.303,[[4,0.13]]],"multimodal":[2.897,[[4,0.141],[12,0.262]]],"brain-wide":[3.303,[[4,0.161]]],"physiology":[3.303,[[4,0.183]]],"refram":[3.303,[[4,0.076]]],"spontaneou":[2.609,[[4,0.102],[5,0.072],[6,0.13]]],"fluctu":[3.303,[[4,0.13]]],"reflection":[3.303,[[4,0.13]]],"arousal-related":[3.303,[[4,0.161]]],"proces":[3.303,[[4,0.161]]],"awake":[3.303,[[4,0.13]]],"organism":[3.303,[[4,0.076]]],"widespread":[3.303,[[4,0.076]]],"spatiotemporally":[3.303,[[4,0.076]]],"diverse":[3.303,[[4,0.13]]],"correl":[3.303,[[4,0.076]]],"behavioral":[2.609,[[4,0.127],[5,0.123],[6,0.161]]],"physiological":[3.303,[[4,0.076]]],"measurement":[3.303,[[4,0.2]]],"covari":[3.303,[[4,0.076]]],"reflect":[2.897,[[4,0.114],[5,0.08]]],"regulat":[3.303,[[4,0.076]]],"timescale":[3.303,[[4,0.076]]],"second":[3.303,[[4,0.076]]],"taken":[3.303,[[4,0.076]]],"together":[3.303,[[4,0.076]]],"theoretical":[3.303,[[4,0.076]]],"dynamical":[3.303,[[4,0.076]]],"system":[2.05,[[4,0.047],[10,0.077],[11,0.14],[13,0.205],[14,0.161],[17,0.247]]],"interpret":[3.303,[[4,0.13]]],"lead":[3.303,[[4,0.076]]],"surpris":[3.303,[[4,0.076]]],"prediction":[2.897,[[4,0.067],[18,0.164]]],"should":[3.303,[[4,0.076]]],"suffice":[3.303,[[4,0.076]]],"continuou":[3.303,[[4,0.076]]],"evolution":[3.303,[[4,0.076]]],"large-scale":[3.303,[[4,0.076]]],"hypothesi":[3.303,[[4,0.13]]],"perform":[3.303,[[4,0.076]]],"cortex-wide":[3.303,[[4,0.076]]],"optical":[2.897,[[4,0.067],[15,0.129]]],"imag":[2.897,[[4,0.067],[9,0.302]]],"monitor":[2.609,[[4,0.06],[13,0.21],[14,0.121]]],"mice":[3.303,[[4,0.076]]],"neuronal":[2.897,[[4,0.067],[7,0.103]]],"calcium":[3.303,[[4,0.076]]],"metabolism":[3.303,[[4,0.076]]],"blood-oxygen":[3.303,[[4,0.076]]],"accurately":[3.303,[[4,0.076]]],"parsimoniously":[3.303,[[4,0.076]]],"modeled":[3.303,[[4,0.076]]],"low-dimensional":[3.303,[[4,0.076]]],"state-space":[3.303,[[4,0.076]]],"reconstructed":[3.303,[[4,0.076]]],"history":[3.303,[[4,0.076]]],"extend":[3.303,[[4,0.076]]],"electrophysiological":[3.303,[[4,0.076]]],"allen":[3.303,[[4,0.076]]],"observatory":[3.303,[[4,0.076]]],"ability":[3.303,[[4,0.076]]],"integrate":[3.303,[[4,0.076]]],"experimental":[3.303,[[4,0.076]]],"generative":[3.303,[[4,0.076]]],"mapp":[3.303,[[4,0.076]]],"manifold":[3.303,[[4,0.076]]],"support":[2.386,[[4,0.055],[7,0.085],[10,0.089],[12,0.103]]],"spatially":[3.303,[[4,0.076]]],"structured":[3.303,[[4,0.076]]],"widely":[3.303,[[4,0.076]]],"interpreted":[3.303,[[4,0.076]]],"regionally-specific":[3.303,[[4,0.076]]],"communic":[3.303,[[4,0.076]]],"enriched":[3.303,[[4,0.076]]],"view":[3.303,[[4,0.076]]],"broad":[3.303,[[4,0.076]]],"implic":[3.303,[[4,0.076]]],"observ":[2.897,[[4,0.067],[6,0.085]]],"body":[3.303,[[4,0.076]]],"behavior":[2.609,[[4,0.06],[5,0.213],[6,0.183]]],"measured":[3.303,[[4,0.076]]],"modality":[3.303,[[4,0.076]]],"context":[2.897,[[4,0.067],[6,0.085]]],"scal":[2.897,[[4,0.067],[6,0.144]]],"characteriz":[3.303,[[5,0.155]]],"bipolar":[2.897,[[5,0.169],[6,0.179]]],"disorder":[2.897,[[5,0.169],[6,0.179]]],"computational":[3.303,[[5,0.219]]],"ethology":[3.303,[[5,0.192]]],"applied":[2.897,[[5,0.08],[9,0.116]]],"free-mov":[2.897,[[5,0.08],[6,0.203]]],"open-field":[3.303,[[5,0.155]]],"human":[2.897,[[5,0.192],[6,0.222]]],"identify":[2.609,[[5,0.072],[6,0.077],[7,0.093]]],"fine-grained":[3.303,[[5,0.155]]],"motif":[2.897,[[5,0.136],[6,0.144]]],"distinguish":[2.897,[[5,0.08],[6,0.085]]],"control":[2.204,[[5,0.061],[6,0.11],[13,0.178],[14,0.173],[17,0.265]]],"traditional":[3.303,[[5,0.155]]],"ethological":[3.303,[[5,0.155]]],"psychiatric":[3.303,[[5,0.155]]],"measur":[3.303,[[5,0.192]]],"technology":[1.916,[[5,0.053],[13,0.091],[14,0.089],[15,0.085],[16,0.138],[17,0.11],[18,0.109]]],"quantific":[2.897,[[5,0.136],[6,0.085]]],"revolutionized":[3.303,[[5,0.092]]],"social":[2.897,[[5,0.08],[7,0.103]]],"cognitive":[3.303,[[5,0.155]]],"pharmacological":[3.303,[[5,0.092]]],"neuroscienc":[3.303,[[5,0.092]]],"comparable":[3.303,[[5,0.092]]],"especially":[3.303,[[5,0.092]]],"psychiatry":[3.303,[[5,0.092]]],"lack":[3.303,[[5,0.092]]],"utilized":[3.303,[[5,0.092]]],"data-driven":[3.303,[[5,0.092]]],"machine":[3.303,[[5,0.092]]],"analyze":[3.303,[[5,0.092]]],"people":[3.303,[[5,0.092]]],"euthymic":[2.897,[[5,0.08],[6,0.144]]],"non-bd":[3.303,[[5,0.092]]],"participant":[2.897,[[5,0.136],[6,0.085]]],"paradigm":[3.303,[[5,0.092]]],"identified":[2.609,[[5,0.072],[6,0.13],[7,0.093]]],"distinct":[3.303,[[5,0.092]]],"sets":[3.303,[[5,0.092]]],"action":[2.897,[[5,0.136],[7,0.103]]],"capture":[3.303,[[5,0.092]]],"physical":[3.303,[[5,0.092]]],"group":[3.303,[[5,0.092]]],"novel":[3.303,[[5,0.092]]],"quantify":[2.897,[[5,0.08],[6,0.085]]],"variability":[3.303,[[5,0.092]]],"stereotypy":[3.303,[[5,0.092]]],"pattern":[2.897,[[5,0.08],[6,0.085]]],"function":[3.303,[[5,0.092]]],"predict":[3.303,[[5,0.092]]],"compared":[3.303,[[5,0.092]]],"recognition":[2.609,[[5,0.072],[9,0.104],[11,0.178]]],"research":[2.897,[[5,0.08],[9,0.196]]],"significant":[2.897,[[5,0.08],[7,0.103]]],"advancement":[3.303,[[5,0.092]]],"complex":[3.303,[[5,0.092]]],"condition":[2.897,[[5,0.136],[6,0.085]]],"open":[3.303,[[5,0.092]]],"avenu":[3.303,[[5,0.092]]],"neuropsychiatric":[2.897,[[5,0.08],[6,0.085]]],"classific":[3.303,[[6,0.097]]],"pose-based":[3.303,[[6,0.097]]],"model":[3.303,[[6,0.097]]],"classify":[2.897,[[6,0.085],[7,0.103]]],"healthy":[3.303,[[6,0.165]]],"outperform":[3.303,[[6,0.097]]],"expert":[3.303,[[6,0.165]]],"annot":[3.303,[[6,0.165]]],"clinical":[2.897,[[6,0.179],[9,0.116]]],"window":[3.303,[[6,0.097]]],"probe":[3.303,[[6,0.097]]],"mind":[3.303,[[6,0.097]]],"individual":[3.303,[[6,0.165]]],"distinctive":[3.303,[[6,0.097]]],"mcreynold":[3.303,[[6,0.097]]],"objective":[3.303,[[6,0.097]]],"differentiate":[3.303,[[6,0.097]]],"analyzed":[3.303,[[6,0.097]]],"video":[3.303,[[6,0.097]]],"patient":[3.303,[[6,0.097]]],"freely":[3.303,[[6,0.097]]],"moving":[3.303,[[6,0.097]]],"unexplored":[3.303,[[6,0.097]]],"room":[3.303,[[6,0.097]]],"minut":[3.303,[[6,0.097]]],"young":[3.303,[[6,0.097]]],"utiliz":[3.303,[[6,0.097]]],"key-point":[3.303,[[6,0.097]]],"estim":[2.609,[[6,0.077],[12,0.19],[15,0.116]]],"toolbox":[3.303,[[6,0.097]]],"mathi":[3.303,[[6,0.097]]],"extracted":[3.303,[[6,0.097]]],"pose":[2.897,[[6,0.085],[12,0.211]]],"represented":[3.303,[[6,0.097]]],"variable":[3.303,[[6,0.097]]],"luxem":[3.303,[[6,0.097]]],"repeated":[3.303,[[6,0.097]]],"unique":[3.303,[[6,0.097]]],"aligned":[3.303,[[6,0.097]]],"known":[3.303,[[6,0.097]]],"outperformed":[3.303,[[6,0.097]]],"established":[3.303,[[6,0.097]]],"assessment":[3.303,[[6,0.097]]],"macaque":[3.303,[[7,0.248]]],"artificial":[2.897,[[7,0.103],[18,0.164]]],"animal-mask":[3.303,[[7,0.118]]],"auc":[3.303,[[7,0.2]]],"valu":[3.303,[[7,0.2]]],"rise":[3.303,[[7,0.118]]],"forag":[3.303,[[7,0.118]]],"spend":[3.303,[[7,0.118]]],"fraction":[3.303,[[7,0.118]]],"conspecific":[3.303,[[7,0.118]]],"avoid":[3.303,[[7,0.118]]],"threat":[3.303,[[7,0.118]]],"suggest":[3.303,[[7,0.118]]],"world":[3.303,[[7,0.118]]],"might":[3.303,[[7,0.118]]],"focu":[3.303,[[7,0.118]]],"animal-based":[3.303,[[7,0.118]]],"discovered":[3.303,[[7,0.118]]],"mask":[3.303,[[7,0.118]]],"region":[3.303,[[7,0.118]]],"strong":[3.303,[[7,0.118]]],"did":[3.303,[[7,0.118]]],"median":[3.303,[[7,0.118]]],"collectively":[3.303,[[7,0.118]]],"provide":[3.303,[[7,0.118]]],"evidence":[3.303,[[7,0.118]]],"diagnostic":[3.303,[[7,0.118]]],"you":[3.303,[[8,0.252]]],"see":[3.303,[[8,0.426]]],"brain-score":[3.303,[[8,0.252]]],"beyond":[3.303,[[8,0.252]]],"confront":[3.303,[[8,0.252]]],"brain-like":[3.303,[[8,0.252]]],"anns":[3.303,[[8,0.252]]],"neuroscientific":[3.303,[[8,0.252]]],"workshop":[3.303,[[8,0.252]]],"shape":[3.303,[[9,0.132]]],"ultrasound":[3.303,[[9,0.369]]],"deep":[3.303,[[9,0.132]]],"pre-trained":[3.303,[[9,0.224]]],"recogniz":[3.303,[[9,0.132]]],"geometric":[3.303,[[9,0.224]]],"shap":[3.303,[[9,0.224]]],"d-printed":[3.303,[[9,0.224]]],"sampl":[2.897,[[9,0.196],[15,0.129]]],"released":[3.303,[[9,0.132]]],"database":[3.303,[[9,0.224]]],"common":[3.303,[[9,0.132]]],"techniqu":[3.303,[[9,0.132]]],"sett":[3.303,[[9,0.132]]],"functionality":[2.897,[[9,0.116],[14,0.134]]],"limited":[3.303,[[9,0.132]]],"dependency":[3.303,[[9,0.132]]],"operator":[3.303,[[9,0.132]]],"skill":[3.303,[[9,0.132]]],"recognize":[3.303,[[9,0.132]]],"achieved":[3.303,[[9,0.132]]],"task":[2.386,[[9,0.095],[12,0.215],[15,0.106],[16,0.29]]],"created":[3.303,[[9,0.132]]],"available":[3.303,[[9,0.132]]],"filtered":[3.303,[[10,0.123]]],"vector":[3.303,[[10,0.294]]],"search":[3.303,[[10,0.322]]],"billion":[3.303,[[10,0.209]]],"scale":[3.303,[[10,0.123]]],"worked":[3.303,[[10,0.209]]],"google":[3.303,[[10,0.209]]],"engine":[2.897,[[10,0.183],[18,0.164]]],"recovered":[3.303,[[10,0.123]]],"recall":[3.303,[[10,0.259]]],"filter":[3.303,[[10,0.123]]],"make":[3.303,[[10,0.123]]],"candidat":[3.303,[[10,0.123]]],"sparse":[3.303,[[10,0.209]]],"b-embedd":[3.303,[[10,0.209]]],"serv":[3.303,[[10,0.209]]],"approximate":[3.303,[[10,0.123]]],"nearest":[3.303,[[10,0.123]]],"neighbor":[3.303,[[10,0.123]]],"ann":[3.303,[[10,0.123]]],"dense":[3.303,[[10,0.123]]],"latency-critical":[3.303,[[10,0.123]]],"high-qp":[3.303,[[10,0.123]]],"production":[3.303,[[10,0.123]]],"behind":[3.303,[[10,0.123]]],"gemini":[3.303,[[10,0.123]]],"waymo":[3.303,[[10,0.123]]],"developed":[2.609,[[10,0.097],[11,0.105],[12,0.19]]],"solution":[3.303,[[10,0.123]]],"filter-induced":[3.303,[[10,0.123]]],"collapse":[3.303,[[10,0.123]]],"high-selectivity":[3.303,[[10,0.123]]],"regim":[3.303,[[10,0.123]]],"meta":[2.897,[[11,0.305],[12,0.211]]],"band":[3.303,[[11,0.28]]],"real-time":[3.303,[[11,0.133]]],"multi-modality":[3.303,[[11,0.133]]],"built":[3.303,[[11,0.133]]],"improved":[3.303,[[11,0.133]]],"robustnes":[3.303,[[11,0.226]]],"handwrit":[3.303,[[11,0.226]]],"productionized":[3.303,[[11,0.226]]],"live":[3.303,[[11,0.226]]],"demoed":[3.303,[[11,0.226]]],"connect":[3.303,[[11,0.226]]],"named":[3.303,[[11,0.133]]],"best":[3.303,[[11,0.226]]],"invention":[3.303,[[11,0.226]]],"improve":[3.303,[[11,0.133]]],"captur":[3.303,[[11,0.133]]],"electrical":[3.303,[[11,0.133]]],"subtle":[3.303,[[11,0.133]]],"forearm":[3.303,[[11,0.133]]],"muscle":[3.303,[[11,0.133]]],"movement":[3.303,[[11,0.133]]],"gesture-based":[3.303,[[11,0.133]]],"work":[2.609,[[11,0.105],[12,0.112],[15,0.116]]],"recognized":[3.303,[[11,0.133]]],"emg":[3.303,[[12,0.298]]],"wristband":[3.303,[[12,0.298]]],"downstream":[3.303,[[12,0.241]]],"includ":[2.897,[[12,0.125],[18,0.164]]],"explored":[3.303,[[12,0.142]]],"joint":[3.303,[[12,0.142]]],"surface":[3.303,[[12,0.142]]],"electromyography":[3.303,[[12,0.142]]],"signal":[3.303,[[12,0.142]]],"synchronized":[3.303,[[12,0.142]]],"embedded":[2.897,[[13,0.29],[14,0.227]]],"closed-loop":[3.303,[[13,0.157]]],"incubator":[3.303,[[13,0.375]]],"remote":[2.897,[[13,0.138],[14,0.134]]],"arduino":[2.897,[[13,0.234],[14,0.134]]],"photon":[2.897,[[13,0.234],[14,0.227]]],"adafruit":[3.303,[[13,0.266]]],"plastic":[3.303,[[13,0.157]]],"bottl":[3.303,[[13,0.157]]],"recycle":[3.303,[[13,0.157]]],"reuse":[3.303,[[13,0.157]]],"hardware":[2.897,[[13,0.138],[14,0.134]]],"wire":[2.897,[[13,0.138],[14,0.134]]],"resistor":[2.897,[[13,0.138],[14,0.134]]],"fan":[3.303,[[13,0.157]]],"sensor":[2.897,[[13,0.138],[14,0.134]]],"actuator":[2.897,[[13,0.138],[14,0.134]]],"feedback":[3.303,[[13,0.157]]],"graphical":[3.303,[[13,0.157]]],"slider":[3.303,[[13,0.157]]],"infrastructure":[2.897,[[13,0.138],[14,0.134]]],"remotely":[2.897,[[13,0.138],[14,0.134]]],"http":[2.386,[[13,0.114],[14,0.11],[17,0.137],[18,0.135]]],"github":[2.386,[[13,0.114],[14,0.11],[17,0.137],[18,0.135]]],"com":[2.386,[[13,0.114],[14,0.11],[17,0.137],[18,0.135]]],"zhanqizhang":[2.386,[[13,0.114],[14,0.11],[17,0.137],[18,0.135]]],"networked":[3.303,[[14,0.153]]],"garage":[3.303,[[14,0.259]]],"controller":[3.303,[[14,0.153]]],"web":[2.897,[[14,0.134],[16,0.353]]],"javascript":[2.897,[[14,0.134],[16,0.208]]],"html":[2.897,[[14,0.134],[16,0.208]]],"button":[3.303,[[14,0.153]]],"leds":[3.303,[[14,0.153]]],"responsive":[3.303,[[14,0.153]]],"website":[3.303,[[14,0.153]]],"app":[2.897,[[14,0.134],[16,0.208]]],"light":[3.303,[[14,0.259]]],"door":[3.303,[[14,0.259]]],"close":[3.303,[[14,0.153]]],"turn":[3.303,[[14,0.153]]],"off":[3.303,[[14,0.153]]],"automatically":[3.303,[[14,0.153]]],"set":[3.303,[[14,0.153]]],"garagecontroller":[3.303,[[14,0.153]]],"computer":[3.303,[[15,0.147]]],"project":[3.303,[[15,0.249]]],"python":[3.303,[[15,0.249]]],"opencv":[3.303,[[15,0.147]]],"tensorflow":[3.303,[[15,0.147]]],"pytorch":[3.303,[[15,0.147]]],"include":[3.303,[[15,0.147]]],"edge":[3.303,[[15,0.147]]],"detection":[3.303,[[15,0.249]]],"image":[3.303,[[15,0.147]]],"restor":[3.303,[[15,0.147]]],"photometric":[3.303,[[15,0.147]]],"stereo":[3.303,[[15,0.249]]],"camera":[3.303,[[15,0.147]]],"projection":[3.303,[[15,0.147]]],"transform":[3.303,[[15,0.147]]],"fitt":[3.303,[[15,0.147]]],"epipolar":[3.303,[[15,0.147]]],"geometry":[3.303,[[15,0.147]]],"binocular":[3.303,[[15,0.147]]],"flow":[3.303,[[15,0.147]]],"semantic":[3.303,[[15,0.147]]],"gan":[3.303,[[15,0.147]]],"vaes":[3.303,[[15,0.147]]],"currently":[3.303,[[15,0.147]]],"viewed":[3.303,[[15,0.147]]],"publicly":[3.303,[[15,0.147]]],"course":[3.303,[[15,0.147]]],"policy":[3.303,[[15,0.147]]],"object-oriented":[2.897,[[16,0.208],[18,0.164]]],"manager":[3.303,[[16,0.237]]],"react":[3.303,[[16,0.498]]],"css":[3.303,[[16,0.237]]],"interactive":[3.303,[[16,0.237]]],"applic":[3.303,[[16,0.237]]],"management":[3.303,[[16,0.237]]],"manipulator":[3.303,[[17,0.189]]],"kinematic":[3.303,[[17,0.321]]],"matlab":[3.303,[[17,0.398]]],"simulink":[3.303,[[17,0.398]]],"robotic":[3.303,[[17,0.321]]],"development":[3.303,[[17,0.189]]],"rotational":[3.303,[[17,0.189]]],"analysi":[3.303,[[17,0.189]]],"r-robotic":[3.303,[[17,0.189]]],"game-play":[3.303,[[18,0.187]]],"tic-tac-toe":[3.303,[[18,0.317]]],"gomoku":[3.303,[[18,0.317]]],"algorithm":[3.303,[[18,0.317]]],"game":[3.303,[[18,0.317]]],"theory":[3.303,[[18,0.187]]],"implement":[3.303,[[18,0.187]]],"intelligence":[3.303,[[18,0.187]]],"classic":[3.303,[[18,0.187]]],"board":[3.303,[[18,0.187]]],"intelligent":[3.303,[[18,0.187]]],"move":[3.303,[[18,0.187]]],"ai-gomuku":[3.303,[[18,0.187]]]}};
+(function(){
+const D=window.WORK,inp=document.getElementById('ask'),out=document.getElementById('ans');
+function stem(w){for(const s of ['ations','ation','ings','ing','ies','es','s']){if(w.endsWith(s)&&w.length-s.length>=4)return w.slice(0,-s.length)+(s==='ies'?'y':'');}return w;}
+inp.addEventListener('input',()=>{const q=inp.value.trim();if(!q){out.textContent='';return;}
+  const qv={};for(const w of (q.toLowerCase().match(/[a-z][a-z\-]+/g)||[]).map(stem).filter(w=>w.length>2)){const hit=D.post[w]?[w]:Object.keys(D.post).filter(k=>k.startsWith(w)).slice(0,6);for(const k of hit)qv[k]=(qv[k]||0)+D.post[k][0];}
+  let n=0;for(const k in qv)n+=qv[k]*qv[k];n=Math.sqrt(n);
+  const s=D.items.map(()=>0);if(n)for(const k in qv)for(const [i,w] of D.post[k][1])s[i]+=qv[k]/n*w;
+  const top=s.map((v,i)=>[i,v]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  out.innerHTML=top.length?'Closest: '+top.map(([i])=>'<a href="'+D.items[i].url+'">'+D.items[i].label+'</a>').join(' · '):'Nothing close yet. Try clustering, emg, retrieval or llm.';});
+})();
+document.getElementById('more').onclick=function(){document.querySelector('.news').classList.add('all');this.remove();};
+</script>
+<div class="treepick" id="pick"></div>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id);};
+// ================= palms and Joshua trees seen from above, with all kinds of birds =================
+var cv=$('forest'),ctx=cv.getContext('2d'),W,H,t=0,root=document.documentElement;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(a,b){return a+Math.random()*(b-a);}
+function wrap(a){while(a>Math.PI)a-=6.283;while(a<-Math.PI)a+=6.283;return a;}
+
+// quiet colours, one set per theme
+// each kind of tree is three greens (shade, mid, sunlit); jacarandas add a little lilac
+var PALS={light:{kinds:[['#a3c39c','#b7d2ae','#cde0c2'],['#b3bf96','#c6d0a9','#d9e0c0'],['#a5c4b8','#bad5ca','#cfe2d9'],['#9cbd9f','#b0cdb0','#c6dcc3']],blooms:[['#e3d08a','#eddd9f','#f5e9bb'],['#e6b5bf','#efc8d0','#f7dce1']],wood:'#b9a78c',shade:'rgba(50,70,55,.13)',edge:'rgba(47,86,92,.28)'},
+          dark:{kinds:[['#1c3a2f','#23483a','#2b5744'],['#2b3926','#35462d','#405436'],['#1e3a39','#264847','#2f5655'],['#1a3a33','#21483f','#29564b']],blooms:[['#4a4222','#5a502a','#6b6034'],['#4d2f3a','#5e3a47','#704655']],wood:'#3a3329',shade:'rgba(0,0,0,.32)',edge:'rgba(0,0,0,0)'}},P=PALS.light,DARK=false;
+function readVars(){DARK=getComputedStyle(root).getPropertyValue('--flow').trim().indexOf('170')===0;P=DARK?PALS.dark:PALS.light;if(typeof trees!=='undefined')trees.forEach(buildTree);}
+new MutationObserver(readVars).observe(root,{attributes:true,attributeFilter:['data-theme']});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',readVars);
+
+// ---- San Diego time: night means sleep
+var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+function nowH(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+function label(h){var Hh=Math.floor(h)%24,M=Math.round((h-Math.floor(h))*60);if(M===60){M=0;Hh=(Hh+1)%24;}return (Hh%12||12)+':'+String(M).padStart(2,'0')+' '+(Hh<12?'am':'pm');}
+var hour=12,preview=null,cap=$('cap'),slider=$('when'),reset=$('now');
+function isNight(){return hour>=20.4||hour<5.6;}
+function clock(){hour=preview==null?nowH():preview;cap.textContent=(preview==null?'San Diego, ':'Preview, ')+label(hour)+(isNight()?', asleep':'');slider.value=hour;reset.hidden=preview==null;}
+slider.oninput=function(){preview=+slider.value;clock();};reset.onclick=function(){preview=null;clock();};setInterval(clock,30000);
+
+// ---- trees down both margins, seen from above; the middle stays open for reading.
+// A canopy is an uneven outline filled with many small leaf dabs, lit from the upper left, with branches showing in the gaps.
+var BLOOMS=['none','specks','full'],bloomMode='full';
+try{bloomMode=localStorage.getItem('vz-bloom')||bloomMode;}catch(e){}
+var trees=[];
+function seeded(s){return function(){s=(s*16807)%2147483647;return s/2147483647;};}
+function buildTree(tr){var R=seeded(tr.seed),r=tr.r,d=Math.min(devicePixelRatio||1,2),pad=r*.3+8,size=(r+pad)*2;
+  var c=tr.cv||(tr.cv=document.createElement('canvas'));c.width=c.height=Math.ceil(size*d);tr.size=size;
+  var x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);x.translate(size/2,size/2);
+  var p1=R()*6.283,p2=R()*6.283,p3=R()*6.283,a1=.1+R()*.12,pal=(tr.bloom&&bloomMode==='full')?P.blooms[tr.bk]:P.kinds[tr.kind%P.kinds.length];
+  function rad(th){return r*(.78+a1*Math.sin(th*2+p1)+.09*Math.sin(th*3+p2)+.06*Math.sin(th*5+p3));}
+  function outline(k){x.beginPath();for(var i=0;i<=48;i++){var th=i/48*6.283,q=rad(th)*k;x[i?'lineTo':'moveTo'](Math.cos(th)*q,Math.sin(th)*q);}x.closePath();}
+  x.save();x.translate(r*.06,r*.09);x.fillStyle=P.shade;outline(1.04);x.fill();x.restore();
+  x.fillStyle=pal[0];outline(.9);x.fill();
+  x.strokeStyle=P.wood;x.lineCap='round';x.globalAlpha=.75;var nb=5+(R()*3|0),b0=R()*6.283;
+  for(var i=0;i<nb;i++){var th=b0+i/nb*6.283+(R()-.5)*.5,L=rad(th)*.74,mx=Math.cos(th+.25)*L*.5,my=Math.sin(th+.25)*L*.5;x.lineWidth=Math.max(1.2,r*.035);x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(mx,my,Math.cos(th)*L,Math.sin(th)*L);x.stroke();
+    var f=th+(R()<.5?.7:-.7);x.lineWidth=Math.max(1,r*.02);x.beginPath();x.moveTo(mx,my);x.lineTo(mx+Math.cos(f)*L*.4,my+Math.sin(f)*L*.4);x.stroke();}
+  x.globalAlpha=1;
+  var n=Math.round(40+r*.75),dabs=[];
+  for(i=0;i<n;i++){var t2=R()*6.283,q=Math.pow(R(),.6)*rad(t2)*.98,dx=Math.cos(t2)*q,dy=Math.sin(t2)*q,light=(-dx*.6-dy*.8)/r+(R()-.5)*.7;
+    dabs.push({x:dx,y:dy,a:r*(.1+R()*.085),b:.5+R()*.3,rot:R()*3.14,c:light>.22?2:light<-.25?0:1});}
+  dabs.sort(function(m,k){return m.c-k.c;});
+  dabs.forEach(function(q){x.fillStyle=pal[q.c];x.beginPath();x.ellipse(q.x,q.y,q.a,q.a*q.b,q.rot,0,6.283);x.fill();});
+  if(tr.bloom&&bloomMode==='specks'){x.fillStyle=P.blooms[tr.bk][DARK?2:0];x.beginPath();var ns=Math.round(r*1.1);for(i=0;i<ns;i++){var t3=R()*6.283,q3=Math.sqrt(R())*rad(t3)*.92,sx=Math.cos(t3)*q3-r*.06,sy=Math.sin(t3)*q3-r*.08,sr=1+R()*1.2;x.moveTo(sx+sr,sy);x.arc(sx,sy,sr,0,6.283);}x.fill();}}
+(function(){var el=document.getElementById('pick');if(!el)return;
+  function paint(){el.innerHTML='Blossom: '+BLOOMS.map(function(n){return '<button data-s="'+n+'"'+(n===bloomMode?' class="on"':'')+'>'+n+'</button>';}).join('');}
+  el.addEventListener('click',function(e){var n=e.target.getAttribute&&e.target.getAttribute('data-s');if(!n)return;bloomMode=n;try{localStorage.setItem('vz-bloom',n);}catch(x){}trees.forEach(buildTree);paint();if(reduce)frame();});paint();})();
+function makeTrees(){trees=[];var R=seeded(11),lane=(W-760)/2,wide=lane>120,id=0;
+  function tree(x,y,r){var t0={x:x,y:y,r:r,seed:1000+(id++)*7919,kind:(R()*4)|0,bloom:R()<.26,bk:id%2};trees.push(t0);}
+  if(wide){var n=Math.ceil(H/190)+1,maxR=Math.min(112,lane*.5);
+    for(var side=0;side<2;side++)for(var i=0;i<n;i++){var r=maxR*(.6+R()*.4),inset=R()*Math.max(0,lane-r*1.9),x=side?W-r*.55-inset:r*.55+inset;tree(x,(i+.2+R()*.6)/n*H*1.06-20,r);}
+    if(lane>330)for(side=0;side<2;side++)for(i=0;i<3;i++){r=34+R()*26;tree(side?W-lane+70+R()*50:lane-70-R()*50,(i+.5+R()*.4)/3*H,r);}
+  }else{tree(-10,H*.12,84);tree(W+10,H*.3,76);tree(-20,H*.78,92);tree(W+16,H*.9,84);}
+  trees.sort(function(a,b){return b.r-a.r;});
+  trees.forEach(function(tr){tr.spots=[[0,0],[tr.r*.32,tr.r*.1],[-tr.r*.25,tr.r*.28],[tr.r*.05,-tr.r*.34],[-tr.r*.3,-tr.r*.15]];buildTree(tr);});}
+function drawTrees(){trees.forEach(function(tr){ctx.drawImage(tr.cv,tr.x-tr.size/2,tr.y-tr.size/2,tr.size,tr.size);});}
+
+// ---- birds from above, in the pond style: an oval, a round head, a small beak. Muted so they sit quietly.
+var KIND={
+  gray: {s:1.3, body:'#a6abb0',wing:'#8d9399',head:'#b3b4a8',beak:'#8f9499',cheek:'#e8935c',crest:'#9aa0a5',bar:'#eeece6',tail:22,span:18,flap:15},
+  pearl:{s:1.3, body:'#f7f4ec',wing:'#e3dfd3',head:'#f0e2a4',beak:'#cfc5b4',cheek:'#e8935c',crest:'#f0e2a4',pearl:'#c9c5ba',outline:true,tail:22,span:18,flap:15},
+  keet: {s:1.05,body:'#8fbd84',wing:'#6f9c6b',head:'#ecd98a',beak:'#cfa25a',tail:18,span:16,flap:18}};
+var birds=[],mouse={x:-9999,y:-9999};
+function spot(tr){var s=tr.spots[(Math.random()*tr.spots.length)|0];return {x:tr.x+s[0]+rnd(-5,5),y:tr.y+s[1]+rnd(-5,5),tr:tr};}
+function visibleTrees(){var v=trees.filter(function(tr){return tr.r>50&&tr.x>10&&tr.x<W-10&&tr.y>40&&tr.y<H-40;});return v.length?v:trees;}
+function makeBirds(){birds=[];var kinds=['gray','pearl','keet'],vis=visibleTrees();
+  kinds.forEach(function(k,i){var sp=spot(vis[i%vis.length]);birds.push({k:k,x:sp.x,y:sp.y,a:rnd(0,6.28),v:0,home:sp,fly:false,wait:rnd(6,40),ph:rnd(0,6),tuck:0,alt:0,look:rnd(0,6.28),mate:null,delay:-1,hops:0,lift:0,hop:null});});
+  }
+function go(b,target,fast){b.hop=null;b.hops=0;b.lift=0;b.home=target;b.fly=true;b.fast=fast;b.tuck=0;}
+function pick(b,scared){var vis=visibleTrees(),night=isNight();
+  if(night){var rt=vis.slice().sort(function(p,q){return Math.abs(p.y-H*.38)+Math.abs(p.x-W*.84)*.3-(Math.abs(q.y-H*.38)+Math.abs(q.x-W*.84)*.3);})[0],k=birds.indexOf(b)-(birds.length-1)/2;return {x:rt.x+k*15,y:rt.y+Math.abs(k)*3,tr:rt,night:true};}
+  var side=b.x<W/2,c=vis.filter(function(tr){return tr!==b.home.tr&&((tr.x<W/2)===side)===(Math.random()<(scared?.5:.8));});
+  if(!c.length)c=vis.filter(function(tr){return tr!==b.home.tr;});if(!c.length)c=vis;
+  return spot(c[(Math.random()*c.length)|0]);}
+function step(){t+=1/60;var night=isNight();
+  birds.forEach(function(b){
+    if(b.fly){var dx=b.home.x-b.x,dy=b.home.y-b.y,dist=Math.hypot(dx,dy),want=Math.atan2(dy,dx);
+      var turn=dist<70?.16:.06;b.a+=Math.max(-turn,Math.min(turn,wrap(want-b.a)));
+      var top=(b.fast?2.8:2),goal=Math.min(top,.5+dist*.04);b.v+=(goal-b.v)*.06;
+      b.x+=Math.cos(b.a)*b.v;b.y+=Math.sin(b.a)*b.v;b.alt+=((dist<50?dist/50:1)-b.alt)*.08;
+      if(dist<5){b.fly=false;b.v=0;b.wait=rnd(4,12);b.look=b.home.night?-1.5708:b.a;}
+      return;}
+    b.alt*=.86;
+    if(b.hop){var h=b.hop;h.u=Math.min(1,h.u+1/15);var e=h.u*h.u*(3-2*h.u);b.x=h.x0+(h.x1-h.x0)*e;b.y=h.y0+(h.y1-h.y0)*e;b.lift=Math.sin(h.u*3.1416);
+      if(h.u>=1){b.hop=null;b.lift=0;b.home={x:b.x,y:b.y,tr:b.home.tr};b.wait=b.hops>0?rnd(.2,.5):rnd(4,12);}return;}
+    var sleepy=night&&b.home.night;b.tuck+=((sleepy?1:0)-b.tuck)*.03;
+    if(b.poke){b.poke=false;var sp=pick(b,true);sp.night=night;go(b,sp,true);birds.forEach(function(o){if(o.mate===b&&!o.fly)o.delay=.3;});return;}
+    if(b.delay>=0){b.delay-=1/60;if(b.delay<0){var m=b.mate,s2=spot(m.home.tr);s2.night=m.home.night;go(b,s2,m.fast);}return;}
+    b.a+=wrap(b.look-b.a)*.03;
+    if(b.speaking)return;
+    b.wait-=1/60;
+    if(b.wait<0){
+      if(night){if(b.home.night){b.wait=999;}else{var r=pick(b);r.night=true;go(b,r,false);}}
+      else if(b.hops>0||Math.random()<.5){ // a few quick hops across the same treetop
+        if(!(b.hops>0))b.hops=1+(Math.random()*3|0);b.hops--;var tr=b.home.tr,ha=b.a+rnd(-.9,.9),hd=rnd(13,24),hx=b.x+Math.cos(ha)*hd,hy=b.y+Math.sin(ha)*hd;
+        if(Math.hypot(hx-tr.x,hy-tr.y)>tr.r*.5){ha=Math.atan2(tr.y-b.y,tr.x-b.x)+rnd(-.5,.5);hx=b.x+Math.cos(ha)*hd;hy=b.y+Math.sin(ha)*hd;}
+        b.a=b.look=ha;b.hop={x0:b.x,y0:b.y,x1:hx,y1:hy,u:0};}
+      else if(Math.random()<.3){b.look=b.a+rnd(-1.2,1.2);b.wait=rnd(4,10);}
+      else if(birds.filter(function(o){return o.fly;}).length>0){b.wait=rnd(3,8);}   // one flight at a time keeps the page calm
+      else{var nx=pick(b);go(b,nx,false);birds.forEach(function(o){if(o.mate===b&&!o.fly)o.delay=rnd(.4,.8);});}
+    }});}
+function wing(g,span,sw){ // rounded leading edge and tip, then a scalloped row of flight feathers back to the body
+  var pts=[[-3.2-sw,.9],[-5.6-sw*.8,.74],[-7.4-sw*.6,.56],[-8.4-sw*.4,.38],[-8.6,.2]],px=-.5-sw,py=1;
+  ctx.beginPath();ctx.moveTo(4.5,g*3);ctx.bezierCurveTo(6.5-sw*.2,g*span*.42,4-sw*.6,g*span*.92,px,g*span);
+  pts.forEach(function(q){ctx.quadraticCurveTo((px+q[0])/2-1.7,g*span*((py+q[1])/2+.05),q[0],g*span*q[1]);px=q[0];py=q[1];});
+  ctx.lineTo(-6.5,g*3);ctx.closePath();ctx.fill();}
+function drawBird(b){var c=KIND[b.k],s=c.s*(1+b.alt*.1),tk=b.tuck,bob=1;
+  var lift=b.lift||0,flap=Math.sin(t*c.flap+b.ph),open=Math.max(Math.min(1,b.alt*1.4),lift*.45),sp=c.span;s*=1+lift*.1;
+  if(lift>.05&&b.alt<=.03){ctx.save();ctx.translate(b.x+3*lift,b.y+5*lift);ctx.rotate(b.a);ctx.scale(c.s,c.s);ctx.fillStyle=P.shade;ctx.beginPath();ctx.ellipse(-2,0,11,5.5,0,0,6.283);ctx.fill();ctx.restore();}
+  if(b.alt>.03){ctx.save();ctx.translate(b.x+5*b.alt,b.y+8*b.alt);ctx.rotate(b.a);ctx.scale(c.s,c.s);ctx.fillStyle=P.shade;
+    ctx.beginPath();ctx.ellipse(-2,0,12,5.5,0,0,6.283);ctx.fill();wing(1,(7+(sp-7)*open)*(.78+.22*flap),4);wing(-1,(7+(sp-7)*open)*(.78+.22*flap),4);ctx.restore();}
+  ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.a);ctx.scale(s*bob,s*bob);
+  ctx.fillStyle=c.wing;var tl=c.tail;ctx.beginPath();ctx.moveTo(-6,-2.4-open);ctx.quadraticCurveTo(-7-tl*.6,-2-open*2.2,-7-tl,-.9-open*1.6);ctx.quadraticCurveTo(-8.6-tl,0,-7-tl,.9+open*1.6);ctx.quadraticCurveTo(-7-tl*.6,2+open*2.2,-6,2.4+open);ctx.closePath();ctx.fill();
+  if(open>.05){var span=(7+(sp-7)*open)*(.76+.24*flap),sweep=3+3*(1-flap);ctx.fillStyle=c.wing;wing(1,span,sweep);wing(-1,span,sweep);}
+  ctx.fillStyle=c.body;ctx.beginPath();ctx.ellipse(0,0,10,6.2,0,0,6.283);ctx.fill();if(c.outline&&!DARK){ctx.strokeStyle=P.edge;ctx.lineWidth=.5;ctx.stroke();}
+  if(open<=.6){ctx.globalAlpha=1-open/.6;ctx.fillStyle=c.wing;ctx.beginPath();ctx.ellipse(-2.2,3.6,7,2.5,-.12,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(-2.2,-3.6,7,2.5,.12,0,6.283);ctx.fill();
+    if(c.bar){ctx.fillStyle=c.bar;ctx.beginPath();ctx.ellipse(-1.5,5.5,5.2,.8,-.12,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(-1.5,-5.5,5.2,.8,.12,0,6.283);ctx.fill();}
+    if(c.pearl){ctx.fillStyle=c.pearl;ctx.beginPath();[[-6,3.4],[-3.4,4.2],[-.8,3.6],[1.6,4.3],[-4.8,-3.9],[-2.2,-3.4],[.4,-4.2],[-7,-3.2]].forEach(function(d){ctx.moveTo(d[0]+.7,d[1]);ctx.arc(d[0],d[1],.7,0,6.283);});ctx.fill();}
+    ctx.globalAlpha=1;}
+  var hx=8.2-8*tk,hy=2*tk;
+  if(tk<.7){ctx.globalAlpha=1-tk/.7;ctx.fillStyle=c.beak;
+    if(c.bill){ctx.beginPath();ctx.moveTo(hx+3,hy-.8);ctx.lineTo(hx+4+c.bill,hy);ctx.lineTo(hx+3,hy+.8);ctx.fill();}
+    else{ctx.beginPath();ctx.ellipse(hx+4.3,hy,2.1,1.5,0,0,6.283);ctx.fill();}
+    if(c.knot){ctx.beginPath();ctx.arc(hx+3.4,hy-3.6,1.5,0,6.283);ctx.fill();}
+    ctx.globalAlpha=1;}
+  ctx.fillStyle=c.head;ctx.beginPath();ctx.arc(hx,hy,4.3,0,6.283);ctx.fill();
+  if(c.crest){ctx.fillStyle=c.crest;ctx.beginPath();ctx.moveTo(hx+1,hy-1.3);ctx.lineTo(hx-9.5,hy);ctx.lineTo(hx+1,hy+1.3);ctx.closePath();ctx.fill();}
+  if(c.cheek){ctx.fillStyle=c.cheek;ctx.beginPath();ctx.arc(hx+.4,hy-3.1,1.3,0,6.283);ctx.arc(hx+.4,hy+3.1,1.3,0,6.283);ctx.fill();}
+  ctx.restore();}
+function frame(){ctx.clearRect(0,0,W,H);var faint=(W-760)/2<=120;ctx.globalAlpha=faint?.45:1;
+  drawTrees();
+  placeSay();
+  birds.filter(function(b){return !b.fly;}).forEach(drawBird);birds.filter(function(b){return b.fly;}).forEach(drawBird);
+  ctx.globalAlpha=1;}
+
+// ---- each bird is a small language model: an n-gram model that has only ever heard the words on this page.
+// Click one and it says a sentence, one word at a time.
+var LM={keet:{n:1,T:1.25,name:'Parakeet',what:'bigram model, 1 word of context'},
+        pearl:{n:2,T:1,name:'Pearl cockatiel',what:'trigram model, 2 words of context'},
+        gray:{n:3,T:.8,name:'Gray cockatiel',what:'4-gram model, 3 words of context'}},toks=[],tab=[{},{},{},{}],starts=[];
+var HEARD=[
+  'Victoria works on representation learning.',
+  'Victoria works on retrieval and vector search at billion scale.',
+  'Victoria is a Ph.D. candidate at UC San Diego.',
+  'Victoria was at Google and at Meta.',
+  'Victoria is open to research scientist roles in 2026.',
+  'She works on LLMs and how LLMs locate items in a list.',
+  'She works on multimodal foundation models and language models.',
+  'She works on self-supervised learning and generative models.',
+  'She trains models for robust generalization under distribution shift.',
+  'She trains models for few-shot and zero-shot decoding.',
+  'She decodes handwriting for the Meta Neural Band.',
+  'She learns nested embeddings for multiscale clustering.',
+  'She draws and takes pictures of the sky.',
+  'She lives with three birds and the birds are small language models.',
+  'The birds work on seeds.'
+];
+(function train(){toks=HEARD.join(' ').split(' ');
+  for(var i=0;i<toks.length;i++){if(i===0||(ends(toks[i-1])&&/^[A-Z]/.test(toks[i])))starts.push(i);
+    for(var k=1;k<=3&&i-k>=0;k++){if(toks.slice(i-k,i).some(function(w,q,arr){return q<arr.length-1&&ends(w);}))continue;var key=toks.slice(i-k,i).join(' '),m=tab[k][key]||(tab[k][key]={});m[toks[i]]=(m[toks[i]]||0)+1;}}})();
+function ends(w){return /[.!?]$/.test(w)&&!/^(Ph\.D\.|Dr\.|M\.S\.|B\.S\.|e\.g\.|i\.e\.)$/.test(w);}
+function nextTok(ctx,n,T){for(var k=Math.min(n,ctx.length);k>=1;k--){var m=tab[k][ctx.slice(-k).join(' ')];if(!m)continue;
+    var ws=Object.keys(m),sum=0,p=ws.map(function(w){var v=Math.pow(m[w],1/T);sum+=v;return v;}),r=Math.random()*sum;for(var i=0;i<ws.length;i++){r-=p[i];if(r<=0)return ws[i];}return ws[ws.length-1];}
+  return null;}
+var say=document.getElementById('say'),sayText=document.getElementById('sayText'),sayMeta=document.getElementById('sayMeta'),talker=null,sayT=null;
+function hush(fly){clearTimeout(sayT);say.classList.remove('on');if(talker){talker.speaking=false;if(fly)talker.poke=true;talker=null;}}
+function speak(b){hush(false);talker=b;b.speaking=true;var m=LM[b.k],out=[],night=b.tuck>.5;
+  sayMeta.textContent=m.name+' · '+m.what+' · heard '+toks.length+' words about Victoria';sayText.textContent='';say.classList.add('on');
+  if(night){sayText.textContent='zzz';sayT=setTimeout(function(){hush(false);},1800);return;}
+  out.push(toks[starts[(Math.random()*starts.length)|0]]);
+  (function more(){sayText.textContent=out.join(' ');var last=out[out.length-1];
+    if(out.length>=22||(ends(last)&&out.length>4)){sayT=setTimeout(function(){hush(true);},3200);return;}
+    var w=nextTok(out,m.n,m.T);if(!w){sayT=setTimeout(function(){hush(true);},3200);return;}out.push(w);sayT=setTimeout(more,95);})();}
+function birdAt(x,y){var best=null,bd=30;birds.forEach(function(b){var d=Math.hypot(b.x-x,b.y-y);if(d<bd&&!b.fly){bd=d;best=b;}});return best;}
+addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a,button,input,.say'))return;var b=birdAt(e.clientX,e.clientY);if(b)speak(b);else if(talker)hush(false);});
+addEventListener('pointermove',function(e){root.style.cursor=birdAt(e.clientX,e.clientY)?'pointer':'';});
+function placeSay(){if(!talker)return;var x=Math.max(12,Math.min(W-292,talker.x+18)),y=talker.y-18;say.style.left=x+'px';say.style.bottom=Math.max(12,H-y)+'px';}
+
+function resize(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);}
+function settle(){if(!isNight())return;birds.forEach(function(b){var sp=pick(b);sp.night=true;b.home=sp;b.x=sp.x;b.y=sp.y;b.fly=false;b.tuck=1;b.wait=999;b.a=b.look=-1.5708;});}
+addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
+addEventListener('pointerdown',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
+document.addEventListener('pointerleave',function(){mouse.x=mouse.y=-9999;});
+var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){resize();makeTrees();makeBirds();settle();if(reduce)frame();},150);});
+var qh=new URLSearchParams(location.search).get('hour');if(qh!==null)preview=+qh;
+resize();readVars();clock();makeTrees();makeBirds();settle();
+if(reduce)frame();else (function loop(){step();frame();requestAnimationFrame(loop);})();
+})();
+</script>
+</body>
+</html>

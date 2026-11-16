@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art · Victoria Zhang</title>
+<meta name="description" content="Drawings and paintings by Victoria Zhang.">
+<link rel="canonical" href="https://zhanqizhang66.github.io/art/">
+<meta property="og:site_name" content="Victoria Zhang">
+<meta property="og:title" content="Art · Victoria Zhang">
+<meta property="og:description" content="Drawings and paintings by Victoria Zhang.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhanqizhang66.github.io/art/">
+<meta property="og:image" content="https://zhanqizhang66.github.io/assets/img/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ZhangZhanqi">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y06S3E3WTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y06S3E3WTE');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){
+  // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
+  var root=document.documentElement,KEY='vz-theme';
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hourCycle:'h23'});
+  function hourNow(){var p={};fmt.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});return (+p.hour%24)+(+p.minute)/60;}
+  function manual(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  window.vzNight=function(h){return h>=19||h<6;};
+  window.vzApplyTheme=function(h){root.setAttribute('data-theme',manual()||(vzNight(h)?'dark':'light'));};
+  window.toggleTheme=function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{sessionStorage.setItem(KEY,next);}catch(e){}};
+  vzApplyTheme(hourNow());
+})();</script>
+<link rel="stylesheet" href="/assets/site/site.css?v=1df954ac">
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+<header class="top"><a class="brand" href="/">Victoria Zhang</a><nav><a class="" href="/">Home</a><a class="" href="/publications/">Research</a><a class="" href="/blog/">Blog</a><a class="on" href="/art/">Art</a><a href="/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf">Resume</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Light or dark"><i class="fa-solid fa-circle-half-stroke"></i></button></nav></header>
+<main><h1>Sometimes I draw</h1><p class="sub">I would like to paint the way a bird sings, and fill a space in a beautiful way.</p><section><script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script><div class="elfsight-app-0cca0446-147e-49ce-94da-272276274e9c"></div></section></main>
+<footer class="foot">Victoria &nbsp;·&nbsp; 2026</footer>
+<aside class="say" id="say" aria-live="polite"><p id="sayText"></p><span id="sayMeta"></span></aside>
+<div class="clock"><span id="cap">San Diego</span><input id="when" type="range" min="0" max="23.99" step="0.25" aria-label="Preview another time of day"><button id="now" hidden>now</button></div>
+<script src="/assets/site/forest.js?v=1df954ac"></script>
+</body>
+</html>
