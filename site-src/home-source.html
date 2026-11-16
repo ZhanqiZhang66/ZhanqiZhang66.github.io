@@ -297,7 +297,8 @@ function drawBird(b){var c=KIND[b.k],s=c.s*(1+b.alt*.1),tk=b.tuck,bob=1;
   if(c.cheek){ctx.save();ctx.beginPath();ctx.arc(hx,hy,4.3,0,6.283);ctx.clip();ctx.fillStyle=c.cheek;ctx.beginPath();ctx.arc(hx-.6,hy-4.5,2.3,0,6.283);ctx.fill();ctx.beginPath();ctx.arc(hx-.6,hy+4.5,2.3,0,6.283);ctx.fill();ctx.restore();} // cheek patch seen from above: a half circle on each side of the head
   if(c.crest){ctx.fillStyle=c.crest;ctx.beginPath();ctx.moveTo(hx+1.8,hy);ctx.quadraticCurveTo(hx-1.5,hy-1.5,hx-10.5,hy);ctx.quadraticCurveTo(hx-1.5,hy+1.5,hx+1.8,hy);ctx.closePath();ctx.fill();}
   ctx.restore();
-  var na=(1-Math.min(1,b.alt*3))*(1-tk);if(c.label&&na>.02){var ga=ctx.globalAlpha;ctx.globalAlpha=ga*na*.8;ctx.font='600 10.5px Manrope,system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';ctx.lineWidth=3;ctx.strokeStyle=DARK?'rgba(20,23,26,.75)':'rgba(255,253,248,.8)';ctx.fillStyle=DARK?'#e8e6e1':'#3a4340';ctx.strokeText(c.label,b.x,b.y+17*c.s);ctx.fillText(c.label,b.x,b.y+17*c.s);ctx.globalAlpha=ga;}}
+  b.nm=(b.nm||0)+((b.speaking?1:0)-(b.nm||0))*.12;var na=(1-Math.min(1,b.alt*3))*b.nm; // the name shows only while the bird is clicked and speaking
+  if(c.label&&na>.02){var ga=ctx.globalAlpha;ctx.globalAlpha=ga*na*.8;ctx.font='600 10.5px Manrope,system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';ctx.lineWidth=3;ctx.strokeStyle=DARK?'rgba(20,23,26,.75)':'rgba(255,253,248,.8)';ctx.fillStyle=DARK?'#e8e6e1':'#3a4340';ctx.strokeText(c.label,b.x,b.y+17*c.s);ctx.fillText(c.label,b.x,b.y+17*c.s);ctx.globalAlpha=ga;}}
 function frame(){ctx.clearRect(0,0,W,H);var faint=(W-760)/2<=120;ctx.globalAlpha=faint?.45:1;
   drawTrees();
   placeSay();
