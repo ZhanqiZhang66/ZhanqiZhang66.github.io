@@ -14,7 +14,7 @@ OUT = REPO
 SITE = 'https://zhanqizhang66.github.io'
 RESUME = '/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf'
 GTAG = 'G-Y06S3E3WTE'
-DESC = 'Victoria Zhang, ML research scientist. Ph.D. at UC San Diego, previously at Google and Meta. Representation learning and retrieval.'
+DESC = 'Victoria Zhang. Machine Learning Research Scientist · Ph.D., UC San Diego · Ex-Google & Meta. Representation · AI Agents · Reasoning · Adaptation.'
 OGIMG = '/assets/img/og-preview.png'
 
 
@@ -79,6 +79,7 @@ main.post{position:relative;max-width:800px;min-height:100vh;background:var(--co
 .prose iframe{display:block;width:100%;border:1px solid var(--line);border-radius:12px;background:#fff}
 .prose p.pdf{margin:18px 0 10px;font-weight:600;font-size:15px}
 .publication-content a.code{display:block;width:fit-content;margin-top:8px;font-weight:600;font-size:14px}
+.nw{white-space:nowrap}
 .figsrc{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
 .pub-abstract details p{margin:0 0 10px}
 .cover-img{width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:18px;border:1px solid var(--line);margin:0 0 36px;display:block}
@@ -569,7 +570,9 @@ def build():
     cover = HOME_MAIN[HOME_MAIN.index('<div class="cover">'):HOME_MAIN.index('<section id="news">')]
     old = '<p class="tag">Ph.D. candidate at UC San Diego. Previously at Google and Meta.</p>'
     assert old in cover
-    cover = cover.replace(old, '<p class="tag">ML research scientist. Ph.D. at UC San Diego, previously at Google and Meta.</p>')
+    cover = cover.replace(old, '<p class="tag"><span class="nw">Machine Learning Research Scientist</span> · <span class="nw">Ph.D., UC San Diego</span> · <span class="nw">Ex-Google &amp; Meta</span></p>')
+    cover = must(cover, '<p class="tag">Working on <b>representation learning</b> and <b>retrieval</b>.</p>',
+                 '<p class="tag">Representation · AI Agents · Reasoning · Adaptation</p>')
     about = re.search(r'<section class="about">.*?</section>', HOME_MAIN, re.S).group(0)
     teach = re.search(r'<section><h3>Teaching</h3>.*?</section>', HOME_MAIN, re.S).group(0)
     exp = re.search(r'<section><h3>Experience</h3>.*?</section>', HOME_MAIN, re.S).group(0)
