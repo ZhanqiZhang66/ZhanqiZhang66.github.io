@@ -63,9 +63,9 @@ function drawTrees(){trees.forEach(function(tr){ctx.drawImage(tr.cv,tr.x-tr.size
 
 // ---- birds from above, in the pond style: an oval, a round head, a small beak. Muted so they sit quietly.
 var KIND={
-  gray: {s:1.3, body:'#a6abb0',wing:'#8d9399',head:'#b3b4a8',beak:'#8f9499',cheek:'#e8935c',crest:'#9aa0a5',bar:'#eeece6',tail:22,span:18,flap:15},
-  pearl:{s:1.3, body:'#f7f4ec',wing:'#e3dfd3',head:'#f0e2a4',beak:'#cfc5b4',cheek:'#e8935c',crest:'#f0e2a4',pearl:'#c9c5ba',outline:true,tail:22,span:18,flap:15},
-  keet: {s:1.05,body:'#8fbd84',wing:'#6f9c6b',head:'#ecd98a',beak:'#cfa25a',tail:18,span:16,flap:18}};
+  gray: {s:1.3, body:'#a6abb0',wing:'#8d9399',head:'#b3b4a8',beak:'#8f9499',cheek:'#e8935c',crest:'#7c838a',bar:'#eeece6',tail:22,span:18,flap:15},
+  pearl:{s:1.3, body:'#f7f4ec',wing:'#e3dfd3',head:'#f0e2a4',beak:'#cfc5b4',crest:'#e2c96c',fold:'#f1ecdd',pearl:'#ead88f',outline:true,tail:22,span:18,flap:15},
+  keet: {s:.85,body:'#8fbd84',wing:'#6f9c6b',head:'#ecd98a',beak:'#cfa25a',tail:18,span:16,flap:18}};
 var birds=[],mouse={x:-9999,y:-9999};
 function spot(tr){var s=tr.spots[(Math.random()*tr.spots.length)|0];return {x:tr.x+s[0]+rnd(-5,5),y:tr.y+s[1]+rnd(-5,5),tr:tr};}
 function visibleTrees(){var v=trees.filter(function(tr){return tr.r>50&&tr.px>10&&tr.px<W-10&&tr.y>40&&tr.y<H-40;});return v.length?v:trees;}
@@ -119,9 +119,9 @@ function drawBird(b){var c=KIND[b.k],s=c.s*(1+b.alt*.1),tk=b.tuck,bob=1;
   ctx.fillStyle=c.wing;var tl=c.tail;ctx.beginPath();ctx.moveTo(-6,-2.4-open);ctx.quadraticCurveTo(-7-tl*.6,-2-open*2.2,-7-tl,-.9-open*1.6);ctx.quadraticCurveTo(-8.6-tl,0,-7-tl,.9+open*1.6);ctx.quadraticCurveTo(-7-tl*.6,2+open*2.2,-6,2.4+open);ctx.closePath();ctx.fill();
   if(open>.05){var span=(7+(sp-7)*open)*(.76+.24*flap),sweep=3+3*(1-flap);ctx.fillStyle=c.wing;wing(1,span,sweep);wing(-1,span,sweep);}
   ctx.fillStyle=c.body;ctx.beginPath();ctx.ellipse(0,0,10,6.2,0,0,6.283);ctx.fill();if(c.outline&&!DARK){ctx.strokeStyle=P.edge;ctx.lineWidth=.5;ctx.stroke();}
-  if(open<=.6){ctx.globalAlpha=1-open/.6;ctx.fillStyle=c.wing;ctx.beginPath();ctx.ellipse(-2.2,3.6,7,2.5,-.12,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(-2.2,-3.6,7,2.5,.12,0,6.283);ctx.fill();
+  if(open<=.6){ctx.globalAlpha=1-open/.6;ctx.fillStyle=c.fold||c.wing;var wy=c.fold?2.9:3.6,wr=c.fold?2.1:2.5,wl=c.fold?6.2:7;ctx.beginPath();ctx.ellipse(-2.2,wy,wl,wr,-.12,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(-2.2,-wy,wl,wr,.12,0,6.283);ctx.fill();
     if(c.bar){ctx.fillStyle=c.bar;ctx.beginPath();ctx.ellipse(-1.5,5.5,5.2,.8,-.12,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(-1.5,-5.5,5.2,.8,.12,0,6.283);ctx.fill();}
-    if(c.pearl){ctx.fillStyle=c.pearl;ctx.beginPath();[[-6,3.4],[-3.4,4.2],[-.8,3.6],[1.6,4.3],[-4.8,-3.9],[-2.2,-3.4],[.4,-4.2],[-7,-3.2]].forEach(function(d){ctx.moveTo(d[0]+.7,d[1]);ctx.arc(d[0],d[1],.7,0,6.283);});ctx.fill();}
+    if(c.pearl){ctx.fillStyle=c.pearl;ctx.beginPath();[[-6.2,2.4],[-4.2,3.4],[-2,2.5],[.2,3.5],[2.2,2.7],[-6.2,-2.4],[-4.2,-3.4],[-2,-2.5],[.2,-3.5],[2.2,-2.7],[-5,0]].forEach(function(d){ctx.moveTo(d[0]+.55,d[1]);ctx.arc(d[0],d[1],.55,0,6.283);});ctx.fill();}
     ctx.globalAlpha=1;}
   var hx=8.2-8*tk,hy=2*tk;
   if(tk<.7){ctx.globalAlpha=1-tk/.7;ctx.fillStyle=c.beak;
@@ -130,8 +130,8 @@ function drawBird(b){var c=KIND[b.k],s=c.s*(1+b.alt*.1),tk=b.tuck,bob=1;
     if(c.knot){ctx.beginPath();ctx.arc(hx+3.4,hy-3.6,1.5,0,6.283);ctx.fill();}
     ctx.globalAlpha=1;}
   ctx.fillStyle=c.head;ctx.beginPath();ctx.arc(hx,hy,4.3,0,6.283);ctx.fill();
-  if(c.crest){ctx.fillStyle=c.crest;ctx.beginPath();ctx.moveTo(hx+1,hy-1.3);ctx.lineTo(hx-9.5,hy);ctx.lineTo(hx+1,hy+1.3);ctx.closePath();ctx.fill();}
-  if(c.cheek){ctx.fillStyle=c.cheek;ctx.beginPath();ctx.arc(hx+.4,hy-3.1,1.3,0,6.283);ctx.arc(hx+.4,hy+3.1,1.3,0,6.283);ctx.fill();}
+  if(c.cheek){ctx.save();ctx.beginPath();ctx.arc(hx,hy,4.3,0,6.283);ctx.clip();ctx.fillStyle=c.cheek;ctx.beginPath();ctx.arc(hx-.6,hy-4.5,2.3,0,6.283);ctx.fill();ctx.beginPath();ctx.arc(hx-.6,hy+4.5,2.3,0,6.283);ctx.fill();ctx.restore();} // cheek patch seen from above: a half circle on each side of the head
+  if(c.crest){ctx.fillStyle=c.crest;ctx.beginPath();ctx.moveTo(hx+1.8,hy);ctx.quadraticCurveTo(hx-1.5,hy-1.5,hx-10.5,hy);ctx.quadraticCurveTo(hx-1.5,hy+1.5,hx+1.8,hy);ctx.closePath();ctx.fill();}
   ctx.restore();}
 function frame(){ctx.clearRect(0,0,W,H);var faint=(W-760)/2<=120;ctx.globalAlpha=faint?.45:1;
   drawTrees();
