@@ -56,9 +56,9 @@ function makeTrees(){trees=[];var R=seeded(11),lane=(W-760)/2,wide=lane>120,id=0
   if(wide){var n=Math.ceil(H/190)+1,maxR=Math.min(112,lane*.5);
     for(var side=0;side<2;side++)for(var i=0;i<n;i++){var r=maxR*(.6+R()*.4),inset=R()*Math.max(0,lane-r*1.9),x=side?W-r*.55-inset:r*.55+inset;tree(x,(i+.2+R()*.6)/n*H*1.06-20,r);}
     if(lane>330)for(side=0;side<2;side++)for(i=0;i<3;i++){r=34+R()*26;tree(side?W-lane+70+R()*50:lane-70-R()*50,(i+.5+R()*.4)/3*H,r);}
-  }else{tree(-10,H*.12,84);tree(W+10,H*.3,76);tree(-20,H*.78,92);tree(W+16,H*.9,84);}
+  }else{tree(0,H*.16,84);tree(W,H*.36,78);tree(-4,H*.62,90);tree(W+4,H*.86,84);}
   trees.sort(function(a,b){return b.r-a.r;});
-  trees.forEach(function(tr){tr.spots=[[0,0],[tr.r*.32,tr.r*.1],[-tr.r*.25,tr.r*.28],[tr.r*.05,-tr.r*.34],[-tr.r*.3,-tr.r*.15]];buildTree(tr);});}
+  trees.forEach(function(tr){tr.spots=[[0,0],[tr.r*.32,tr.r*.1],[-tr.r*.25,tr.r*.28],[tr.r*.05,-tr.r*.34],[-tr.r*.3,-tr.r*.15]];tr.px=tr.x;tr.py=tr.y;tr.pr=tr.r*.5;if(!wide){tr.px=tr.x<W/2?15:W-15;tr.pr=10;tr.spots=[[0,0],[-3,-tr.r*.3],[3,-tr.r*.13],[-2,tr.r*.14],[2,tr.r*.3]].map(function(s){return [tr.px-tr.x+s[0],s[1]];});}buildTree(tr);});}
 function drawTrees(){trees.forEach(function(tr){ctx.drawImage(tr.cv,tr.x-tr.size/2,tr.y-tr.size/2,tr.size,tr.size);});}
 
 // ---- birds from above, in the pond style: an oval, a round head, a small beak. Muted so they sit quietly.
@@ -68,13 +68,13 @@ var KIND={
   keet: {s:1.05,body:'#8fbd84',wing:'#6f9c6b',head:'#ecd98a',beak:'#cfa25a',tail:18,span:16,flap:18}};
 var birds=[],mouse={x:-9999,y:-9999};
 function spot(tr){var s=tr.spots[(Math.random()*tr.spots.length)|0];return {x:tr.x+s[0]+rnd(-5,5),y:tr.y+s[1]+rnd(-5,5),tr:tr};}
-function visibleTrees(){var v=trees.filter(function(tr){return tr.r>50&&tr.x>10&&tr.x<W-10&&tr.y>40&&tr.y<H-40;});return v.length?v:trees;}
+function visibleTrees(){var v=trees.filter(function(tr){return tr.r>50&&tr.px>10&&tr.px<W-10&&tr.y>40&&tr.y<H-40;});return v.length?v:trees;}
 function makeBirds(){birds=[];var kinds=['gray','pearl','keet'],vis=visibleTrees();
   kinds.forEach(function(k,i){var sp=spot(vis[i%vis.length]);birds.push({k:k,x:sp.x,y:sp.y,a:rnd(0,6.28),v:0,home:sp,fly:false,wait:rnd(6,40),ph:rnd(0,6),tuck:0,alt:0,look:rnd(0,6.28),mate:null,delay:-1,hops:0,lift:0,hop:null});});
   }
 function go(b,target,fast){b.hop=null;b.hops=0;b.lift=0;b.home=target;b.fly=true;b.fast=fast;b.tuck=0;}
 function pick(b,scared){var vis=visibleTrees(),night=isNight();
-  if(night){var rt=vis.slice().sort(function(p,q){return Math.abs(p.y-H*.38)+Math.abs(p.x-W*.84)*.3-(Math.abs(q.y-H*.38)+Math.abs(q.x-W*.84)*.3);})[0],k=birds.indexOf(b)-(birds.length-1)/2;return {x:rt.x+k*15,y:rt.y+Math.abs(k)*3,tr:rt,night:true};}
+  if(night){var rt=vis.slice().sort(function(p,q){return Math.abs(p.y-H*.38)+Math.abs(p.x-W*.84)*.3-(Math.abs(q.y-H*.38)+Math.abs(q.x-W*.84)*.3);})[0],k=birds.indexOf(b)-(birds.length-1)/2;return {x:(rt.px===rt.x?rt.x+k*15:(rt.px<W/2?34:W-34)+k*13),y:rt.py+Math.abs(k)*3,tr:rt,night:true};}
   var side=b.x<W/2,c=vis.filter(function(tr){return tr!==b.home.tr&&((tr.x<W/2)===side)===(Math.random()<(scared?.5:.8));});
   if(!c.length)c=vis.filter(function(tr){return tr!==b.home.tr;});if(!c.length)c=vis;
   return spot(c[(Math.random()*c.length)|0]);}
@@ -99,7 +99,7 @@ function step(){t+=1/60;var night=isNight();
       if(night){if(b.home.night){b.wait=999;}else{var r=pick(b);r.night=true;go(b,r,false);}}
       else if(b.hops>0||Math.random()<.5){ // a few quick hops across the same treetop
         if(!(b.hops>0))b.hops=1+(Math.random()*3|0);b.hops--;var tr=b.home.tr,ha=b.a+rnd(-.9,.9),hd=rnd(13,24),hx=b.x+Math.cos(ha)*hd,hy=b.y+Math.sin(ha)*hd;
-        if(Math.hypot(hx-tr.x,hy-tr.y)>tr.r*.5){ha=Math.atan2(tr.y-b.y,tr.x-b.x)+rnd(-.5,.5);hx=b.x+Math.cos(ha)*hd;hy=b.y+Math.sin(ha)*hd;}
+        if(Math.hypot(hx-tr.px,hy-tr.py)>tr.pr){ha=Math.atan2(tr.py-b.y,tr.px-b.x)+rnd(-.5,.5);hx=b.x+Math.cos(ha)*hd;hy=b.y+Math.sin(ha)*hd;}
         b.a=b.look=ha;b.hop={x0:b.x,y0:b.y,x1:hx,y1:hy,u:0};}
       else if(Math.random()<.3){b.look=b.a+rnd(-1.2,1.2);b.wait=rnd(4,10);}
       else if(birds.filter(function(o){return o.fly;}).length>0){b.wait=rnd(3,8);}   // one flight at a time keeps the page calm
@@ -188,7 +188,7 @@ function settle(){if(!isNight())return;birds.forEach(function(b){var sp=pick(b);
 addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
 addEventListener('pointerdown',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
 document.addEventListener('pointerleave',function(){mouse.x=mouse.y=-9999;});
-var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){resize();makeTrees();makeBirds();settle();if(reduce)frame();},150);});
+var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){if(innerWidth===W&&Math.abs(innerHeight-H)<160){resize();if(reduce)frame();return;}resize();makeTrees();makeBirds();settle();if(reduce)frame();},150);});
 var qh=new URLSearchParams(location.search).get('hour');if(qh!==null)preview=+qh;
 resize();readVars();clock();makeTrees();makeBirds();settle();
 if(reduce)frame();else (function loop(){step();frame();requestAnimationFrame(loop);})();

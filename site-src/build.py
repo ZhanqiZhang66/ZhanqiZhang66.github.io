@@ -52,6 +52,18 @@ FOREST_JS = must(FOREST_JS, "what:'4-gram model, 3 words of context'", "what:'4-
 FOREST_JS = must(FOREST_JS, "'Victoria is a Ph.D. candidate at UC San Diego.'", "'Victoria is an ML research scientist.',\n  'Victoria defended her Ph.D. at UC San Diego.'")
 FOREST_JS = must(FOREST_JS, "try{bloomMode=localStorage.getItem('vz-bloom')||bloomMode;}catch(e){}", "")
 
+# ---- small screens: there are no side lanes, so the trees lean in from the edges and the birds perch on the part that shows
+FOREST_JS = must(FOREST_JS, "}else{tree(-10,H*.12,84);tree(W+10,H*.3,76);tree(-20,H*.78,92);tree(W+16,H*.9,84);}",
+                 "}else{tree(0,H*.16,84);tree(W,H*.36,78);tree(-4,H*.62,90);tree(W+4,H*.86,84);}")
+FOREST_JS = must(FOREST_JS, "tr.spots=[[0,0],[tr.r*.32,tr.r*.1],[-tr.r*.25,tr.r*.28],[tr.r*.05,-tr.r*.34],[-tr.r*.3,-tr.r*.15]];buildTree(tr);",
+                 "tr.spots=[[0,0],[tr.r*.32,tr.r*.1],[-tr.r*.25,tr.r*.28],[tr.r*.05,-tr.r*.34],[-tr.r*.3,-tr.r*.15]];tr.px=tr.x;tr.py=tr.y;tr.pr=tr.r*.5;"
+                 "if(!wide){tr.px=tr.x<W/2?15:W-15;tr.pr=10;tr.spots=[[0,0],[-3,-tr.r*.3],[3,-tr.r*.13],[-2,tr.r*.14],[2,tr.r*.3]].map(function(s){return [tr.px-tr.x+s[0],s[1]];});}buildTree(tr);")
+FOREST_JS = must(FOREST_JS, "return tr.r>50&&tr.x>10&&tr.x<W-10&&tr.y>40&&tr.y<H-40;", "return tr.r>50&&tr.px>10&&tr.px<W-10&&tr.y>40&&tr.y<H-40;")
+FOREST_JS = must(FOREST_JS, "if(Math.hypot(hx-tr.x,hy-tr.y)>tr.r*.5){ha=Math.atan2(tr.y-b.y,tr.x-b.x)+rnd(-.5,.5);", "if(Math.hypot(hx-tr.px,hy-tr.py)>tr.pr){ha=Math.atan2(tr.py-b.y,tr.px-b.x)+rnd(-.5,.5);")
+FOREST_JS = must(FOREST_JS, "return {x:rt.x+k*15,y:rt.y+Math.abs(k)*3,tr:rt,night:true};", "return {x:(rt.px===rt.x?rt.x+k*15:(rt.px<W/2?34:W-34)+k*13),y:rt.py+Math.abs(k)*3,tr:rt,night:true};")
+# a phone's address bar sliding away changes the height a little; keep the same forest and birds instead of starting over
+FOREST_JS = must(FOREST_JS, "rz=setTimeout(function(){resize();makeTrees();makeBirds();settle();", "rz=setTimeout(function(){if(innerWidth===W&&Math.abs(innerHeight-H)<160){resize();if(reduce)frame();return;}resize();makeTrees();makeBirds();settle();")
+
 HEAD_JS = """(function(){
   // Dark at night and bright by day, on San Diego time. The button overrides it for this visit.
   var root=document.documentElement,KEY='vz-theme';
@@ -573,6 +585,8 @@ def build():
     cover = cover.replace(old, '<p class="tag"><span class="nw">Machine Learning Research Scientist</span> · <span class="nw">Ph.D., UC San Diego</span> · <span class="nw">Ex-Google &amp; Meta</span></p>')
     cover = must(cover, '<p class="tag">Working on <b>representation learning</b> and <b>retrieval</b>.</p>',
                  '<p class="tag">Representation · AI Agents · Reasoning · Adaptation</p>')
+    cover = must(cover, '<a href="https://twitter.com/ZhangZhanqi"><i class="fa-brands fa-x-twitter"></i>X</a>',
+                 '<a href="https://twitter.com/ZhangZhanqi" aria-label="X"><i class="fa-brands fa-x-twitter" style="margin-right:0"></i></a>')
     about = re.search(r'<section class="about">.*?</section>', HOME_MAIN, re.S).group(0)
     teach = re.search(r'<section><h3>Teaching</h3>.*?</section>', HOME_MAIN, re.S).group(0)
     exp = re.search(r'<section><h3>Experience</h3>.*?</section>', HOME_MAIN, re.S).group(0)
