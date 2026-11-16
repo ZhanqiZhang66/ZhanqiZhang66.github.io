@@ -15,7 +15,7 @@ SITE = 'https://zhanqizhang66.github.io'
 RESUME = '/Zhanqi%20Zhang%20CV_2026_sans_serif_0722.pdf'
 GTAG = 'G-Y06S3E3WTE'
 DESC = 'Victoria Zhang. Machine Learning Research Scientist · Ph.D., UC San Diego · Ex-Google & Meta. Representation · AI Agents · Reasoning · Adaptation.'
-OGIMG = '/assets/img/og-preview.png'
+OGIMG = '/assets/img/og-card.png'
 
 
 def read(p):
@@ -186,10 +186,10 @@ def page(title, main, path='/', active='', extra_head='', extra_body='', desc=DE
     meta = ('<meta name="description" content="%s">\n<link rel="canonical" href="%s">\n'
             '<meta property="og:site_name" content="Victoria Zhang">\n<meta property="og:title" content="%s">\n<meta property="og:description" content="%s">\n'
             '<meta property="og:type" content="website">\n<meta property="og:url" content="%s">\n<meta property="og:image" content="%s">\n'
-            '<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:site" content="@ZhangZhanqi">\n'
+            '<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:site" content="@ZhangZhanqi">\n<meta name="twitter:image" content="%s">\n'
             '<script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>\n'
             "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','%s');</script>"
-            ) % (html.escape(desc, True), html.escape(url, True), html.escape(title, True), html.escape(desc, True), html.escape(url, True), html.escape(SITE + img, True), GTAG, GTAG)
+            ) % (html.escape(desc, True), html.escape(url, True), html.escape(title, True), html.escape(desc, True), html.escape(url, True), html.escape(SITE + img, True), html.escape(SITE + img, True), GTAG, GTAG)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -476,6 +476,7 @@ def build():
         cover = ('/assets/site/covers/' + os.path.basename(cov)) if '/blog/covers/' in cov else ('/' + cov.lstrip('/') if cov else '')
         live = '%s/%s/' % (SITE, dirn)
         share = fm.get('share-img', '') or (cover if cover and not cover.endswith('.svg') else OGIMG)
+        if 'og-preview' in share: share = OGIMG
         posts.append(dict(slug=dirn, share='/' + share.lstrip('/'), title=fm.get('title', base), sub=fm.get('subtitle', ''), date=(int(y), int(mo), int(d)),
                           cover=cover, tags=tags, tut=is_tut, live=live, body=body, math='mathjax' in fm.get('head-extra', '')))
     posts.sort(key=lambda p: p['date'], reverse=True)
